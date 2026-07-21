@@ -19,7 +19,7 @@ IRMS (Incident Response Management System) is a SaaS-style security incident man
 After completing the workshop, you will have a working IRMS system on AWS with core functions such as user authentication, incident management, evidence storage, automatic threat detection, and AI-assisted incident analysis.
 
 #### 5.1.1.2 Overall Architecture
-![IRMS Architecture Diagram](/images/2-Proposal/IRMS_architecture_v10.drawio.png)
+![IRMS Architecture Diagram](//images/2-Proposal/IRMS_architecture_v10.drawio.png)
 
 The system includes the following layers:
 Global/Edge:

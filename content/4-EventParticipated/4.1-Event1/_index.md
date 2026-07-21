@@ -65,5 +65,5 @@ to the design and development of practical features in my project.
 
 ## Photos During the Event
 
-![AWS Event](images/Event/aws-event.jpg)
-![AWS Event](images/Event/aws-event1.jpg)
+![AWS Event](/images/Event/aws-event.jpg)
+![AWS Event](/images/Event/aws-event1.jpg)

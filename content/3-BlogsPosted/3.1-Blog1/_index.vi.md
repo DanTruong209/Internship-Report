@@ -14,7 +14,7 @@ Tuy nhiên, Threat Modeling theo cách truyền thống thường cần nhiều 
 
 Để giải quyết bài toán này, AWS giới thiệu kiến trúc tham chiếu **Threat Designer**, kết hợp **Generative AI** và **Amazon Bedrock** để tự động hóa quá trình xây dựng Threat Model.
 
-![Shift-left Security và Security Debt](/images/3-BlogsTranslated/blog-diagram-01.jpeg)
+![Shift-left Security và Security Debt](//images/3-BlogsTranslated/blog-diagram-01.jpeg)
 
 ### 3.1.1 Giải pháp
 
@@ -28,7 +28,7 @@ Thay vì yêu cầu kỹ sư bảo mật tự phân tích sơ đồ kiến trúc
 
 Từ các thông tin đó, hệ thống xây dựng **Threat Catalog** gồm các mối đe dọa, kịch bản tấn công và biện pháp giảm thiểu tương ứng.
 
-![Kiến trúc Threat Designer trên AWS](/images/3-BlogsTranslated/blog-diagram-02.jpeg)
+![Kiến trúc Threat Designer trên AWS](//images/3-BlogsTranslated/blog-diagram-02.jpeg)
 
 Khác với các công cụ Threat Modeling truyền thống thường dựa trên rule hoặc template cố định, Foundation Models có khả năng suy luận theo ngữ cảnh, hiểu mối quan hệ giữa các thành phần trong hệ thống và phát hiện cả những kịch bản tấn công chưa được định nghĩa sẵn. Toàn bộ giải pháp được xây dựng trên kiến trúc serverless, giúp giảm chi phí vận hành, tự động mở rộng và hạn chế việc quản lý hạ tầng.
 

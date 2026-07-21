@@ -146,9 +146,9 @@ json
 "TokenType": "Bearer"
 }
 }
-![Setup Authentication 5](/images/5-Workshop/IRMS/section-03-005.png)
-![Setup Authentication 6](/images/5-Workshop/IRMS/section-03-006.png)
-![Setup Authentication 7](/images/5-Workshop/IRMS/section-03-007.png)
+![Setup Authentication 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-005.png)
+![Setup Authentication 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-006.png)
+![Setup Authentication 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-007.png)
 if thay loi NotAuthorizedException → verify lai password or email.
 if thay loi UserNotFoundException → verify lai email da create dung chua.
 Verify JWT token:
@@ -268,7 +268,7 @@ aws cognito-idp initiate-auth \
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
-![Setup API Gateway 12](/images/5-Workshop/IRMS/section-04-012.png)
+![Setup API Gateway 12](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-012.png)
 Copy toan bo chuoi IdToken (bat dau with eyJ...) vao notepad.
 
 Test 1 — /ping not can token:
@@ -282,7 +282,7 @@ Expected result:
 "message": "pong",
 "auth": false
 }
-![Setup API Gateway 13](/images/5-Workshop/IRMS/section-04-013.png)
+![Setup API Gateway 13](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-013.png)
 Status: 200 OK → ✅ API Gateway hoat dong
 
 Test 2 — /ping-auth not has token:
@@ -294,7 +294,7 @@ Expected result:
 {
 "message": "Unauthorized"
 }
-![Setup API Gateway 14](/images/5-Workshop/IRMS/section-04-014.png)
+![Setup API Gateway 14](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-014.png)
 Status: 401 Unauthorized → ✅ Authorizer dang chan dung
 
 Test 3 — /ping-auth has token:
@@ -309,7 +309,7 @@ Expected result:
 "message": "Authorized",
 "auth": true
 }
-![Setup API Gateway 15](/images/5-Workshop/IRMS/section-04-015.png)
+![Setup API Gateway 15](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-015.png)
 Status: 200 OK → ✅ Authorizer authentication JWT thanh cong
 
 Test 4 — /ping-auth with token sai:
@@ -320,7 +320,7 @@ Expected result:
 {
 "message": "Unauthorized"
 }
-![Setup API Gateway 16](/images/5-Workshop/IRMS/section-04-016.png)
+![Setup API Gateway 16](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-016.png)
 Status: 401 Unauthorized → ✅ Authorizer from choi token not hop le
 
 #### 5.3.4.6 Checklist 4

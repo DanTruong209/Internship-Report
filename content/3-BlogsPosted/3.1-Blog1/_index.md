@@ -14,7 +14,7 @@ Traditional Threat Modeling often requires several meetings, security specialist
 
 To address this challenge, AWS introduced a reference architecture called **Threat Designer**, combining **Generative AI** and **Amazon Bedrock** to automate the process of building threat models.
 
-![Shift-left Security and Security Debt](/images/3-BlogsTranslated/blog-diagram-01.jpeg)
+![Shift-left Security and Security Debt](//images/3-BlogsTranslated/blog-diagram-01.jpeg)
 
 ### 3.1.1 Solution
 
@@ -28,7 +28,7 @@ Instead of requiring security engineers to manually analyze architecture diagram
 
 From these inputs, it builds a **Threat Catalog** that includes threats, attack scenarios, and corresponding mitigations.
 
-![Threat Designer architecture on AWS](/images/3-BlogsTranslated/blog-diagram-02.jpeg)
+![Threat Designer architecture on AWS](//images/3-BlogsTranslated/blog-diagram-02.jpeg)
 
 Unlike traditional Threat Modeling tools that rely mainly on fixed rules or templates, Foundation Models can reason with context, understand relationships between system components, and identify attack scenarios that may not have been predefined. The whole solution is built on a serverless architecture, which helps reduce operational cost, scale automatically, and minimize infrastructure management.
 

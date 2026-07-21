@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-pattern = re.compile(r'!\[[^\]]*\]\((/images/5-Workshop/IRMS/[^)]+)\)')
+pattern = re.compile(r'!\[[^\]]*\]\((///images/5-Workshop/5.2-Prerequisite/IRMS/[^)]+)\)')
 files = [
     Path('content/5-Workshop/5.3-Infrastructure-Configuration/_index.md'),
     Path('content/5-Workshop/5.3-Infrastructure-Configuration/_index.vi.md'),

@@ -27,7 +27,7 @@ IRMS addresses this problem by providing a structured incident management workfl
 
 The system follows a Serverless-first model and avoids EC2, RDS, and NAT Gateway in the MVP to reduce cost and operational complexity.
 
-![IRMS Solution Architecture](/images/2-Proposal/IRMS_architecture_v10.drawio.png)
+![IRMS Solution Architecture](//images/2-Proposal/IRMS_architecture_v10.drawio.png)
 
 #### Deployed Core Architecture
 

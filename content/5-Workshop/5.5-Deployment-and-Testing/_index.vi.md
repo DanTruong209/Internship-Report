@@ -274,19 +274,19 @@ cd /d "D:\Thực Tập\irms-serverless"
 findstr /C:"AWS::Serverless::Api" infrastructure\template.yaml
 Kết quả mong đợi:
 Type: AWS::Serverless::Api
-![API Gateway Production 1](/images/5-Workshop/IRMS/section-08-001.png)
+![API Gateway Production 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-001.png)
 **Bước 3: Kiểm tra route /incidents:**
 findstr /C:"/incidents" infrastructure\template.yaml
 Kết quả mong đợi có các route:
 Path: /incidents
 Path: /incidents/{id}
-![API Gateway Production 2](/images/5-Workshop/IRMS/section-08-002.png)
+![API Gateway Production 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-002.png)
 **Bước 4: Kiểm tra route /evidence:**
 findstr /C:"/evidence" infrastructure\template.yaml
 Kết quả mong đợi:
 Path: /evidence
 Path: /evidence/{id}
-![API Gateway Production 3](/images/5-Workshop/IRMS/section-08-003.png)
+![API Gateway Production 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-003.png)
 **Bước 5: Kiểm tra route AI:**
 findstr /C:"/ai/analyze" infrastructure\template.yaml
 findstr /C:"/ai/explain" infrastructure\template.yaml
@@ -295,13 +295,13 @@ Kết quả mong đợi:
 Path: /ai/analyze
 Path: /ai/explain
 Path: /ai/chat
-![API Gateway Production 4](/images/5-Workshop/IRMS/section-08-004.png)
+![API Gateway Production 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-004.png)
 **Bước 6: Kiểm tra CORS:**
 findstr /C:"Cors:" infrastructure\template.yaml
 findstr /C:"AllowOrigin" infrastructure\template.yaml
 findstr /C:"AllowHeaders" infrastructure\template.yaml
 findstr /C:"AllowMethods" infrastructure\template.yaml
-![API Gateway Production 5](/images/5-Workshop/IRMS/section-08-005.png)
+![API Gateway Production 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-005.png)
 **Bước 7: Kiểm tra Cognito Authorizer:**
 findstr /C:"Authorizer" infrastructure\template.yaml
 findstr /C:"UserPoolArn" infrastructure\template.yaml
@@ -309,12 +309,12 @@ Nếu template đã có Cognito Authorizer, kết quả sẽ có các dòng liê
 DefaultAuthorizer
 CognitoAuthorizer
 UserPoolArn
-![API Gateway Production 6](/images/5-Workshop/IRMS/section-08-006.png)
+![API Gateway Production 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-006.png)
 **Bước 8: Validate SAM template:**
 sam validate --template-file infrastructure\template.yaml --region ap-southeast-1
 Kết quả mong đợi:
 D:\Thực Tập\irms-serverless\infrastructure\template.yaml is a valid SAM Template.
-![API Gateway Production 7](/images/5-Workshop/IRMS/section-08-007.png)
+![API Gateway Production 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-08-007.png)
 
 #### 5.5.8.10 Checklist 8
 - ✅ Hiểu vai trò API Gateway trong kiến trúc IRMS
@@ -398,28 +398,28 @@ Trong demo internship, có thể subscribe email cá nhân vào SNS topic để 
 cd /d "D:\Thực Tập\irms-serverless"
 **Bước 2: Kiểm tra có EventBridge rule không:**
 findstr /C:"AWS::Events::Rule" infrastructure\template.yaml
-![EventBridge & GuardDuty 1](/images/5-Workshop/IRMS/section-09-001.png)
+![EventBridge & GuardDuty 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-001.png)
 **Bước 3: Kiểm tra có EventBridge pattern không:**
 findstr /C:"EventPattern" infrastructure\template.yaml
 findstr /C:"aws.guardduty" infrastructure\template.yaml
 findstr /C:"GuardDuty Finding" infrastructure\template.yaml
-![EventBridge & GuardDuty 2](/images/5-Workshop/IRMS/section-09-002.png)
+![EventBridge & GuardDuty 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-002.png)
 **Bước 4: Kiểm tra alert-handler có được trigger bởi EventBridge không:**
 findstr /C:"alert-handler" infrastructure\template.yaml
 findstr /C:"AlertHandler" infrastructure\template.yaml
-![EventBridge & GuardDuty 3](/images/5-Workshop/IRMS/section-09-003.png)
+![EventBridge & GuardDuty 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-003.png)
 **Bước 5: Kiểm tra SNS topic:**
 findstr /C:"TopicName" infrastructure\template.yaml
-![EventBridge & GuardDuty 4](/images/5-Workshop/IRMS/section-09-004.png)
+![EventBridge & GuardDuty 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-004.png)
 findstr /C:"SNS" infrastructure\template.yaml
-![EventBridge & GuardDuty 5](/images/5-Workshop/IRMS/section-09-005.png)
+![EventBridge & GuardDuty 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-005.png)
 **Bước 6: Kiểm tra quyền SNS publish:**
 findstr /C:"SNS" infrastructure\template.yaml
-![EventBridge & GuardDuty 6](/images/5-Workshop/IRMS/section-09-006.png)
+![EventBridge & GuardDuty 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-006.png)
 **Bước 7: Kiểm tra quyền Lambda invoke từ EventBridge:**
 findstr /C:"AWS::Lambda::Permission" infrastructure\template.yaml
 findstr /C:"events.amazonaws.com" infrastructure\template.yaml
-![EventBridge & GuardDuty 7](/images/5-Workshop/IRMS/section-09-007.png)
+![EventBridge & GuardDuty 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-09-007.png)
 **Bước 8: Validate SAM template:**
 sam validate --template-file infrastructure\template.yaml --region ap-southeast-1
 Kết quả mong đợi:
@@ -495,7 +495,7 @@ SAM sẽ
 - cài requirements.txt
 - sinh thư mục
 .aws-sam
-![Build & Deploy 1](/images/5-Workshop/IRMS/section-10-001.png)
+![Build & Deploy 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-001.png)
 
 #### 5.5.10.6 Kiểm tra Build
 dir .aws-sam
@@ -511,7 +511,7 @@ GenerateReportFunction
 AlertHandlerFunction
 AiAssistantFunction
 template.yaml
-![Build & Deploy 2](/images/5-Workshop/IRMS/section-10-002.png)
+![Build & Deploy 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-002.png)
 
 #### 5.5.10.7 Deploy Guided
 Tiếp theo là deploy guided, nhưng trước khi chạy cần chuẩn bị Cognito parameter.
@@ -544,7 +544,7 @@ Save configuration
 Y
 Sau lần đầu sẽ sinh
 samconfig.toml
-![Build & Deploy 3](/images/5-Workshop/IRMS/section-10-003.png)
+![Build & Deploy 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-003.png)
 
 #### 5.5.10.8 Deploy lần sau
 Chỉ cần
@@ -557,13 +557,13 @@ không cần guided nữa.
 Kiểm tra stack
 aws cloudformation list-stacks ^
 --profile irms-shared
-![Build & Deploy 4](/images/5-Workshop/IRMS/section-10-004.png)
+![Build & Deploy 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-004.png)
 Kiểm tra Lambda
 aws lambda list-functions ^
 --profile irms-shared
-![Build & Deploy 5](/images/5-Workshop/IRMS/section-10-005.png)
-![Build & Deploy 6](/images/5-Workshop/IRMS/section-10-006.png)
-![Build & Deploy 7](/images/5-Workshop/IRMS/section-10-007.png)
+![Build & Deploy 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-005.png)
+![Build & Deploy 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-006.png)
+![Build & Deploy 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-10-007.png)
 Kiểm tra API
 aws apigateway get-rest-apis ^
 --profile irms-shared
@@ -594,7 +594,7 @@ Thực hiện
 **Bước 1: Mở AWS Console**
 Vào:
 API Gateway → irms-api → Stages → dev
-![Testing & Validation 1](/images/5-Workshop/IRMS/section-11-001.png)
+![Testing & Validation 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-001.png)
 Lưu ý: URL này chỉ là base URL, chưa phải endpoint chức năng.
 **Bước 2: Liệt kê API Resources**
 Chạy:
@@ -602,10 +602,10 @@ aws apigateway get-resources ^
 --rest-api-id 07frck8bih ^
 --region ap-southeast-1 ^
 --profile irms-shared
-![Testing & Validation 2](/images/5-Workshop/IRMS/section-11-002.png)
-![Testing & Validation 3](/images/5-Workshop/IRMS/section-11-003.png)
-![Testing & Validation 4](/images/5-Workshop/IRMS/section-11-004.png)
-![Testing & Validation 5](/images/5-Workshop/IRMS/section-11-005.png)
+![Testing & Validation 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-002.png)
+![Testing & Validation 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-003.png)
+![Testing & Validation 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-004.png)
+![Testing & Validation 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-005.png)
 
 #### 5.5.11.2 Test API Health Check
 Mục tiêu
@@ -614,10 +614,10 @@ Client → API Gateway → IncidentCrud Lambda → Response
 Thực hiện
 Chạy:
 curl.exe https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping
-![Testing & Validation 6](/images/5-Workshop/IRMS/section-11-006.png)
+![Testing & Validation 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-006.png)
 Hoặc mở trình duyệt:
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping
-![Testing & Validation 7](/images/5-Workshop/IRMS/section-11-007.png)
+![Testing & Validation 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-007.png)
 
 #### 5.5.11.3 Test Incident CRUD
 🎯 Mục tiêu
@@ -673,14 +673,14 @@ Bước 2 - Kiểm tra Lambda đang mong đợi body như thế nào
 Trước khi gọi API, chúng ta cần xem handler.py của incident-crud.
 Hãy chạy:
 type backend\incident-crud\handler.py
-![Testing & Validation 8](/images/5-Workshop/IRMS/section-11-008.png)
+![Testing & Validation 8](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-008.png)
 Bước 3 - Gửi request tạo Incident
 Mở CMD và chạy:
 curl.exe -X POST ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents ^
 -H "Content-Type: application/json" ^
 -d "{\"title\":\"Unauthorized SSH Login\",\"description\":\"Multiple failed SSH login attempts detected\",\"severity\":\"High\",\"source\":\"manual\",\"assignedTo\":\"Security Analyst\"}"
-![Testing & Validation 9](/images/5-Workshop/IRMS/section-11-009.png)
+![Testing & Validation 9](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-009.png)
 Nghĩa là endpoint /incidents đang được Cognito Authorizer bảo vệ. /ping public, còn CRUD thì cần JWT token.
 Bạn cần lấy Access Token bằng Cognito. Chạy lệnh này, thay YOUR_USERNAME và YOUR_PASSWORD bằng user bạn đã tạo trước đó:
 aws cognito-idp initiate-auth ^
@@ -691,21 +691,21 @@ aws cognito-idp initiate-auth ^
 --auth-parameters USERNAME=YOUR_USERNAME,PASSWORD=YOUR_PASSWORD
 Sau khi chạy xong, bạn sẽ nhận được:
 "IDToken": "eyJ..."
-![Testing & Validation 10](/images/5-Workshop/IRMS/section-11-010.png)
+![Testing & Validation 10](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-010.png)
 Sau đó gọi lại API bằng token:
 curl.exe -X POST ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents ^
 -H "Content-Type: application/json" ^
 -H "Authorization: Bearer YOUR_ID _TOKEN" ^
 -d "{\"title\":\"Unauthorized SSH Login\",\"description\":\"Multiple failed SSH login attempts detected\",\"severity\":\"High\",\"source\":\"manual\",\"assignedTo\":\"Security Analyst\"}"
-![Testing & Validation 11](/images/5-Workshop/IRMS/section-11-011.png)
+![Testing & Validation 11](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-011.png)
 Bước 4 – Kiểm tra Incident vừa tạo
 Lấy danh sách Incident.
 Chạy: curl.exe ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents ^
 -H "Authorization: Bearer YOUR_ID_TOKEN"
 Danh sách Incident.
-![Testing & Validation 12](/images/5-Workshop/IRMS/section-11-012.png)
+![Testing & Validation 12](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-012.png)
 Bước 5 : GET chi tiết incident
 Dùng ID vừa tạo:
 INC-53DB6458
@@ -713,7 +713,7 @@ Chạy:
 curl.exe ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458 ^
 -H "Authorization: Bearer YOUR_ID_TOKEN"
-![Testing & Validation 13](/images/5-Workshop/IRMS/section-11-013.png)
+![Testing & Validation 13](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-013.png)
 Bước 6 : PUT cập nhật incident
 Chạy:
 curl.exe -X PUT ^
@@ -725,7 +725,7 @@ Mục tiêu: status đổi từ:
 Open
 thành:
 In Progress
-![Testing & Validation 14](/images/5-Workshop/IRMS/section-11-014.png)
+![Testing & Validation 14](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-014.png)
 **Bước 7: GET timeline**
 Sau khi tạo và update, timeline phải có ít nhất 2 event:
 curl.exe ^
@@ -734,17 +734,17 @@ https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53
 Mục tiêu thấy các event kiểu:
 incident.created
 incident.updated
-![Testing & Validation 15](/images/5-Workshop/IRMS/section-11-015.png)
+![Testing & Validation 15](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-015.png)
 **Bước 8: Kiểm tra DynamoDB**
 Vào AWS Console:
 DynamoDB → Tables → irms-incidents → Explore table items
 Tìm :INC-53DB6458
-![Testing & Validation 16](/images/5-Workshop/IRMS/section-11-016.png)
+![Testing & Validation 16](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-016.png)
 Sau đó kiểm tra timeline:
 DynamoDB → Tables → irms-timeline → Explore table items
 Tìm các item có:
 incidentId = INC-53DB6458
-![Testing & Validation 17](/images/5-Workshop/IRMS/section-11-017.png)
+![Testing & Validation 17](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-017.png)
 
 #### 5.5.11.4 Test Evidence Upload
 Đây là nơi chúng ta sẽ kiểm tra:
@@ -804,9 +804,9 @@ Quan sát hai hàm:
 - create_evidence()
 - lambda_handler()
 
-![Testing & Validation 18](/images/5-Workshop/IRMS/section-11-018.png)
-![Testing & Validation 19](/images/5-Workshop/IRMS/section-11-019.png)
-![Testing & Validation 20](/images/5-Workshop/IRMS/section-11-020.png)
+![Testing & Validation 18](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-018.png)
+![Testing & Validation 19](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-019.png)
+![Testing & Validation 20](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-020.png)
 Chức năng
 create_evidence() thực hiện:
 - Đọc request body.
@@ -825,7 +825,7 @@ Tạo file:
 echo This is IRMS evidence test file > evidence-test.txt
 Kiểm tra:
 dir evidence-test.txt
-![Testing & Validation 21](/images/5-Workshop/IRMS/section-11-021.png)
+![Testing & Validation 21](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-021.png)
 Bước 3. Tạo Evidence Metadata
 Gọi API:
 curl.exe -X POST ^
@@ -835,7 +835,7 @@ https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence ^
 -d "{\"incidentId\":\"INC-53DB6458\",\"fileName\":\"evidence-test.txt\",\"fileType\":\"text/plain\",\"description\":\"Test evidence upload from CMD\",\"uploadedBy\":\"analyst@example.com\",\"fileSize\":32}"
 Lưu ý: Thay YOUR_ID_TOKEN bằng IdToken vừa lấy từ Amazon Cognito.
 API trả về:
-![Testing & Validation 22](/images/5-Workshop/IRMS/section-11-022.png)
+![Testing & Validation 22](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-022.png)
 Response trả về metadata và upload URL.
 Bước 4. Upload file lên Amazon S3
 Copy giá trị:
@@ -847,19 +847,19 @@ curl.exe -X PUT ^
 -H "Content-Type: text/plain" ^
 --upload-file evidence-test.txt
 Nếu thành công, lệnh sẽ không hiển thị lỗi và file sẽ được upload lên Amazon S3.
-![Testing & Validation 23](/images/5-Workshop/IRMS/section-11-023.png)
+![Testing & Validation 23](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-023.png)
 Sau đó gọi GET evidence:
 curl.exe ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence/845d4a06-f3c2-4a4d-84bb-d937a522da46 ^
 -H "Authorization: Bearer YOUR_ID_TOKEN"
-![Testing & Validation 24](/images/5-Workshop/IRMS/section-11-024.png)
+![Testing & Validation 24](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-024.png)
 
 #### 5.5.11.5 Test AI Assistant
 
 Mục tiêu: kiểm tra request đã xác thực có đi tới AI Assistant Lambda, Lambda đọc Groq API key từ Secrets Manager, và provider abstraction trả về structured response hoặc fallback response an toàn.
 
-![Testing & Validation 25](/images/5-Workshop/IRMS/section-11-025.png)
-![Testing & Validation 26](/images/5-Workshop/IRMS/section-11-026.png)
+![Testing & Validation 25](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-025.png)
+![Testing & Validation 26](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-026.png)
 
 Kiểm tra Groq secret đã cấu hình:
 
@@ -902,7 +902,7 @@ curl.exe -X POST ^
 
 Nếu Groq không khả dụng hoặc timeout, Lambda trả về fallback notification và rule-based analysis để người dùng vẫn tiếp tục được quy trình xử lý incident.
 
-![Testing & Validation 28](/images/5-Workshop/IRMS/section-11-028.png)
+![Testing & Validation 28](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-028.png)
 
 #### 5.5.11.6 Test Generate Report
 **Bước 1: Test GET /reports**
@@ -910,7 +910,7 @@ curl.exe ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports ^
 -H "Authorization: Bearer YOUR_ID_TOKEN"
 Mục tiêu: trả về danh sách report summary.
-![Testing & Validation 29](/images/5-Workshop/IRMS/section-11-029.png)
+![Testing & Validation 29](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-029.png)
 **Bước 2: Test POST /reports/generate**
 Dùng incident đã có:
 INC-53DB6458
@@ -920,7 +920,7 @@ https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports/generate
 -H "Content-Type: application/json" ^
 -H "Authorization: Bearer YOUR_ID_TOKEN" ^
 -d "{\"incidentId\":\"INC-53DB6458\"}"
-![Testing & Validation 30](/images/5-Workshop/IRMS/section-11-030.png)
+![Testing & Validation 30](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-030.png)
 
 #### 5.5.11.7 Test EventBridge Alert Automation
 Phần này kiểm tra luồng tự động:
@@ -949,26 +949,26 @@ aws events put-events ^
 --entries file://guardduty-event.json ^
 --region ap-southeast-1 ^
 --profile irms-shared
-![Testing & Validation 31](/images/5-Workshop/IRMS/section-11-031.png)
+![Testing & Validation 31](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-031.png)
 **Bước 3: Kiểm tra Incident tự động**
 curl.exe ^
 https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents ^
 -H "Authorization: Bearer YOUR_ID_TOKEN"
 Tìm incident: Simulated SSH Brute Force Attack
-![Testing & Validation 32](/images/5-Workshop/IRMS/section-11-032.png)
+![Testing & Validation 32](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-032.png)
 **Bước 5: Kiểm tra DynamoDB**
 Vào:
 DynamoDB → irms-incidents → Explore table items
 Tìm incident có:
 source = guardduty-simulation
 createdBy = alert-handler
-![Testing & Validation 33](/images/5-Workshop/IRMS/section-11-033.png)
+![Testing & Validation 33](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-033.png)
 **Bước 6: Kiểm tra CloudWatch**
 aws logs describe-log-groups ^
 --log-group-name-prefix /aws/lambda/alert-handler ^
 --region ap-southeast-1 ^
 --profile irms-shared
-![Testing & Validation 34](/images/5-Workshop/IRMS/section-11-034.png)
+![Testing & Validation 34](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-034.png)
 #### 5.5.11.8 CloudWatch Logs and Final Validation
 Chạy các lệnh kiểm tra tổng thể:
 aws cloudformation describe-stacks ^
@@ -976,23 +976,23 @@ aws cloudformation describe-stacks ^
 --region ap-southeast-1 ^
 --profile irms-shared ^
 --query "Stacks[0].StackStatus"
-![Testing & Validation 35](/images/5-Workshop/IRMS/section-11-035.png)
+![Testing & Validation 35](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-035.png)
 aws lambda list-functions ^
 --region ap-southeast-1 ^
 --profile irms-shared ^
 --query "Functions[].FunctionName"
-![Testing & Validation 36](/images/5-Workshop/IRMS/section-11-036.png)
+![Testing & Validation 36](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-036.png)
 aws dynamodb list-tables ^
 --region ap-southeast-1 ^
 --profile irms-shared
-![Testing & Validation 37](/images/5-Workshop/IRMS/section-11-037.png)
+![Testing & Validation 37](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-037.png)
 aws s3 ls ^
 --profile irms-shared
-![Testing & Validation 38](/images/5-Workshop/IRMS/section-11-038.png)
+![Testing & Validation 38](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-038.png)
 aws events list-rules ^
 --region ap-southeast-1 ^
 --profile irms-shared
-![Testing & Validation 39](/images/5-Workshop/IRMS/section-11-039.png)
+![Testing & Validation 39](///images/5-Workshop/5.2-Prerequisite/IRMS/section-11-039.png)
 Kết quả mong đợi cuối 11
 Sau khi hoàn thành 11, bạn có thể chứng minh:
 - ✅ API Gateway gọi được Lambda

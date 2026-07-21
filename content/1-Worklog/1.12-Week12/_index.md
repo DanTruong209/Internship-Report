@@ -1,57 +1,56 @@
 ---
 title: "Week 12 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-07-06
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 12 Objectives:
 
-### Week 12 Objectives:
+Finalize the Incident Response Management System (IRMS) project and complete the internship roadmap.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Review the entire system workflow, improve remaining issues, finalize documentation, and prepare the final project presentation.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Evaluate the completed AI Assistant integration and summarize the knowledge gained throughout the internship.
 
+---
 
-### Week 12 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Review the complete IRMS architecture and verify the integration flow between Backend, AI Assistant, and AWS services.<br><br>- Check the overall system workflow from incident creation to AI analysis and notification. | 07/06/2026 | 07/06/2026 | Project Architecture Documentation |
+| 3 | - Perform final testing for AI Assistant features.<br><br>- Verify AI Chat, Incident Summary, AI Recommendations, and Context Builder functionality.<br><br>- Fix remaining issues found during testing. | 07/07/2026 | 07/07/2026 | Testing Documentation |
+| 4 | - Review AWS security configuration.<br><br>- Recheck IAM permissions, Secrets Manager integration, CloudWatch monitoring, and system logs. | 07/08/2026 | 07/08/2026 | AWS Security Best Practices |
+| 5 | - Complete final technical documentation.<br><br>- Update system diagrams, deployment flow, and user guide for IRMS. | 07/09/2026 | 07/09/2026 | Project Documentation |
+| 6 | - Prepare final presentation and internship report.<br><br>- Summarize achievements, technical skills gained, and future improvement directions. | 07/10/2026 | 07/10/2026 | Internship Report |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 12 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+Week 12 was the final week of my internship, focusing on reviewing, improving, and completing the Incident Response Management System (IRMS).
 
-* Used AWS CLI to perform basic operations such as:
+During this week, I reviewed the entire system architecture and verified the integration between the main components, including the IRMS application, AI Assistant module, and AWS services.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+I performed final testing for AI-related features such as:
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- AI Incident Summary.
+- AI Recommendations.
+- AI Chat Assistant.
+- AI Context Builder.
+
+Through testing, I identified and fixed remaining issues to improve system stability and response quality.
+
+In addition, I reviewed the security configuration of the system, including:
+
+- IAM permissions.
+- AWS Secrets Manager integration.
+- CloudWatch monitoring.
+- Service communication security.
+
+The final stage focused on completing technical documentation, updating architecture diagrams, deployment workflows, and preparing the internship presentation.
+
+Overall, Week 12 successfully completed the internship project roadmap. The IRMS system was developed as a Serverless AWS-based cybersecurity incident management platform with AI-assisted investigation capabilities.
+

@@ -1,59 +1,42 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+title: "Week 3 Worklog"
+date: 2026-05-04
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 3:
 
-### Mục tiêu tuần 3:
+Tìm hiểu các dịch vụ Storage và Database trên AWS nhằm chuẩn bị kiến thức cho việc thiết kế giải pháp quản lý dữ liệu trên Cloud.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Hoàn thành Module 6 (Storage) và Module 7 (Databases) trong khóa AWS Cloud Practitioner Essentials.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Thực hành tạo Amazon S3 và hiểu sự khác biệt giữa Block Storage, Object Storage, File Storage, Relational Database và NoSQL Database.
 
+---
 
-### Kết quả đạt được tuần 3:
+## Các công việc thực hiện trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Hoàn thành Module 6 – Storage (AWS Cloud Practitioner Essentials).<br><br>- Tìm hiểu các khái niệm về Storage, Amazon EBS, Instance Store, Amazon S3, S3 Storage Classes, S3 Lifecycle Management, Amazon EFS, Amazon FSx và các giải pháp lưu trữ khác. | 04/05/2026 | 04/05/2026 | https://skillbuilder.aws/ |
+| 3 | - Hoàn thành Module 7 – Databases trên AWS.<br><br>- Tìm hiểu Relational Database, NoSQL Database, Amazon RDS, Database Services, Caching Solutions và các công nghệ Database khác trên AWS. | 05/05/2026 | 05/05/2026 | https://skillbuilder.aws/ |
+| 4 | - Thực hành Amazon S3 trên AWS Console.<br><br>- Tạo S3 Bucket, upload file thử nghiệm, tìm hiểu cách quản lý Object và quyền truy cập. | 06/05/2026 | 06/05/2026 | AWS S3 Documentation |
+| 5 | - Ôn tập Module 6 và Module 7.<br><br>- So sánh Block Storage, Object Storage, File Storage, Relational Database và NoSQL Database. | 07/05/2026 | 07/05/2026 | AWS Documentation |
+| 6 | - Nghiên cứu các mô hình lưu trữ dữ liệu trên AWS.<br><br>- Phân tích lựa chọn Storage phù hợp cho các ứng dụng Cloud trong tương lai. | 08/05/2026 | 08/05/2026 | AWS Architecture Center |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+## Kết quả đạt được trong tuần 3:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Tuần này tập trung vào việc tìm hiểu cách AWS quản lý và lưu trữ dữ liệu trong môi trường Cloud.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tôi đã hoàn thành Module 6 và Module 7 của khóa AWS Cloud Practitioner Essentials, hiểu rõ hơn về các mô hình lưu trữ khác nhau như Block Storage (Amazon EBS), Object Storage (Amazon S3) và File Storage (Amazon EFS).
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Trước tuần này, kiến thức của tôi chủ yếu tập trung vào các dịch vụ Compute như EC2 và Lambda. Sau khi tìm hiểu thêm về Storage và Database trên AWS, tôi hiểu rõ hơn cách các ứng dụng Cloud phân tách giữa tài nguyên xử lý và nơi lưu trữ dữ liệu.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+Tôi cũng tìm hiểu về các mô hình Database như Relational Database và NoSQL Database. Các kiến thức về Amazon RDS, DynamoDB và các giải pháp Cache giúp tôi hiểu cách lựa chọn công nghệ Database dựa trên yêu cầu thực tế của hệ thống.
 
+Trong phần thực hành, tôi đã tạo một Amazon S3 Bucket trên AWS Console, upload file thử nghiệm, kiểm tra quá trình quản lý Object và tìm hiểu các khái niệm cơ bản về quyền truy cập dữ liệu.
 

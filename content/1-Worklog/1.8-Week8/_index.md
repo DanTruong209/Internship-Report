@@ -1,57 +1,41 @@
 ---
 title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 8 Objectives:
 
-### Week 8 Objectives:
+Understand Event-Driven Architecture and asynchronous processing patterns on AWS.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Learn how AWS messaging services such as Amazon SQS, Amazon SNS, and Amazon EventBridge support distributed systems.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Practice designing event-based workflows and understand how asynchronous processing can improve system scalability and reliability.
 
+---
 
-### Week 8 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Research Event-Driven Architecture concepts on AWS.<br><br>- Understand the role of events, producers, consumers, and asynchronous processing in modern cloud systems. | 06/08/2026 | 06/08/2026 | AWS Event-Driven Architecture Documentation |
+| 3 | - Study Amazon SQS and SNS services.<br><br>- Understand SQS Standard/FIFO Queue, SNS Topic, Subscription, and message delivery mechanisms. | 06/09/2026 | 06/09/2026 | AWS Documentation |
+| 4 | - Design an asynchronous processing workflow using SQS and SNS.<br><br>- Analyze how message queues can handle large workloads and prevent system overload. | 06/10/2026 | 06/10/2026 | AWS Messaging Services |
+| 5 | - Research error handling mechanisms in distributed systems.<br><br>- Learn about Dead Letter Queue (DLQ), message retry, and failure handling strategies. | 06/11/2026 | 06/11/2026 | AWS SQS Documentation |
+| 6 | - Review SQS + SNS integration patterns.<br><br>- Design sample event flows and verify how services communicate asynchronously. | 06/12/2026 | 06/12/2026 | AWS Architecture Center |
+| 7 | - Practice configuring Amazon SNS Topic and Amazon SQS Queue on AWS Console.<br><br>- Test sending messages and receiving notifications through the configured services. | 06/13/2026 | 06/13/2026 | AWS Console |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 8 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+This week focused on understanding Event-Driven Architecture, which is one of the important design patterns for building scalable cloud applications.
 
-* Used AWS CLI to perform basic operations such as:
+I studied how traditional synchronous processing can become a limitation when systems receive a large number of requests simultaneously. Through Amazon SQS and SNS, I learned how AWS enables asynchronous communication between services, allowing different components to process tasks independently.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+I practiced designing message processing flows using SQS as a queue system and SNS as a notification mechanism. Concepts such as FIFO Queue, Subscription, Message Retry, and Dead Letter Queue (DLQ) helped me understand how AWS maintains reliability and prevents data loss when processing failures occur.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+I also practiced configuring SQS Queue and SNS Topic directly on AWS Console to understand the actual workflow of sending and receiving messages.
+

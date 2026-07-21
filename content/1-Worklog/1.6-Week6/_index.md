@@ -1,57 +1,40 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 6 Objectives:
 
-### Week 6 Objectives:
+Understand AWS migration strategies and AWS Well-Architected Framework principles.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Learn how AWS evaluates cloud architectures based on security, reliability, performance, cost optimization, operational excellence, and sustainability.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Practice architecture evaluation and cost estimation to prepare for designing a production-ready cloud system.
 
+---
 
-### Week 6 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Complete Module 10 – Migration and Innovation (AWS Cloud Practitioner Essentials).<br><br>- Learn AWS Cloud Adoption Framework (CAF), migration strategies, migration tools, and AWS Snow Family solutions. | 05/25/2026 | 05/25/2026 | https://skillbuilder.aws/ |
+| 3 | - Complete Module 11 – AWS Well-Architected Framework.<br><br>- Study the six pillars of AWS architecture design: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability. | 05/26/2026 | 05/26/2026 | https://skillbuilder.aws/ |
+| 4 | - Practice AWS cost optimization methods.<br><br>- Use AWS Pricing Calculator to estimate infrastructure costs and analyze resource usage. | 05/27/2026 | 05/27/2026 | AWS Pricing Calculator |
+| 5 | - Review all 11 modules of AWS Cloud Practitioner Essentials.<br><br>- Summarize important concepts and connect AWS services with architecture design patterns. | 05/28/2026 | 05/28/2026 | AWS Skill Builder |
+| 6 | - Complete the Final Assessment of AWS Cloud Practitioner Essentials.<br><br>- Review assessment results and identify topics requiring further improvement. | 05/29/2026 | 05/29/2026 | https://skillbuilder.aws/ |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 6 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+This week marked the completion of the AWS Cloud Practitioner Essentials learning roadmap.
 
-* Used AWS CLI to perform basic operations such as:
+I completed the final two modules: Module 10 (Migration and Innovation) and Module 11 (AWS Well-Architected Framework). Through these modules, I gained a better understanding of how organizations migrate workloads to AWS and how cloud architectures are evaluated using AWS best practices.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+The AWS Well-Architected Framework was one of the most important topics because it introduced the six core pillars used for designing reliable and secure cloud systems: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+I also practiced cost estimation using AWS Pricing Calculator to understand how infrastructure design decisions affect operational costs.
+

@@ -1,59 +1,41 @@
 ---
-title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+title: "Week 8 Worklog"
+date: 2026-06-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 8:
 
-### Mục tiêu tuần 8:
+Tìm hiểu kiến trúc hướng sự kiện (Event-Driven Architecture) và mô hình xử lý bất đồng bộ trên AWS.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Nghiên cứu cách các dịch vụ Messaging như Amazon SQS, Amazon SNS và Amazon EventBridge hỗ trợ xây dựng hệ thống phân tán.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Thực hành thiết kế các luồng xử lý dựa trên sự kiện và hiểu cách xử lý bất đồng bộ giúp hệ thống tăng khả năng mở rộng và độ tin cậy.
 
+---
 
-### Kết quả đạt được tuần 8:
+## Các công việc thực hiện trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Nghiên cứu khái niệm Event-Driven Architecture trên AWS.<br><br>- Tìm hiểu vai trò của Event Producer, Event Consumer và cơ chế xử lý bất đồng bộ trong hệ thống Cloud hiện đại. | 08/06/2026 | 08/06/2026 | AWS Event-Driven Architecture Documentation |
+| 3 | - Tìm hiểu Amazon SQS và Amazon SNS.<br><br>- Nghiên cứu SQS Standard/FIFO Queue, SNS Topic, Subscription và cơ chế truyền tải Message. | 09/06/2026 | 09/06/2026 | AWS Documentation |
+| 4 | - Thiết kế luồng xử lý bất đồng bộ sử dụng SQS và SNS.<br><br>- Phân tích cách Message Queue giúp xử lý lượng lớn yêu cầu và tránh quá tải hệ thống. | 10/06/2026 | 10/06/2026 | AWS Messaging Services |
+| 5 | - Nghiên cứu cơ chế xử lý lỗi trong hệ thống phân tán.<br><br>- Tìm hiểu Dead Letter Queue (DLQ), Message Retry và các chiến lược xử lý khi xảy ra lỗi. | 11/06/2026 | 11/06/2026 | AWS SQS Documentation |
+| 6 | - Ôn tập mô hình tích hợp SQS + SNS.<br><br>- Thiết kế các luồng Event mẫu và kiểm tra cách các dịch vụ giao tiếp bất đồng bộ. | 12/06/2026 | 12/06/2026 | AWS Architecture Center |
+| 7 | - Thực hành cấu hình Amazon SNS Topic và Amazon SQS Queue trên AWS Console.<br><br>- Kiểm tra việc gửi Message và nhận Notification thông qua các dịch vụ đã cấu hình. | 13/06/2026 | 13/06/2026 | AWS Console |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+## Kết quả đạt được trong tuần 8:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Tuần này tập trung vào việc tìm hiểu Event-Driven Architecture, một trong những mô hình quan trọng để xây dựng các hệ thống Cloud có khả năng mở rộng.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tôi đã tìm hiểu hạn chế của mô hình xử lý đồng bộ truyền thống khi hệ thống phải tiếp nhận nhiều yêu cầu cùng lúc. Thông qua Amazon SQS và SNS, tôi hiểu được cách AWS hỗ trợ giao tiếp bất đồng bộ giữa các thành phần, giúp từng dịch vụ có thể xử lý độc lập và giảm tải cho hệ thống chính.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Tôi đã thực hành thiết kế các luồng xử lý Message sử dụng SQS làm Queue và SNS làm cơ chế gửi thông báo. Các khái niệm như FIFO Queue, Subscription, Message Retry và Dead Letter Queue (DLQ) giúp tôi hiểu rõ hơn cách AWS đảm bảo tính ổn định và hạn chế mất dữ liệu khi xảy ra lỗi trong quá trình xử lý.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+Ngoài ra, tôi thực hành cấu hình trực tiếp SQS Queue và SNS Topic trên AWS Console để hiểu rõ quy trình gửi và nhận Message trong môi trường thực tế.
 

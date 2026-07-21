@@ -1,57 +1,39 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026-04-20
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 1 Objectives:
 
-### Week 1 Objectives:
+Get familiar with AWS Cloud fundamentals and understand the basic concepts required for cloud application development.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Learn AWS Cloud Practitioner Essentials Module 1 and Module 2, explore AWS infrastructure, cloud benefits, and basic compute services.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Create an AWS Free Tier account and perform the first cloud deployment practice using Amazon EC2.
 
+---
 
-### Week 1 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Complete Module 1 – Introduction to Cloud (AWS Cloud Practitioner Essentials).<br><br>- Learn cloud computing concepts, AWS benefits, AWS Global Infrastructure, Shared Responsibility Model, and real-world cloud applications. | 04/20/2026 | 04/20/2026 | https://skillbuilder.aws/ |
+| 3 | - Complete Module 2 – Cloud Computing on AWS.<br><br>- Learn Amazon EC2, instance types, resource provisioning, EC2 pricing, Auto Scaling, Elastic Load Balancing, and messaging services. | 04/21/2026 | 04/21/2026 | https://skillbuilder.aws/ |
+| 4 | - Create AWS Free Tier account.<br><br>- Explore AWS Management Console and basic account configuration. | 04/22/2026 | 04/22/2026 | https://aws.amazon.com/free/ |
+| 5 | - Configure AWS Billing Alerts and Budgets.<br><br>- Understand AWS cost monitoring and resource management. | 04/23/2026 | 04/23/2026 | AWS Billing Documentation |
+| 6 | - Launch an EC2 Ubuntu instance.<br><br>- Install Node.js environment and deploy a simple backend application using PM2. | 04/24/2026 | 04/24/2026 | AWS EC2 Documentation |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 1 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+The first week focused on building a foundation of AWS Cloud knowledge.
 
-* Used AWS CLI to perform basic operations such as:
+I completed Module 1 and Module 2 of AWS Cloud Practitioner Essentials, gaining an understanding of cloud computing concepts, AWS advantages, global infrastructure, and the Shared Responsibility Model.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+The most challenging part of the week was creating the AWS Free Tier account and configuring billing protection. After successfully setting up the account, I explored AWS Console and launched my first EC2 Ubuntu instance.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+I also practiced deploying a simple Node.js backend application using PM2. This helped me understand the basic workflow of deploying applications on cloud infrastructure instead of running everything locally.

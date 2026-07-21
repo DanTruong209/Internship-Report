@@ -1,22 +1,15 @@
 ---
-title: "Blogs Posted"
-date: 2024-01-01
+title: "Translated Blogs"
+date: 2026-07-10
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+During the internship, I read and rewrote selected AWS Blog articles to better understand how AWS applies cloud, security, and AI to real technical problems. This section does not only summarize the original articles; it also records my personal takeaways and how the topics relate to the IRMS project.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+#### Contents
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
-
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+1. [Shift-left Security with Amazon Bedrock: Automating Threat Modeling with Generative AI](3.1-Blog1/)
+2. [Amazon RDS + AI + MCP: When Reading Logs Is No Longer a Nightmare](3.2-Blog2/)

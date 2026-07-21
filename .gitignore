@@ -1,1 +1,14 @@
 public/*
+# Hugo
+public/
+resources/_gen/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Hugo lock
+.hugo_build.lock

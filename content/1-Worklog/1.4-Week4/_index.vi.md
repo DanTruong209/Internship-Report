@@ -1,59 +1,40 @@
 ---
-title: "Worklog Tuần 4"
-date: 2024-01-01
-weight: 1
+title: "Week 4 Worklog"
+date: 2026-05-11
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 4:
 
-### Mục tiêu tuần 4:
+Tìm hiểu các kiến thức nền tảng về AWS Security và khám phá cách Artificial Intelligence, Machine Learning và Data Analytics được tích hợp trên AWS.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Hoàn thành Module 8 (AI, ML and Data Analytics) và Module 9 (Security) trong khóa AWS Cloud Practitioner Essentials.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Thực hành các cấu hình bảo mật trên AWS như IAM, Security Group và các cơ chế kiểm soát quyền truy cập nhằm chuẩn bị cho việc xây dựng các ứng dụng Cloud an toàn.
 
+---
 
-### Kết quả đạt được tuần 4:
+## Các công việc thực hiện trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Hoàn thành Module 8 – AI, ML and Data Analytics trên AWS.<br><br>- Tìm hiểu các khái niệm AI/ML trên AWS, Generative AI, các giải pháp Data Analytics và Data Pipeline. | 11/05/2026 | 11/05/2026 | https://skillbuilder.aws/ |
+| 3 | - Hoàn thành Module 9 – Security trên AWS.<br><br>- Tìm hiểu AWS Security Fundamentals, quản lý danh tính, bảo vệ dữ liệu, bảo mật mạng, phát hiện mối đe dọa và Incident Response. | 12/05/2026 | 12/05/2026 | https://skillbuilder.aws/ |
+| 4 | - Thực hành AWS Identity and Access Management (IAM).<br><br>- Kiểm tra Users, Groups, Roles, Policies và các đề xuất bảo mật trên AWS Console. | 13/05/2026 | 13/05/2026 | AWS IAM Documentation |
+| 5 | - Ôn tập Module 8 và Module 9.<br><br>- Tổng hợp các kiến thức quan trọng về Generative AI, Data Analytics, IAM Permission và AWS Security Controls. | 14/05/2026 | 14/05/2026 | AWS Security Documentation |
+| 6 | - Thực hành cấu hình EC2 Security Group.<br><br>- Kiểm tra Inbound/Outbound Rules và điều chỉnh quyền truy cập SSH, HTTP cơ bản. | 15/05/2026 | 15/05/2026 | AWS EC2 Security Documentation |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+## Kết quả đạt được trong tuần 4:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Tuần này tập trung vào hai lĩnh vực quan trọng trong quá trình phát triển hệ thống Cloud hiện đại: Artificial Intelligence và AWS Security.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tôi đã hoàn thành Module 8 và Module 9 của khóa AWS Cloud Practitioner Essentials. Thông qua Module 8, tôi có cái nhìn tổng quan về khả năng ứng dụng AI/ML trên AWS, Generative AI và cách Data Analytics Pipeline hỗ trợ xây dựng các ứng dụng thông minh.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Module 9 giúp tôi hiểu sâu hơn về các nguyên tắc bảo mật trên AWS như IAM, quản lý quyền truy cập, bảo vệ dữ liệu, bảo mật mạng, phát hiện mối đe dọa và quy trình xử lý sự cố.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+Trong phần thực hành, tôi đã làm quen với IAM trên AWS Console bằng cách kiểm tra Users, Groups, Roles và Policies. Ngoài ra, tôi cũng thực hành kiểm tra Security Group của EC2, phân tích các luật Inbound/Outbound và điều chỉnh quyền truy cập SSH, HTTP.
 

@@ -5,40 +5,88 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
-
-### Đánh giá chung
-
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
-
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
-
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
-
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
-
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
-
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
 
 
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+# Chia Sẻ Và Đóng Góp Ý Kiến
+
+Tại phần này, tôi xin chia sẻ những cảm nhận cá nhân về trải nghiệm trong quá trình tham gia chương trình **First Cloud AI Journey**. Những ý kiến dưới đây được đưa ra nhằm giúp chương trình tiếp tục cải thiện và mang lại trải nghiệm tốt hơn cho các bạn thực tập sinh trong tương lai.
 
 
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+# Đánh Giá Tổng Quan
+
+
+## 1. Môi Trường Làm Việc
+
+Môi trường làm việc trong chương trình rất thân thiện, cởi mở và chuyên nghiệp. Các thành viên trong chương trình luôn sẵn sàng hỗ trợ khi tôi gặp khó khăn trong quá trình học tập cũng như triển khai dự án.
+
+Không gian làm việc tạo cảm giác thoải mái, giúp tôi có thể tập trung nghiên cứu công nghệ mới và hoàn thành các nhiệm vụ được giao. Bên cạnh đó, tôi mong muốn chương trình có thể tổ chức thêm nhiều hoạt động giao lưu, kết nối giữa các thành viên để tăng sự gắn kết trong cộng đồng.
+
+
+## 2. Sự Hỗ Trợ Từ Đội Ngũ Admin
+
+Đội ngũ Admin đã hỗ trợ rất nhiệt tình trong suốt quá trình thực tập. Các anh/chị luôn hướng dẫn chi tiết về cách tiếp cận vấn đề, cung cấp tài liệu học tập và giải đáp các thắc mắc liên quan đến AWS, kiến trúc hệ thống cũng như quá trình phát triển dự án.
+
+Điều tôi đánh giá cao nhất là thay vì đưa ra câu trả lời trực tiếp, các anh/chị thường định hướng để thực tập sinh tự phân tích, tìm hiểu nguyên nhân và đưa ra giải pháp phù hợp. Điều này giúp tôi cải thiện khả năng tư duy giải quyết vấn đề.
+
+
+## 3. Mức Độ Phù Hợp Của Chương Trình Với Chuyên Ngành Học
+
+Chương trình có sự liên kết rất tốt với chuyên ngành Công nghệ thông tin của tôi. Nội dung học không chỉ củng cố kiến thức nền tảng về mạng máy tính, cơ sở dữ liệu và phát triển phần mềm mà còn giúp tôi có cơ hội thực hành trực tiếp trên nền tảng AWS.
+
+Thông qua việc xây dựng dự án **IRMS (Incident Response Management System)**, tôi được tiếp cận với các kiến thức thực tế về Cloud Architecture, Serverless, Security Monitoring và AI Integration mà trước đây chưa có nhiều cơ hội thực hành chuyên sâu tại trường.
+
+
+## 4. Cơ Hội Học Tập Và Phát Triển Kỹ Năng
+
+Trong quá trình thực tập, tôi đã học hỏi được nhiều kỹ năng mới như:
+
+- Sử dụng các công cụ quản lý dự án.
+- Làm việc nhóm trong môi trường công nghệ.
+- Viết tài liệu kỹ thuật.
+- Thiết kế kiến trúc hệ thống Cloud.
+- Cải thiện kỹ năng giao tiếp và báo cáo công việc.
+
+Ngoài ra, các buổi chia sẻ từ các diễn giả và chuyên gia trong ngành đã giúp tôi có thêm góc nhìn thực tế về công việc của kỹ sư Cloud, DevOps và AI Engineer, từ đó định hướng rõ hơn cho con đường phát triển nghề nghiệp.
+
+
+## 5. Văn Hóa Học Tập Và Tinh Thần Đồng Đội
+
+Văn hóa học tập trong chương trình rất tích cực. Các thành viên luôn tôn trọng, hỗ trợ và chia sẻ kiến thức với nhau.
+
+Trong quá trình gặp các vấn đề khó về thiết kế hệ thống, triển khai AWS hoặc hoàn thiện dự án, mọi người luôn chủ động trao đổi và cùng nhau tìm hướng giải quyết.
+
+Điều này giúp tôi không chỉ cải thiện kiến thức kỹ thuật mà còn học được cách làm việc nhóm hiệu quả trong môi trường thực tế.
+
+
+## 6. Chính Sách Và Quyền Lợi Trong Quá Trình Thực Tập
+
+Việc được cung cấp môi trường thực hành trên AWS cùng với các tài liệu học tập chuyên sâu là một lợi thế rất lớn đối với thực tập sinh.
+
+Bên cạnh đó, thời gian làm việc linh hoạt, sự hướng dẫn từ các anh/chị trong chương trình và cơ hội tiếp cận với các công nghệ Cloud, AI hiện đại là những trải nghiệm rất giá trị.
+
+
+# Câu Hỏi Bổ Sung
+
+
+## Điều gì khiến bạn cảm thấy hài lòng nhất trong quá trình thực tập?
+
+Điều khiến tôi hài lòng nhất là được trực tiếp tham gia xây dựng một hệ thống thực tế trên nền tảng AWS thông qua dự án **IRMS (Incident Response Management System)**.
+
+Thay vì chỉ học lý thuyết, tôi có cơ hội thiết kế kiến trúc Cloud, triển khai các dịch vụ AWS, tích hợp AI Assistant và tìm hiểu cách xây dựng một hệ thống Serverless có tính bảo mật và khả năng mở rộng.
+
+Bên cạnh đó, sự hỗ trợ nhiệt tình từ đội ngũ Admin và các thành viên trong nhóm cũng là một yếu tố giúp tôi có trải nghiệm thực tập tích cực.
+
+
+## Bạn nghĩ công ty/chương trình nên cải thiện điều gì cho các thực tập sinh trong tương lai?
+
+Tôi nghĩ chương trình có thể cung cấp thêm tài liệu hướng dẫn chi tiết về quy chuẩn thiết kế kiến trúc hệ thống, đặc biệt là cách xây dựng Architecture Diagram theo tiêu chuẩn thực tế.
+
+Điều này sẽ giúp các thực tập sinh mới nhanh chóng làm quen với cách trình bày hệ thống chuyên nghiệp ngay từ những tuần đầu tiên.
+
+
+## Nếu giới thiệu chương trình này cho bạn bè, bạn có muốn giới thiệu không? Vì sao?
+
+Tôi chắc chắn sẽ giới thiệu chương trình này cho bạn bè.
+
+Đối với tôi, đây không chỉ là một môi trường thực tập tốt mà còn là cơ hội quý giá để tiếp cận công nghệ thực tế, học hỏi từ những người có kinh nghiệm trong ngành và phát triển tư duy làm việc chuyên nghiệp.
+

@@ -1,57 +1,40 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-01
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 7 Objectives:
 
-### Week 7 Objectives:
+Explore AWS application deployment approaches and understand how cloud applications are delivered in real-world environments.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Learn AWS Elastic Beanstalk as a Platform-as-a-Service (PaaS) solution and compare it with traditional EC2-based deployment.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Understand CI/CD concepts and AWS deployment automation services to prepare for future system implementation.
 
+---
 
-### Week 7 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Research AWS Elastic Beanstalk fundamentals.<br><br>- Learn about Applications, Environments, deployment workflow, and how Beanstalk automatically manages AWS resources. | 06/01/2026 | 06/01/2026 | AWS Elastic Beanstalk Documentation |
+| 3 | - Compare traditional EC2 deployment using PM2 with AWS Elastic Beanstalk deployment.<br><br>- Analyze differences in resource management, scalability, and operational complexity. | 06/02/2026 | 06/02/2026 | AWS Documentation |
+| 4 | - Practice deploying a basic Node.js backend application using Elastic Beanstalk.<br><br>- Explore application versions, environment configuration, and deployment process. | 06/03/2026 | 06/03/2026 | AWS Elastic Beanstalk |
+| 5 | - Study AWS CI/CD services.<br><br>- Explore CodeCommit, CodeBuild, CodeDeploy, and CodePipeline concepts. | 06/04/2026 | 06/04/2026 | AWS CI/CD Documentation |
+| 6 | - Research automated deployment workflows.<br><br>- Understand how GitHub/CodeCommit source code can connect with CodePipeline for automatic build and deployment processes. | 06/05/2026 | 06/05/2026 | AWS Developer Tools |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 7 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+This week focused on understanding modern application deployment workflows on AWS.
 
-* Used AWS CLI to perform basic operations such as:
+Previously, I mainly deployed applications manually on EC2 using PM2, which required manually configuring servers, installing dependencies, and managing application processes. Through studying AWS Elastic Beanstalk, I learned how AWS can automatically manage infrastructure components such as EC2 instances, Load Balancers, Auto Scaling, and application environments.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+I practiced deploying a basic Node.js backend application using Elastic Beanstalk and gained a better understanding of the PaaS deployment model. Compared with traditional server management, Beanstalk provides a more standardized and easier-to-maintain deployment approach.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+In addition, I explored AWS CI/CD services including CodePipeline and CodeBuild. I learned how source code changes can automatically trigger build and deployment processes, reducing manual operations and improving development efficiency.
+

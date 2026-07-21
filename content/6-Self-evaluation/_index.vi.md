@@ -6,35 +6,48 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Tự Đánh Giá
 
-Trong suốt thời gian thực tập tại **[Tên công ty/tổ chức]** từ **[ngày bắt đầu]** đến **[ngày kết thúc]**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia **[mô tả ngắn gọn dự án hoặc công việc chính]**, qua đó cải thiện kỹ năng **[liệt kê kỹ năng: lập trình, phân tích, viết báo cáo, giao tiếp…]**.  
+Trong quá trình thực tập tại **Công ty TNHH Amazon Web Services Việt Nam** từ ngày **20/04/2026 đến ngày 10/07/2026**, tôi đã có cơ hội học tập, thực hành và áp dụng những kiến thức đã được học tại trường vào môi trường làm việc thực tế.
 
-Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
+Trong thời gian thực tập, tôi đã tham gia chương trình **Workforce Bootcamp - First Cloud AI Journey** và tham gia phát triển dự án **IRMS (Incident Response Management System)** - một hệ thống quản lý sự cố an ninh mạng được xây dựng trên nền tảng **Serverless AWS**.
 
-Để phản ánh một cách khách quan quá trình thực tập, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
+Thông qua dự án, tôi đã cải thiện và phát triển các kỹ năng thực tế về:
+
+- Thiết kế kiến trúc Cloud trên AWS.
+- Phát triển ứng dụng Serverless.
+- Tích hợp các dịch vụ AWS vào hệ thống.
+- Ứng dụng AI trong hệ thống Cloud.
+- Quản lý và xử lý sự cố bảo mật.
+- Viết tài liệu kỹ thuật và làm việc nhóm.
 
 
-| STT | Tiêu chí                            | Mô tả                                                                                            | Tốt | Khá | Trung bình |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn** | Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc | ✅   | ☐   | ☐          |
-| 2   | **Khả năng học hỏi**                | Tiếp thu kiến thức mới, học hỏi nhanh                                                            | ☐   | ✅   | ☐          |
-| 3   | **Chủ động**                        | Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn                                                  | ✅   | ☐   | ☐          |
-| 4   | **Tinh thần trách nhiệm**           | Hoàn thành công việc đúng hạn, đảm bảo chất lượng                                                | ✅   | ☐   | ☐          |
-| 5   | **Kỷ luật**                         | Tuân thủ giờ giấc, nội quy, quy trình làm việc                                                   | ☐   | ☐   | ✅          |
-| 6   | **Tính cầu tiến**                   | Sẵn sàng nhận feedback và cải thiện bản thân                                                     | ☐   | ✅   | ☐          |
-| 7   | **Giao tiếp**                       | Trình bày ý tưởng, báo cáo công việc rõ ràng                                                     | ☐   | ✅   | ☐          |
-| 8   | **Hợp tác nhóm**                    | Làm việc hiệu quả với đồng nghiệp, tham gia nhóm                                                 | ✅   | ☐   | ☐          |
-| 9   | **Ứng xử chuyên nghiệp**            | Tôn trọng đồng nghiệp, đối tác, môi trường làm việc                                              | ✅   | ☐   | ☐          |
-| 10  | **Tư duy giải quyết vấn đề**        | Nhận diện vấn đề, đề xuất giải pháp, sáng tạo                                                    | ☐   | ✅   | ☐          |
-| 11  | **Đóng góp vào dự án/tổ chức**      | Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team                                         | ✅   | ☐   | ☐          |
-| 12  | **Tổng thể**                        | Đánh giá chung về toàn bộ quá trình thực tập                                                     | ✅   | ☐   | ☐          |
+Về thái độ làm việc, tôi luôn cố gắng hoàn thành các nhiệm vụ được giao đúng thời hạn, tuân thủ quy trình làm việc của nhóm, chủ động trao đổi với các thành viên và không ngừng cải thiện kiến thức kỹ thuật thông qua việc nghiên cứu và thực hành.
 
-### Cần cải thiện
+Để đánh giá khách quan quá trình thực tập của bản thân, tôi tự đánh giá dựa trên các tiêu chí sau:
 
-* Nâng cao tính kỹ luật, chấp hành nghiêm chỉnh nội quy của công ty hoặc bất kỳ trong một tổ chức nào
-* Cải thiện trong cách tư duy giải quyết vấn đề
-* Học cách giao tiếp tốt hơn trong giao tiếp hằng ngày và trong công việc, xử lý tình huống
+
+| STT | Tiêu chí | Mô tả | Tốt | Khá | Trung bình |
+|---|---|---|---|---|---|
+| 1 | Kiến thức chuyên môn & kỹ năng | Hiểu biết về lĩnh vực Cloud, khả năng áp dụng kiến thức vào thực tế, sử dụng công cụ AWS và đảm bảo chất lượng công việc | ✅ | ☐ | ☐ |
+| 2 | Khả năng học hỏi | Khả năng tiếp thu kiến thức mới, nhanh chóng làm quen với công nghệ và dịch vụ AWS | ✅ | ☐ | ☐ |
+| 3 | Tính chủ động | Chủ động tìm hiểu giải pháp, nghiên cứu công nghệ và hoàn thành nhiệm vụ được giao | ✅ | ☐ | ☐ |
+| 4 | Tinh thần trách nhiệm | Hoàn thành công việc đúng thời hạn và đảm bảo yêu cầu chất lượng | ✅ | ☐ | ☐ |
+| 5 | Tính kỷ luật | Tuân thủ thời gian thực tập, quy định nhóm và quy trình phát triển | ✅ | ☐ | ☐ |
+| 6 | Tư duy cầu tiến | Tiếp nhận phản hồi, sửa đổi và liên tục cải thiện bản thân | ✅ | ☐ | ☐ |
+| 7 | Kỹ năng giao tiếp | Báo cáo tiến độ, trao đổi vấn đề kỹ thuật và trình bày ý tưởng rõ ràng | ☐ | ✅ | ☐ |
+| 8 | Làm việc nhóm | Phối hợp hiệu quả với các thành viên và tham gia các hoạt động của dự án | ✅ | ☐ | ☐ |
+| 9 | Tác phong chuyên nghiệp | Có thái độ làm việc chuyên nghiệp, tôn trọng đồng nghiệp và môi trường làm việc | ✅ | ☐ | ☐ |
+| 10 | Kỹ năng giải quyết vấn đề | Phân tích vấn đề kỹ thuật, tìm kiếm giải pháp và đưa ra hướng xử lý phù hợp | ☐ | ✅ | ☐ |
+| 11 | Đóng góp cho dự án/nhóm | Hoàn thành nhiệm vụ được giao, đóng góp ý tưởng và hỗ trợ quá trình phát triển dự án | ✅ | ☐ | ☐ |
+| 12 | Đánh giá tổng thể | Đánh giá chung về toàn bộ quá trình thực tập | ✅ | ☐ | ☐ |
+
+
+# Những Điểm Cần Cải Thiện
+
+Bên cạnh những kết quả đạt được trong quá trình thực tập, tôi nhận thấy bản thân vẫn cần tiếp tục cải thiện một số kỹ năng:
+
+- Tích lũy thêm kinh nghiệm xử lý sự cố trong môi trường AWS thực tế và các hệ thống có quy mô lớn hơn.
+- Nâng cao kiến thức về bảo mật AWS, giám sát hệ thống và tối ưu chi phí trên Cloud.
+- Cải thiện khả năng đọc hiểu tài liệu kỹ thuật bằng tiếng Anh để tiếp cận công nghệ mới nhanh hơn.
+- Phát triển thêm kỹ năng thiết kế hệ thống, đặc biệt trong việc xây dựng các kiến trúc Cloud có khả năng mở rộng, bảo mật và tối ưu hiệu năng.

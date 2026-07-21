@@ -1,57 +1,48 @@
 ---
 title: "Week 10 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-06-22
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 10 Objectives:
 
-### Week 10 Objectives:
+Develop the core AI Assistant functionality for the Incident Response Management System (IRMS).
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Integrate Groq API as the AI processing engine and build AI capabilities to support Security Analysts during incident investigation.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Implement AI Analyst features including incident summarization, severity analysis, recommended actions, and AI chat interaction.
 
+Tasks to be carried out this week:
 
-### Week 10 Achievements:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Research and integrate Groq API into the IRMS backend.<br><br>- Configure communication flow between the backend service and AI provider for processing incident analysis requests. | 06/22/2026 | 06/22/2026 | Groq API Documentation |
+| 3 | - Develop Prompt Engineering strategies for cybersecurity incident analysis.<br><br>- Design structured prompts to generate incident summaries, severity evaluation, and response recommendations. | 06/23/2026 | 06/23/2026 | Prompt Engineering Resources |
+| 4 | - Develop AI Analyst functionality.<br><br>- Implement AI-generated incident summaries and recommended response actions based on incident information. | 06/24/2026 | 06/24/2026 | Generative AI Development |
+| 5 | - Develop AI Chat functionality for Security Analysts.<br><br>- Allow users to interact with AI assistant and ask questions related to incident investigation. | 06/25/2026 | 06/25/2026 | AI Application Design |
+| 6 | - Build and improve AI Context Builder.<br><br>- Combine Incident data, Timeline records, and Evidence metadata to provide complete context for AI analysis.<br><br>- Test AI response quality and improve prompts. | 06/26/2026 | 06/26/2026 | AI Context Engineering |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+---
 
-* Successfully created and configured an AWS Free Tier account.
+## Week 10 Achievements:
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+This week, I started the AI development phase of the Incident Response Management System (IRMS).
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+The main achievement was successfully integrating the Groq API into the backend service and establishing the communication flow between IRMS and the AI processing layer.
 
-* Used AWS CLI to perform basic operations such as:
+Instead of sending only a simple incident description, I designed an AI Context Builder mechanism to collect and organize relevant information including incident details, investigation timeline, and evidence metadata. This approach helps the AI model understand the complete security situation before generating recommendations.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+I also focused on Prompt Engineering to improve AI response quality. Structured prompts were created to guide the AI in performing security analysis tasks such as:
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Generating incident summaries.
+- Evaluating incident severity.
+- Suggesting investigation steps.
+- Recommending response actions.
+
+Additionally, I developed the initial AI Analyst and AI Chat features, allowing Security Analysts to interact with the AI assistant during the incident investigation process.
+
+Through testing, I continued improving prompt structures and AI context preparation to make responses more accurate and relevant.
+
+Overall, Week 10 was an important milestone in transforming IRMS from a traditional incident management system into an intelligent security platform with AI-assisted investigation capabilities.

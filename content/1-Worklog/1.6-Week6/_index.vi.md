@@ -1,58 +1,40 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+title: "Week 6 Worklog"
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 6:
 
-### Mục tiêu tuần 6:
+Tìm hiểu các chiến lược Migration trên AWS và nguyên tắc thiết kế hệ thống thông qua AWS Well-Architected Framework.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Nắm được cách AWS đánh giá một kiến trúc Cloud dựa trên các yếu tố: bảo mật, độ tin cậy, hiệu năng, tối ưu chi phí, vận hành và tính bền vững.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Thực hành đánh giá kiến trúc và ước lượng chi phí để chuẩn bị cho việc xây dựng hệ thống Cloud thực tế.
 
+---
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Các công việc thực hiện trong tuần:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Hoàn thành Module 10 – Migration and Innovation (AWS Cloud Practitioner Essentials).<br><br>- Tìm hiểu AWS Cloud Adoption Framework (CAF), các chiến lược Migration, công cụ hỗ trợ di chuyển và AWS Snow Family. | 25/05/2026 | 25/05/2026 | https://skillbuilder.aws/ |
+| 3 | - Hoàn thành Module 11 – AWS Well-Architected Framework.<br><br>- Tìm hiểu 6 trụ cột trong thiết kế kiến trúc AWS: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization và Sustainability. | 26/05/2026 | 26/05/2026 | https://skillbuilder.aws/ |
+| 4 | - Thực hành phương pháp tối ưu chi phí trên AWS.<br><br>- Sử dụng AWS Pricing Calculator để ước lượng chi phí hạ tầng và phân tích mức sử dụng tài nguyên. | 27/05/2026 | 27/05/2026 | AWS Pricing Calculator |
+| 5 | - Ôn tập toàn bộ 11 Module của AWS Cloud Practitioner Essentials.<br><br>- Tổng hợp các kiến thức quan trọng và liên kết AWS Services với các mô hình thiết kế kiến trúc. | 28/05/2026 | 28/05/2026 | AWS Skill Builder |
+| 6 | - Hoàn thành Final Assessment của khóa AWS Cloud Practitioner Essentials.<br><br>- Đánh giá kết quả và ghi chú các phần cần tiếp tục cải thiện. | 29/05/2026 | 29/05/2026 | https://skillbuilder.aws/ |
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+---
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+## Kết quả đạt được trong tuần 6:
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tuần này đánh dấu việc hoàn thành lộ trình học AWS Cloud Practitioner Essentials.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Tôi đã hoàn thành hai Module cuối cùng là Module 10 (Migration and Innovation) và Module 11 (AWS Well-Architected Framework). Qua đó, tôi hiểu rõ hơn cách các tổ chức thực hiện quá trình di chuyển hệ thống lên AWS cũng như cách đánh giá một kiến trúc Cloud theo các tiêu chuẩn của AWS.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+AWS Well-Architected Framework là một trong những nội dung quan trọng nhất trong tuần này vì nó giới thiệu 6 trụ cột nền tảng để xây dựng hệ thống Cloud an toàn và ổn định: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization và Sustainability.
 
+Tôi cũng thực hành sử dụng AWS Pricing Calculator để ước lượng chi phí triển khai và hiểu rõ hơn cách các quyết định thiết kế kiến trúc ảnh hưởng đến chi phí vận hành hệ thống.
 

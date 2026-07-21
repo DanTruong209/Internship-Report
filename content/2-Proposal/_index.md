@@ -1,115 +1,142 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-07-03
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# IRMS - Incident Response Management System
+
+## Project Proposal
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+
+IRMS (Incident Response Management System) is a SaaS-style platform for managing cybersecurity incidents on AWS serverless services. The project was implemented by a five-member team during the FCAJ internship program. My main contribution focused on AWS infrastructure, API integration, deployment, testing, and documentation.
+
+The system standardizes the incident response workflow: detection, classification, assignment, investigation, evidence storage, reporting, and AI-assisted guidance. IRMS replaces informal tracking through Email, Excel, Zalo, or chat messages with a centralized web application. The final implementation uses Groq with model `llama-3.1-8b-instant`, stores the provider API key in AWS Secrets Manager, and includes a rule-based fallback when the AI provider is unavailable. Amazon Bedrock is kept as an optional future provider through the same provider abstraction.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+In many small and medium-sized organizations, security incidents such as exposed S3 buckets, suspicious authentication attempts, or phishing reports are handled through informal channels. This makes it difficult to track ownership, preserve evidence, review status changes, and generate reports for later assessment.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+IRMS addresses this problem by providing a structured incident management workflow on AWS. The project prioritizes serverless services to reduce operational overhead and keep the demo environment cost-aware.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+The system follows a Serverless-first model and avoids EC2, RDS, and NAT Gateway in the MVP to reduce cost and operational complexity.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![IRMS Solution Architecture](/images/2-Proposal/IRMS_architecture_v10.drawio.png)
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+#### Deployed Core Architecture
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Amazon CloudFront**: Distributes the React frontend and provides HTTPS access.
+- **Amazon S3 (Frontend Hosting)**: Stores the React + Vite static build output.
+- **Amazon API Gateway (REST)**: Receives backend API requests from the frontend.
+- **Amazon Cognito**: Handles login, issues JWT tokens, and supports role-based access.
+- **AWS Lambda**: Runs business logic for incidents, evidence, reports, alerts, and AI assistance.
+- **Amazon DynamoDB**: Stores incidents, timeline records, users, and evidence metadata.
+- **Amazon S3 (Evidence Store)**: Stores evidence files and generated report artifacts.
+- **Amazon EventBridge**: Routes scheduled and simulated security events.
+- **Amazon SNS**: Sends notification messages for alert workflows.
+- **AWS Secrets Manager**: Stores the Groq API key securely.
+- **Amazon CloudWatch**: Stores logs and supports troubleshooting.
+
+#### AI Provider Layer
+
+- **Current provider:** Groq.
+- **Model:** `llama-3.1-8b-instant`.
+- **Secret storage:** AWS Secrets Manager.
+- **Fallback:** Rule-based analysis if the provider is unavailable or times out.
+- **Future Enhancement:** Amazon Bedrock can be enabled later without changing the frontend API contract.
+
+#### Future Enhancements
+
+- **Amazon Route 53:** Custom domain and DNS management.
+- **AWS WAF:** Additional web request filtering in front of CloudFront.
+- **Amazon Bedrock:** Native AWS AI provider option when project requirements and account access allow it.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+**Frontend:** React + Vite with Stitch AI-assisted UI integration. Main screens include Dashboard, Incidents, Incident Detail, Evidence, Reports, and the AI Assistant Panel. The application is built into static assets, uploaded to S3, and served through CloudFront.
+
+**Backend:** Python Lambda functions behind API Gateway REST endpoints. Cognito JWT authentication protects the API. DynamoDB stores operational data, while S3 stores evidence and report artifacts.
+
+**AI Assistant:** The AI Lambda exposes `POST /ai/analyze`, `POST /ai/explain`, and `POST /ai/chat`. These endpoints use a provider abstraction. In the final implementation, requests are sent to Groq, and fallback logic returns a structured response if the provider is unavailable.
+
+**Infrastructure as Code:** AWS SAM defines serverless resources and deployment configuration. The backend is validated with `sam validate`, built with `sam build`, and deployed with `sam deploy`.
+
+**Source Control:** GitHub is used for collaboration, with feature branches and review before merging team changes.
+
+**Team assignment:**
+
+- **Member 1:** Frontend UI and dashboard integration.
+- **Member 2:** Authentication, Cognito, API Gateway, and RBAC.
+- **Member 3:** Incident CRUD, DynamoDB schema, and report logic.
+- **Member 4:** Evidence upload and storage integration.
+- **Member 5:** Security automation, EventBridge/SNS, AI Assistant, deployment support, and documentation coordination.
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+
+- **Week 1:** Set up AWS accounts, IAM users, budget monitoring, SAM CLI, GitHub workflow, Cognito, API Gateway, and the first test Lambda.
+- **Week 2:** Implement Incident CRUD, DynamoDB access patterns, frontend API integration, and login-to-incident end-to-end testing.
+- **Week 3:** Implement evidence upload, report generation, EventBridge/SNS alert automation, and deployment validation.
+- **Week 4:** Complete CloudFront/S3 hosting, integrate the AI Assistant with Groq, configure Secrets Manager, test Cognito-protected API routes, and run end-to-end validation.
+- **Final period:** Refine the workshop, synchronize bilingual documentation, investigate Bedrock as a future provider, replace sensitive demo credentials with placeholders, and prepare the final report for submission.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+The serverless architecture has no continuously running compute servers. Cost is mainly driven by actual requests, storage, logs, and secret storage.
 
-Total: $0.7/month, $8.40/12 months
+| Service | Expected cost driver |
+| --- | --- |
+| AWS Lambda | Number of invocations and duration |
+| API Gateway | Number of REST API requests |
+| DynamoDB | Read/write capacity and storage |
+| Amazon S3 | Frontend/evidence storage and requests |
+| CloudFront | Data transfer and requests |
+| Cognito | Monthly active users |
+| EventBridge | Events and scheduler usage |
+| SNS | Notification requests |
+| Secrets Manager | Number of stored secrets |
+| CloudWatch | Logs and metrics |
+| Groq | Development/demo usage under the provider's free tier |
+| Amazon Bedrock | Future inference cost only if enabled |
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+For the internship demo, the expected AWS usage is small. The team still monitors Billing and Cost Explorer regularly and removes unused resources after testing.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+**Risk 1: AI provider availability or quota limitation**
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+Resolution: Keep AI access behind a provider abstraction. The current provider is Groq, the API key is stored in Secrets Manager, and the Lambda returns a rule-based fallback response if the provider is unavailable.
+
+**Risk 2: AWS cost exceeds the expected demo budget**
+
+Resolution: Use serverless services, avoid always-on resources such as EC2/RDS/NAT Gateway, monitor Billing and Cost Explorer, and clean up test resources after validation.
+
+**Risk 3: Code conflicts when five members work together**
+
+Resolution: Use feature branches, keep Lambda functions modular, agree on API contracts early, and review pull requests before merging.
+
+**Risk 4: Team members are blocked by dependencies**
+
+Resolution: Prioritize Cognito, API Gateway, and shared API contracts early. Frontend screens can use mock data while backend endpoints are being completed.
+
+**Risk 5: Demo credentials or secrets are accidentally published**
+
+Resolution: Use placeholders in documentation, store provider API keys in Secrets Manager, and avoid publishing passwords, access keys, tokens, or full presigned URLs.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+
+By the end of the project, the team will have a working IRMS system running on AWS with the following features:
+
+- Login and role-based access through Cognito.
+- Create, view, update, assign, and delete incidents.
+- Record timeline activities for incident investigation.
+- Upload and manage evidence files through S3 presigned URLs.
+- Create alerts through EventBridge/SNS automation.
+- Use AI-assisted incident analysis, severity explanation, and incident Q&A.
+- Return a rule-based fallback response when the AI provider is unavailable.
+- Export report data and document the cleanup process.

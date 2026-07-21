@@ -1,59 +1,41 @@
 ---
-title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+title: "Week 5 Worklog"
+date: 2026-05-18
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 5:
 
-### Mục tiêu tuần 5:
+Tìm hiểu các nguyên tắc thiết kế kiến trúc AWS và cách xây dựng các hệ thống Cloud có khả năng mở rộng.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Nghiên cứu High Availability, Microservices Architecture, Serverless Architecture và Event-Driven Architecture.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Phân tích các mô hình kiến trúc AWS nhằm chuẩn bị cho quá trình thiết kế hạ tầng Cloud của hệ thống IRMS.
 
+---
 
-### Kết quả đạt được tuần 5:
+## Các công việc thực hiện trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Nghiên cứu các hướng dẫn kiến trúc chính thức từ AWS.<br><br>- Tìm hiểu mô hình High Availability, Fault Tolerance và thiết kế hệ thống có khả năng mở rộng trên AWS. | 18/05/2026 | 18/05/2026 | AWS Architecture Center |
+| 3 | - Tìm hiểu sự khác biệt giữa Monolithic Architecture và Microservices Architecture.<br><br>- Phân tích ưu điểm, hạn chế, khả năng mở rộng và trường hợp sử dụng của từng mô hình. | 19/05/2026 | 19/05/2026 | AWS Architecture Documentation |
+| 4 | - Nghiên cứu các giải pháp Scaling trên AWS.<br><br>- Tìm hiểu Elastic Load Balancing, Auto Scaling và cách AWS xử lý lưu lượng truy cập tăng cao. | 20/05/2026 | 20/05/2026 | AWS Documentation |
+| 5 | - Nghiên cứu Event-Driven Architecture.<br><br>- Tìm hiểu xử lý bất đồng bộ, Event Producer, Event Consumer và mô hình xử lý thông qua Message Queue. | 21/05/2026 | 21/05/2026 | AWS Event-Driven Architecture |
+| 6 | - Thiết kế mô hình kiến trúc Cloud ban đầu cho một hệ thống quản lý bảo mật.<br><br>- Xác định các AWS Services cần thiết và cách các thành phần kết nối với nhau. | 22/05/2026 | 22/05/2026 | AWS Architecture Center |
+| 7 | - Tham gia các hoạt động học tập về AWS.<br><br>- Phân tích các chủ đề về High Availability, Microservices, Serverless Architecture và Event-Driven Architecture. | 23/05/2026 | 23/05/2026 | AWS Events |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+## Kết quả đạt được trong tuần 5:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Tuần này tập trung vào việc tìm hiểu cách thiết kế các hệ thống Cloud thực tế thay vì chỉ tìm hiểu từng dịch vụ AWS riêng lẻ.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tôi đã nghiên cứu các mô hình kiến trúc AWS và hiểu cách các hệ thống đạt được tính High Availability, khả năng mở rộng và khả năng chịu lỗi thông qua việc kết hợp nhiều dịch vụ khác nhau. Các kiến thức về Load Balancer, Auto Scaling và Distributed System giúp tôi hiểu cách ứng dụng Cloud xử lý lượng truy cập lớn.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Một trong những nội dung quan trọng nhất trong tuần là so sánh giữa Monolithic Architecture và Microservices Architecture. Tôi nhận thấy Microservices có ưu điểm về khả năng mở rộng và tính linh hoạt nhờ việc chia hệ thống thành các dịch vụ độc lập, trong khi Monolithic đơn giản hơn nhưng khó mở rộng khi hệ thống phát triển.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+Tôi cũng nghiên cứu Event-Driven Architecture, hiểu được cách các hệ thống hiện đại sử dụng cơ chế xử lý bất đồng bộ thông qua Event và Message Service. Kiến thức này là nền tảng quan trọng để tiếp cận các dịch vụ như Amazon SQS, SNS, EventBridge và Lambda.
 

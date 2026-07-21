@@ -1,59 +1,40 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
+title: "Week 1 Worklog"
+date: 2026-04-20
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Mục tiêu tuần 1:
 
-### Mục tiêu tuần 1:
+Làm quen với nền tảng AWS Cloud và hiểu các khái niệm cơ bản cần thiết cho quá trình phát triển ứng dụng trên Cloud.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+Hoàn thành Module 1 và Module 2 trong khóa AWS Cloud Practitioner Essentials, tìm hiểu về Cloud Computing, AWS Infrastructure và các dịch vụ tính toán cơ bản.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Tạo tài khoản AWS Free Tier và thực hiện triển khai ứng dụng đầu tiên trên Amazon EC2.
 
+---
 
-### Kết quả đạt được tuần 1:
+## Các công việc thực hiện trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Hoàn thành Module 1 – Introduction to Cloud (AWS Cloud Practitioner Essentials).<br><br>- Tìm hiểu Cloud Computing, lợi ích của AWS Cloud, AWS Global Infrastructure, Shared Responsibility Model và các ứng dụng thực tế của Cloud. | 20/04/2026 | 20/04/2026 | https://skillbuilder.aws/ |
+| 3 | - Hoàn thành Module 2 – Cloud Computing trên AWS.<br><br>- Tìm hiểu Amazon EC2, các loại Instance, Resource Provisioning, EC2 Pricing, Auto Scaling, Elastic Load Balancing và Messaging Services. | 21/04/2026 | 21/04/2026 | https://skillbuilder.aws/ |
+| 4 | - Tạo tài khoản AWS Free Tier.<br><br>- Làm quen với AWS Management Console và cấu hình tài khoản cơ bản. | 22/04/2026 | 22/04/2026 | https://aws.amazon.com/free/ |
+| 5 | - Thiết lập Billing Alerts và AWS Budgets.<br><br>- Tìm hiểu cách theo dõi chi phí và quản lý tài nguyên AWS. | 23/04/2026 | 23/04/2026 | AWS Billing Documentation |
+| 6 | - Khởi tạo EC2 Ubuntu Instance.<br><br>- Cài đặt Node.js và triển khai thử nghiệm Backend bằng PM2. | 24/04/2026 | 24/04/2026 | AWS EC2 Documentation |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+## Kết quả đạt được trong tuần 1:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Tuần đầu tiên tập trung vào việc xây dựng nền tảng kiến thức AWS Cloud.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Tôi đã hoàn thành Module 1 và Module 2 của khóa AWS Cloud Practitioner Essentials, hiểu được các khái niệm cơ bản về Cloud Computing, lợi ích của AWS, AWS Global Infrastructure và mô hình Shared Responsibility.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Phần mất nhiều thời gian nhất trong tuần là quá trình tạo tài khoản AWS Free Tier và thiết lập các cơ chế bảo vệ chi phí. Sau khi hoàn thành, tôi làm quen với AWS Console và thực hiện khởi tạo EC2 Ubuntu Instance đầu tiên.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+Ngoài việc học lý thuyết, tôi cũng thực hành triển khai một ứng dụng Backend Node.js đơn giản bằng PM2. Qua đó hiểu được quy trình đưa ứng dụng từ môi trường local lên Cloud thay vì chỉ chạy trên máy cá nhân.
 

@@ -1,57 +1,41 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-05-18
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 5 Objectives:
 
-### Week 5 Objectives:
+Understand AWS architecture design principles and learn how large-scale cloud systems are structured.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Study High Availability, Microservices Architecture, Serverless Architecture, and Event-Driven Architecture patterns.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Analyze AWS architecture best practices to prepare for designing the IRMS cloud infrastructure.
 
+---
 
-### Week 5 Achievements:
+## Tasks to be carried out this week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Study AWS official architecture guidance.<br><br>- Explore High Availability architecture patterns, fault tolerance, and scalable system design on AWS. | 05/18/2026 | 05/18/2026 | AWS Architecture Center |
+| 3 | - Research the differences between Monolithic Architecture and Microservices Architecture.<br><br>- Analyze advantages, disadvantages, scalability, and suitable use cases of each approach. | 05/19/2026 | 05/19/2026 | AWS Architecture Documentation |
+| 4 | - Study AWS application scaling solutions.<br><br>- Explore Elastic Load Balancing, Auto Scaling, and how AWS handles traffic increases. | 05/20/2026 | 05/20/2026 | AWS Documentation |
+| 5 | - Research Event-Driven Architecture concepts.<br><br>- Understand asynchronous communication, event producers, event consumers, and message-based processing. | 05/21/2026 | 05/21/2026 | AWS Event-Driven Architecture |
+| 6 | - Design an initial cloud architecture model for a security management system.<br><br>- Identify required AWS services and their relationships in the architecture. | 05/22/2026 | 05/22/2026 | AWS Architecture Center |
+| 7 | - Participate in AWS technical learning activities.<br><br>- Analyze topics related to High Availability, Microservices, Serverless Architecture, and Event-Driven Architecture. | 05/23/2026 | 05/23/2026 | AWS Events |
 
-* Successfully created and configured an AWS Free Tier account.
+---
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Week 5 Achievements:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+This week focused on understanding how real-world cloud systems are designed instead of only learning individual AWS services.
 
-* Used AWS CLI to perform basic operations such as:
+I studied AWS architecture patterns and learned how High Availability, scalability, and fault tolerance are achieved through different AWS services. Concepts such as Load Balancer, Auto Scaling, and distributed system design helped me understand how cloud applications handle large amounts of traffic.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+One of the most important topics this week was comparing Monolithic Architecture and Microservices Architecture. I learned that Microservices provide better scalability and flexibility by separating applications into independent services, while Monolithic systems are simpler but harder to scale when the system grows.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+I also explored Event-Driven Architecture, which introduced the concept of asynchronous processing through events and messaging services. This knowledge became an important foundation for understanding services such as Amazon SQS, SNS, EventBridge, and Lambda.
+

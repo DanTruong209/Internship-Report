@@ -1,57 +1,50 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-15
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 9 Objectives:
 
-### Week 9 Objectives:
+Start implementing the main internship project: Incident Response Management System (IRMS).
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Research and design the AI Assistant module to support Security Analysts during incident investigation.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+Analyze how Generative AI can be integrated into the incident response workflow through AI context building, prompt engineering, and security-aware recommendations.
 
+Tasks to be carried out this week:
 
-### Week 9 Achievements:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Analyze the IRMS project requirements and define the role of AI Assistant in incident response.<br><br>- Research how AI can support security analysts in incident analysis, incident summary, and recommended actions. | 06/15/2026 | 06/15/2026 | AWS AI/ML Documentation |
+| 3 | - Design the AI Assistant architecture and data flow.<br><br>- Identify required input context including Incident information, Timeline investigation data, and Evidence metadata. | 06/16/2026 | 06/16/2026 | System Architecture Design |
+| 4 | - Research AI integration approaches for IRMS.<br><br>- Compare different LLM API solutions and study the communication flow between Backend Service and AI Provider. | 06/17/2026 | 06/17/2026 | Generative AI Documentation |
+| 5 | - Design the AI Context Builder mechanism.<br><br>- Define how incident data, investigation timeline, and evidence information are collected and transformed into AI input context. | 06/18/2026 | 06/18/2026 | AI Prompt Engineering Resources |
+| 6 | - Analyze security requirements for AI integration.<br><br>- Identify security considerations including API Key protection, IAM permissions, and secure communication between services. | 06/19/2026 | 06/19/2026 | AWS Security Best Practices |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+---
 
-* Successfully created and configured an AWS Free Tier account.
+## Week 9 Achievements:
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+This week marked the beginning of the implementation phase for my main internship project: **Incident Response Management System (IRMS)**.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+The main focus was researching and designing the **AI Assistant module**, which aims to support Security Analysts during cybersecurity incident investigation. Instead of manually analyzing every incident, the AI Assistant can help summarize incidents, evaluate severity levels, and suggest possible response actions.
 
-* Used AWS CLI to perform basic operations such as:
+During this week, I analyzed the role of AI in the incident response workflow and designed the overall integration approach between the IRMS system and the AI service.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+The most important part was designing the **AI Context Builder**, which defines how information from different sources can be collected and provided to the AI model. The context includes:
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Incident information.
+- Investigation timeline.
+- Evidence metadata.
+- Previous investigation activities.
+
+The designed workflow:
+
+**Incident Data → AI Context Builder → AI Model → Security Analysis & Recommendations**
+
+I also researched security requirements before integrating AI into the system. Important considerations include protecting API credentials, applying proper IAM permissions, validating user input, and ensuring secure communication between backend services and the AI provider.
+
+Overall, Week 9 helped establish the foundation for developing the AI Assistant feature in IRMS. The architecture design and security analysis from this week will be used as the basis for the next stages: Groq API integration, prompt engineering, AI Analyst development, and AI Chat implementation.

@@ -7,7 +7,7 @@ pre: " <b> 7. </b> "
 ---
 
 
-# Chia Sẻ Và Đóng Góp Ý Kiến
+
 
 Tại phần này, tôi xin chia sẻ những cảm nhận cá nhân về trải nghiệm trong quá trình tham gia chương trình **First Cloud AI Journey**. Những ý kiến dưới đây được đưa ra nhằm giúp chương trình tiếp tục cải thiện và mang lại trải nghiệm tốt hơn cho các bạn thực tập sinh trong tương lai.
 

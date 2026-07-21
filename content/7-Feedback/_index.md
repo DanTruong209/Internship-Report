@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-# Sharing and Feedback
+
 
 In this section, I would like to share my personal feedback and experiences during my participation in the **First Cloud AI Journey** program. The following opinions are provided to help improve the program and provide better experiences for future interns.
 
@@ -92,6 +92,3 @@ For me, this was not only a valuable internship environment but also a great opp
 The program motivated me to continue improving my AWS knowledge, developing Cloud skills, and creating a clearer career direction for my future.
 
 
-# Event and Internship Participation Photos
-
-*Add event and internship participation photos here.*

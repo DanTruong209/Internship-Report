@@ -1,4 +1,4 @@
-baseURL = "https://workshop-sample.awsfcaj.com/"
+baseURL = "https://DanTruong209.github.io/Internship-Report/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
@@ -14,9 +14,9 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = ""
+ editURL = "https://github.com/DanTruong209/Internship-Report/edit/main/"
   description = ""
-  author = "thienlh@thienlu.com"
+  author = "nguyendantruong12a9@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false

@@ -301,7 +301,7 @@ Expected result:
 Type: AWS::Serverless::Api
 ```
 
-![API Gateway Production 1](//images/5-Workshop/IRMS/section-08-001.png)
+![API Gateway Production 1](/images/5-Workshop/IRMS/section-08-001.png)
 
 **Step 3: Verify Incident routes.**
 
@@ -316,7 +316,7 @@ Path: /incidents
 Path: /incidents/{id}
 ```
 
-![API Gateway Production 2](//images/5-Workshop/IRMS/section-08-002.png)
+![API Gateway Production 2](/images/5-Workshop/IRMS/section-08-002.png)
 
 **Step 4: Verify Evidence routes.**
 
@@ -331,7 +331,7 @@ Path: /evidence
 Path: /evidence/{id}
 ```
 
-![API Gateway Production 3](//images/5-Workshop/IRMS/section-08-003.png)
+![API Gateway Production 3](/images/5-Workshop/IRMS/section-08-003.png)
 
 **Step 5: Verify AI route.**
 
@@ -349,7 +349,7 @@ Path: /ai/explain
 Path: /ai/chat
 ```
 
-![API Gateway Production 4](//images/5-Workshop/IRMS/section-08-004.png)
+![API Gateway Production 4](/images/5-Workshop/IRMS/section-08-004.png)
 
 **Step 6: Verify CORS.**
 
@@ -360,7 +360,7 @@ findstr /C:"AllowHeaders" infrastructure\template.yaml
 findstr /C:"AllowMethods" infrastructure\template.yaml
 ```
 
-![API Gateway Production 5](//images/5-Workshop/IRMS/section-08-005.png)
+![API Gateway Production 5](/images/5-Workshop/IRMS/section-08-005.png)
 
 **Step 7: Verify Cognito Authorizer.**
 
@@ -371,7 +371,7 @@ findstr /C:"UserPoolArn" infrastructure\template.yaml
 
 Expected result should include `DefaultAuthorizer`, `CognitoAuthorizer`, and `UserPoolArn`.
 
-![API Gateway Production 6](//images/5-Workshop/IRMS/section-08-006.png)
+![API Gateway Production 6](/images/5-Workshop/IRMS/section-08-006.png)
 
 **Step 8: Validate the SAM template.**
 
@@ -385,7 +385,7 @@ Expected result:
 infrastructure/template.yaml is a valid SAM Template.
 ```
 
-![API Gateway Production 7](//images/5-Workshop/IRMS/section-08-007.png)
+![API Gateway Production 7](/images/5-Workshop/IRMS/section-08-007.png)
 
 #### 5.5.8.10 Checklist 8
 
@@ -472,7 +472,7 @@ cd /d "D:\Thuc Tap\irms-serverless"
 findstr /C:"AWS::Events::Rule" infrastructure\template.yaml
 ```
 
-![EventBridge & GuardDuty 1](//images/5-Workshop/IRMS/section-09-001.png)
+![EventBridge & GuardDuty 1](/images/5-Workshop/IRMS/section-09-001.png)
 
 **Step 3: Verify EventBridge pattern.**
 
@@ -482,7 +482,7 @@ findstr /C:"aws.guardduty" infrastructure\template.yaml
 findstr /C:"GuardDuty Finding" infrastructure\template.yaml
 ```
 
-![EventBridge & GuardDuty 2](//images/5-Workshop/IRMS/section-09-002.png)
+![EventBridge & GuardDuty 2](/images/5-Workshop/IRMS/section-09-002.png)
 
 **Step 4: Verify that `alert-handler` is triggered by EventBridge.**
 
@@ -491,7 +491,7 @@ findstr /C:"alert-handler" infrastructure\template.yaml
 findstr /C:"AlertHandler" infrastructure\template.yaml
 ```
 
-![EventBridge & GuardDuty 3](//images/5-Workshop/IRMS/section-09-003.png)
+![EventBridge & GuardDuty 3](/images/5-Workshop/IRMS/section-09-003.png)
 
 **Step 5: Verify SNS topic and publish permission.**
 
@@ -500,9 +500,9 @@ findstr /C:"TopicName" infrastructure\template.yaml
 findstr /C:"SNS" infrastructure\template.yaml
 ```
 
-![EventBridge & GuardDuty 4](//images/5-Workshop/IRMS/section-09-004.png)
-![EventBridge & GuardDuty 5](//images/5-Workshop/IRMS/section-09-005.png)
-![EventBridge & GuardDuty 6](//images/5-Workshop/IRMS/section-09-006.png)
+![EventBridge & GuardDuty 4](/images/5-Workshop/IRMS/section-09-004.png)
+![EventBridge & GuardDuty 5](/images/5-Workshop/IRMS/section-09-005.png)
+![EventBridge & GuardDuty 6](/images/5-Workshop/IRMS/section-09-006.png)
 
 **Step 6: Verify Lambda permission for EventBridge.**
 
@@ -511,7 +511,7 @@ findstr /C:"AWS::Lambda::Permission" infrastructure\template.yaml
 findstr /C:"events.amazonaws.com" infrastructure\template.yaml
 ```
 
-![EventBridge & GuardDuty 7](//images/5-Workshop/IRMS/section-09-007.png)
+![EventBridge & GuardDuty 7](/images/5-Workshop/IRMS/section-09-007.png)
 
 **Step 7: Validate SAM template.**
 
@@ -570,7 +570,7 @@ sam build ^
 
 SAM copies Lambda source code, installs dependencies from `requirements.txt`, and creates the `.aws-sam` build directory.
 
-![Build & Deploy 1](//images/5-Workshop/IRMS/section-10-001.png)
+![Build & Deploy 1](/images/5-Workshop/IRMS/section-10-001.png)
 
 Verify build output:
 
@@ -590,7 +590,7 @@ AiAssistantFunction
 template.yaml
 ```
 
-![Build & Deploy 2](//images/5-Workshop/IRMS/section-10-002.png)
+![Build & Deploy 2](/images/5-Workshop/IRMS/section-10-002.png)
 
 #### 5.5.10.4 Deploy Guided
 
@@ -621,7 +621,7 @@ Save configuration: Y
 
 After the first deployment, SAM generates `samconfig.toml`.
 
-![Build & Deploy 3](//images/5-Workshop/IRMS/section-10-003.png)
+![Build & Deploy 3](/images/5-Workshop/IRMS/section-10-003.png)
 
 #### 5.5.10.5 Subsequent Deployments
 
@@ -642,10 +642,10 @@ aws lambda list-functions --profile irms-shared
 aws apigateway get-rest-apis --profile irms-shared
 ```
 
-![Build & Deploy 4](//images/5-Workshop/IRMS/section-10-004.png)
-![Build & Deploy 5](//images/5-Workshop/IRMS/section-10-005.png)
-![Build & Deploy 6](//images/5-Workshop/IRMS/section-10-006.png)
-![Build & Deploy 7](//images/5-Workshop/IRMS/section-10-007.png)
+![Build & Deploy 4](/images/5-Workshop/IRMS/section-10-004.png)
+![Build & Deploy 5](/images/5-Workshop/IRMS/section-10-005.png)
+![Build & Deploy 6](/images/5-Workshop/IRMS/section-10-006.png)
+![Build & Deploy 7](/images/5-Workshop/IRMS/section-10-007.png)
 
 #### 5.5.10.7 Checklist
 
@@ -669,7 +669,7 @@ Open AWS Console:
 API Gateway -> irms-api -> Stages -> dev
 ```
 
-![Testing & Validation 1](//images/5-Workshop/IRMS/section-11-001.png)
+![Testing & Validation 1](/images/5-Workshop/IRMS/section-11-001.png)
 
 List API resources:
 
@@ -680,10 +680,10 @@ aws apigateway get-resources ^
   --profile irms-shared
 ```
 
-![Testing & Validation 2](//images/5-Workshop/IRMS/section-11-002.png)
-![Testing & Validation 3](//images/5-Workshop/IRMS/section-11-003.png)
-![Testing & Validation 4](//images/5-Workshop/IRMS/section-11-004.png)
-![Testing & Validation 5](//images/5-Workshop/IRMS/section-11-005.png)
+![Testing & Validation 2](/images/5-Workshop/IRMS/section-11-002.png)
+![Testing & Validation 3](/images/5-Workshop/IRMS/section-11-003.png)
+![Testing & Validation 4](/images/5-Workshop/IRMS/section-11-004.png)
+![Testing & Validation 5](/images/5-Workshop/IRMS/section-11-005.png)
 
 #### 5.5.11.2 Test API Health Check
 
@@ -693,8 +693,8 @@ Goal: verify the flow from client to API Gateway to Lambda.
 curl.exe https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping
 ```
 
-![Testing & Validation 6](//images/5-Workshop/IRMS/section-11-006.png)
-![Testing & Validation 7](//images/5-Workshop/IRMS/section-11-007.png)
+![Testing & Validation 6](/images/5-Workshop/IRMS/section-11-006.png)
+![Testing & Validation 7](/images/5-Workshop/IRMS/section-11-007.png)
 
 #### 5.5.11.3 Test Incident CRUD
 
@@ -710,7 +710,7 @@ Inspect the Lambda handler:
 type backend\incident-crud\handler.py
 ```
 
-![Testing & Validation 8](//images/5-Workshop/IRMS/section-11-008.png)
+![Testing & Validation 8](/images/5-Workshop/IRMS/section-11-008.png)
 
 Create an incident:
 
@@ -722,9 +722,9 @@ curl.exe -X POST ^
   -d "{\"title\":\"Unauthorized SSH Login\",\"description\":\"Multiple failed SSH login attempts detected\",\"severity\":\"High\",\"source\":\"manual\",\"assignedTo\":\"Security Analyst\"}"
 ```
 
-![Testing & Validation 9](//images/5-Workshop/IRMS/section-11-009.png)
-![Testing & Validation 10](//images/5-Workshop/IRMS/section-11-010.png)
-![Testing & Validation 11](//images/5-Workshop/IRMS/section-11-011.png)
+![Testing & Validation 9](/images/5-Workshop/IRMS/section-11-009.png)
+![Testing & Validation 10](/images/5-Workshop/IRMS/section-11-010.png)
+![Testing & Validation 11](/images/5-Workshop/IRMS/section-11-011.png)
 
 Get the incident list:
 
@@ -734,7 +734,7 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 12](//images/5-Workshop/IRMS/section-11-012.png)
+![Testing & Validation 12](/images/5-Workshop/IRMS/section-11-012.png)
 
 Get incident details:
 
@@ -744,7 +744,7 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 13](//images/5-Workshop/IRMS/section-11-013.png)
+![Testing & Validation 13](/images/5-Workshop/IRMS/section-11-013.png)
 
 Update incident status:
 
@@ -756,7 +756,7 @@ curl.exe -X PUT ^
   -d "{\"status\":\"In Progress\",\"assignedTo\":\"Security Analyst\",\"actor\":\"analyst@example.com\"}"
 ```
 
-![Testing & Validation 14](//images/5-Workshop/IRMS/section-11-014.png)
+![Testing & Validation 14](/images/5-Workshop/IRMS/section-11-014.png)
 
 Get timeline:
 
@@ -766,7 +766,7 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 15](//images/5-Workshop/IRMS/section-11-015.png)
+![Testing & Validation 15](/images/5-Workshop/IRMS/section-11-015.png)
 
 Verify DynamoDB:
 
@@ -775,8 +775,8 @@ DynamoDB -> Tables -> irms-incidents -> Explore table items
 DynamoDB -> Tables -> irms-timeline -> Explore table items
 ```
 
-![Testing & Validation 16](//images/5-Workshop/IRMS/section-11-016.png)
-![Testing & Validation 17](//images/5-Workshop/IRMS/section-11-017.png)
+![Testing & Validation 16](/images/5-Workshop/IRMS/section-11-016.png)
+![Testing & Validation 17](/images/5-Workshop/IRMS/section-11-017.png)
 
 #### 5.5.11.4 Test Evidence Upload
 
@@ -795,9 +795,9 @@ Inspect source code:
 more backend\upload-evidence\handler.py
 ```
 
-![Testing & Validation 18](//images/5-Workshop/IRMS/section-11-018.png)
-![Testing & Validation 19](//images/5-Workshop/IRMS/section-11-019.png)
-![Testing & Validation 20](//images/5-Workshop/IRMS/section-11-020.png)
+![Testing & Validation 18](/images/5-Workshop/IRMS/section-11-018.png)
+![Testing & Validation 19](/images/5-Workshop/IRMS/section-11-019.png)
+![Testing & Validation 20](/images/5-Workshop/IRMS/section-11-020.png)
 
 Create a test file:
 
@@ -806,7 +806,7 @@ echo This is IRMS evidence test file > evidence-test.txt
 dir evidence-test.txt
 ```
 
-![Testing & Validation 21](//images/5-Workshop/IRMS/section-11-021.png)
+![Testing & Validation 21](/images/5-Workshop/IRMS/section-11-021.png)
 
 Create evidence metadata and get upload URL:
 
@@ -818,7 +818,7 @@ curl.exe -X POST ^
   -d "{\"incidentId\":\"INC-53DB6458\",\"fileName\":\"evidence-test.txt\",\"fileType\":\"text/plain\",\"description\":\"Test evidence upload from CMD\",\"uploadedBy\":\"analyst@example.com\",\"fileSize\":32}"
 ```
 
-![Testing & Validation 22](//images/5-Workshop/IRMS/section-11-022.png)
+![Testing & Validation 22](/images/5-Workshop/IRMS/section-11-022.png)
 
 Upload the file to S3 using the presigned URL:
 
@@ -829,7 +829,7 @@ curl.exe -X PUT ^
   --upload-file evidence-test.txt
 ```
 
-![Testing & Validation 23](//images/5-Workshop/IRMS/section-11-023.png)
+![Testing & Validation 23](/images/5-Workshop/IRMS/section-11-023.png)
 
 Get evidence details:
 
@@ -839,14 +839,14 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 24](//images/5-Workshop/IRMS/section-11-024.png)
+![Testing & Validation 24](/images/5-Workshop/IRMS/section-11-024.png)
 
 #### 5.5.11.5 Test AI Assistant
 
 Goal: verify that authenticated requests reach the AI Assistant Lambda, the Lambda reads the Groq API key from Secrets Manager, and the provider abstraction returns a structured response or a safe fallback response.
 
-![Testing & Validation 25](//images/5-Workshop/IRMS/section-11-025.png)
-![Testing & Validation 26](//images/5-Workshop/IRMS/section-11-026.png)
+![Testing & Validation 25](/images/5-Workshop/IRMS/section-11-025.png)
+![Testing & Validation 26](/images/5-Workshop/IRMS/section-11-026.png)
 
 Verify the configured Groq secret:
 
@@ -889,7 +889,7 @@ curl.exe -X POST ^
 
 If Groq is unavailable or times out, the Lambda returns a fallback notification and rule-based analysis so the user can continue the incident response workflow.
 
-![Testing & Validation 28](//images/5-Workshop/IRMS/section-11-028.png)
+![Testing & Validation 28](/images/5-Workshop/IRMS/section-11-028.png)
 
 #### 5.5.11.6 Test Generate Report
 
@@ -901,7 +901,7 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 29](//images/5-Workshop/IRMS/section-11-029.png)
+![Testing & Validation 29](/images/5-Workshop/IRMS/section-11-029.png)
 
 Generate report for an incident:
 
@@ -913,7 +913,7 @@ curl.exe -X POST ^
   -d "{\"incidentId\":\"INC-53DB6458\"}"
 ```
 
-![Testing & Validation 30](//images/5-Workshop/IRMS/section-11-030.png)
+![Testing & Validation 30](/images/5-Workshop/IRMS/section-11-030.png)
 
 #### 5.5.11.7 Test EventBridge Alert Automation
 
@@ -945,7 +945,7 @@ aws events put-events ^
   --profile irms-shared
 ```
 
-![Testing & Validation 31](//images/5-Workshop/IRMS/section-11-031.png)
+![Testing & Validation 31](/images/5-Workshop/IRMS/section-11-031.png)
 
 Verify that an incident was created:
 
@@ -955,7 +955,7 @@ curl.exe ^
   -H "Authorization: Bearer YOUR_ID_TOKEN"
 ```
 
-![Testing & Validation 32](//images/5-Workshop/IRMS/section-11-032.png)
+![Testing & Validation 32](/images/5-Workshop/IRMS/section-11-032.png)
 
 Verify DynamoDB and CloudWatch:
 
@@ -966,8 +966,8 @@ aws logs describe-log-groups ^
   --profile irms-shared
 ```
 
-![Testing & Validation 33](//images/5-Workshop/IRMS/section-11-033.png)
-![Testing & Validation 34](//images/5-Workshop/IRMS/section-11-034.png)
+![Testing & Validation 33](/images/5-Workshop/IRMS/section-11-033.png)
+![Testing & Validation 34](/images/5-Workshop/IRMS/section-11-034.png)
 
 #### 5.5.11.8 CloudWatch Logs and Final Validation
 
@@ -997,11 +997,11 @@ aws events list-rules ^
   --profile irms-shared
 ```
 
-![Testing & Validation 35](//images/5-Workshop/IRMS/section-11-035.png)
-![Testing & Validation 36](//images/5-Workshop/IRMS/section-11-036.png)
-![Testing & Validation 37](//images/5-Workshop/IRMS/section-11-037.png)
-![Testing & Validation 38](//images/5-Workshop/IRMS/section-11-038.png)
-![Testing & Validation 39](//images/5-Workshop/IRMS/section-11-039.png)
+![Testing & Validation 35](/images/5-Workshop/IRMS/section-11-035.png)
+![Testing & Validation 36](/images/5-Workshop/IRMS/section-11-036.png)
+![Testing & Validation 37](/images/5-Workshop/IRMS/section-11-037.png)
+![Testing & Validation 38](/images/5-Workshop/IRMS/section-11-038.png)
+![Testing & Validation 39](/images/5-Workshop/IRMS/section-11-039.png)
 
 Expected final result:
 

@@ -52,11 +52,11 @@ Demo users for testing. The guided workflow uses the Analyst account; to test ot
 
 Open the project URL in the browser and sign in with the Analyst demo account listed above.
 
-![IRMS login screen](//images/5-Workshop/IRMS-demo-test/demo-test-06.png)
+![IRMS login screen](/images/5-Workshop/IRMS-demo-test/demo-test-06.png)
 
 After login, verify that the dashboard loads correctly and shows incident status cards, recent incidents, and security posture information.
 
-![IRMS dashboard](//images/5-Workshop/IRMS-demo-test/demo-test-07.png)
+![IRMS dashboard](/images/5-Workshop/IRMS-demo-test/demo-test-07.png)
 
 Expected result:
 
@@ -68,21 +68,21 @@ Expected result:
 
 Create a new incident from the Incidents page.
 
-![Create new incident](//images/5-Workshop/IRMS-demo-test/demo-test-09.png)
+![Create new incident](/images/5-Workshop/IRMS-demo-test/demo-test-09.png)
 
 Submit the form and confirm that the incident appears in the incident list.
 
-![Incident created successfully](//images/5-Workshop/IRMS-demo-test/demo-test-10.png)
+![Incident created successfully](/images/5-Workshop/IRMS-demo-test/demo-test-10.png)
 
 Open the new incident detail page and verify the status, severity, assignment, timeline, and evidence panel.
 
-![Incident detail](//images/5-Workshop/IRMS-demo-test/demo-test-11.png)
+![Incident detail](/images/5-Workshop/IRMS-demo-test/demo-test-11.png)
 
 Add an investigation or containment timeline entry.
 
-![Add timeline entry](//images/5-Workshop/IRMS-demo-test/demo-test-12.png)
+![Add timeline entry](/images/5-Workshop/IRMS-demo-test/demo-test-12.png)
 
-![Timeline entry saved](//images/5-Workshop/IRMS-demo-test/demo-test-13.png)
+![Timeline entry saved](/images/5-Workshop/IRMS-demo-test/demo-test-13.png)
 
 Expected result:
 
@@ -94,23 +94,23 @@ Expected result:
 
 Select a local evidence file and associate it with the incident.
 
-![Evidence upload form](//images/5-Workshop/IRMS-demo-test/demo-test-14.png)
+![Evidence upload form](/images/5-Workshop/IRMS-demo-test/demo-test-14.png)
 
 The frontend detects the file name, MIME type, and file size before upload.
 
-![Evidence upload details](//images/5-Workshop/IRMS-demo-test/demo-test-15.png)
+![Evidence upload details](/images/5-Workshop/IRMS-demo-test/demo-test-15.png)
 
 Submit the evidence. The browser uploads the file directly to Amazon S3 using a short-lived presigned PUT URL.
 
-![Submit evidence](//images/5-Workshop/IRMS-demo-test/demo-test-16.png)
+![Submit evidence](/images/5-Workshop/IRMS-demo-test/demo-test-16.png)
 
 Verify the uploaded evidence object in the private S3 evidence bucket.
 
-![Evidence object in S3](//images/5-Workshop/IRMS-demo-test/demo-test-17.png)
+![Evidence object in S3](/images/5-Workshop/IRMS-demo-test/demo-test-17.png)
 
 Verify the metadata item in DynamoDB.
 
-![Evidence metadata in DynamoDB](//images/5-Workshop/IRMS-demo-test/demo-test-18.png)
+![Evidence metadata in DynamoDB](/images/5-Workshop/IRMS-demo-test/demo-test-18.png)
 
 Expected result:
 
@@ -123,19 +123,19 @@ Expected result:
 
 Open the AI Assistant page and choose **AI Analyst** mode.
 
-![AI Assistant page](//images/5-Workshop/IRMS-demo-test/demo-test-19.png)
+![AI Assistant page](/images/5-Workshop/IRMS-demo-test/demo-test-19.png)
 
 Select the incident created during the test.
 
-![Select incident for AI analysis](//images/5-Workshop/IRMS-demo-test/demo-test-20.png)
+![Select incident for AI analysis](/images/5-Workshop/IRMS-demo-test/demo-test-20.png)
 
 Review the structured AI result.
 
-![AI Analyst result](//images/5-Workshop/IRMS-demo-test/demo-test-21.png)
+![AI Analyst result](/images/5-Workshop/IRMS-demo-test/demo-test-21.png)
 
 The result summarizes likely impact, response priorities, recommendations, and supporting context.
 
-![AI findings](//images/5-Workshop/IRMS-demo-test/demo-test-22.png)
+![AI findings](/images/5-Workshop/IRMS-demo-test/demo-test-22.png)
 
 Important validation:
 
@@ -147,7 +147,7 @@ Important validation:
 
 Switch to **AI Chat** mode.
 
-![AI Chat mode](//images/5-Workshop/IRMS-demo-test/demo-test-24.png)
+![AI Chat mode](/images/5-Workshop/IRMS-demo-test/demo-test-24.png)
 
 Use a prompt related to the selected incident, for example:
 
@@ -155,7 +155,7 @@ Use a prompt related to the selected incident, for example:
 Explain why this incident has its current severity.
 ```
 
-![AI Chat response](//images/5-Workshop/IRMS-demo-test/demo-test-25.png)
+![AI Chat response](/images/5-Workshop/IRMS-demo-test/demo-test-25.png)
 
 Expected result:
 

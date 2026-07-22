@@ -27,7 +27,7 @@ IRMS giải quyết vấn đề này bằng cách đưa quy trình xử lý inci
 
 Hệ thống đi theo hướng Serverless-first và không dùng EC2, RDS hoặc NAT Gateway trong MVP để giảm chi phí và độ phức tạp vận hành.
 
-![IRMS Solution Architecture](//images/2-Proposal/IRMS_architecture_v10.drawio.png)
+![IRMS Solution Architecture](/images/2-Proposal/IRMS_architecture_v10.drawio.png)
 
 #### Kiến trúc đã triển khai
 

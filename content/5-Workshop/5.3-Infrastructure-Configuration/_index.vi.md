@@ -35,7 +35,7 @@ Kiểm tra AWS CLI đã cấu hình đúng chưa bằng lệnh:
 aws sts get-caller-identity --profile irms-shared
 ```
 
-![Setup Authentication 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-001.png)
+![Setup Authentication 1](//images/5-Workshop/IRMS/section-03-001.png)
 Kết quả mong đợi (thấy Account ID và UserId là đúng):
 
 ```json
@@ -103,7 +103,7 @@ Admin            (Precedence: 1)
 SecurityManager  (Precedence: 2)
 SecurityAnalyst  (Precedence: 3)
 Auditor          (Precedence: 4)
-![Setup Authentication 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-002.png)
+![Setup Authentication 2](//images/5-Workshop/IRMS/section-03-002.png)
 
 #### 5.3.3.4 Tạo User test
 Vẫn ở trang User Pool, click tab Users → Create user:
@@ -115,12 +115,12 @@ Temporary password:     chọn "Set a password"
 Password:               YOUR_TEMP_PASSWORD
 User must create a new password: bỏ tích ✅
 Click Create user → click vào user vừa tạo → Add user to group → chọn Admin
-![Setup Authentication 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-003.png)
+![Setup Authentication 3](//images/5-Workshop/IRMS/section-03-003.png)
 Lặp lại tương tự cho 3 user còn lại, gắn vào đúng group:
 manager@example.com  → group SecurityManager  → pass: YOUR_TEMP_PASSWORD
 analyst@example.com  → group SecurityAnalyst   → pass: YOUR_TEMP_PASSWORD
 auditor@example.com  → group Auditor           → pass: YOUR_TEMP_PASSWORD
-![Setup Authentication 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-004.png)
+![Setup Authentication 4](//images/5-Workshop/IRMS/section-03-004.png)
 
 #### 5.3.3.5 Verify bằng Terminal
 Mở Terminal trên máy, chạy lệnh sau (thay YOUR_CLIENT_ID bằng Client ID đã lưu ở bước 3.2):
@@ -145,9 +145,9 @@ json
 "TokenType": "Bearer"
 }
 }
-![Setup Authentication 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-005.png)
-![Setup Authentication 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-006.png)
-![Setup Authentication 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-007.png)
+![Setup Authentication 5](//images/5-Workshop/IRMS/section-03-005.png)
+![Setup Authentication 6](//images/5-Workshop/IRMS/section-03-006.png)
+![Setup Authentication 7](//images/5-Workshop/IRMS/section-03-007.png)
 Nếu thấy lỗi NotAuthorizedException → kiểm tra lại password hoặc email.
 Nếu thấy lỗi UserNotFoundException → kiểm tra lại email đã tạo đúng chưa.
 Kiểm tra JWT token:
@@ -165,7 +165,7 @@ Kiểm tra JWT token:
 ...
 }
 Thấy đúng 2 field trên →  Cognito hoàn thành.
-![Setup Authentication 8](///images/5-Workshop/5.2-Prerequisite/IRMS/section-03-008.png)
+![Setup Authentication 8](//images/5-Workshop/IRMS/section-03-008.png)
 Nhận xét này rất chính xác — tất cả 8 điểm đều đúng. Tớ viết lại 4 theo đúng hướng đó:
 
 ### 5.3.4 Setup API Gateway
@@ -174,18 +174,18 @@ Lưu ý về cách tiếp cận: này chỉ dùng Console để hiểu cơ chế
 #### 5.3.4.1 Tạo REST API
 **Bước 1: Trên AWS Console, thanh tìm kiếm gõ API Gateway → click API Gateway**
 **Bước 2: Click Create API**
-![Setup API Gateway 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-001.png)
+![Setup API Gateway 1](//images/5-Workshop/IRMS/section-04-001.png)
 **Bước 3: Trang chọn loại API:**
 - Chọn REST API (không phải REST API Private, không phải HTTP API)
 - Click Build
-![Setup API Gateway 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-002.png)
+![Setup API Gateway 2](//images/5-Workshop/IRMS/section-04-002.png)
 **Bước 4: Điền thông tin:**
 API details:        New API
 API name:           irms-api-learning
 Description:        Dùng để học Authorizer, sẽ xóa sau khi sang 7
 API endpoint type:  Regional
 Click Create API
-![Setup API Gateway 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-003.png)
+![Setup API Gateway 3](//images/5-Workshop/IRMS/section-04-003.png)
 ⚠️ API này đặt tên irms-api-learning để phân biệt với API thật do SAM tạo sau. Sau khi test xong Authorizer ở này, API này có thể xóa đi — không ảnh hưởng gì đến hệ thống.
 
 #### 5.3.4.2 Tạo Cognito Authorizer
@@ -197,8 +197,8 @@ Cognito user pool:  chọn "irms-user-pool"
 Token source:       Authorization
 Token validation:   (để trống)
 Click Create authorizer
-![Setup API Gateway 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-004.png)
-![Setup API Gateway 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-005.png)
+![Setup API Gateway 4](//images/5-Workshop/IRMS/section-04-004.png)
+![Setup API Gateway 5](//images/5-Workshop/IRMS/section-04-005.png)
 
 #### 5.3.4.3 Tạo 2 routes test
 Vào Resources ở menu bên trái. Mục tiêu tạo 2 route để test rõ ràng:
@@ -213,9 +213,9 @@ Click Create resource
 **Bước 2: Click vào /ping → click Create method**
 Method type:        GET
 Integration type:   Mock
-![Setup API Gateway 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-006.png)
+![Setup API Gateway 6](//images/5-Workshop/IRMS/section-04-006.png)
 Click Create method
-![Setup API Gateway 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-007.png)
+![Setup API Gateway 7](//images/5-Workshop/IRMS/section-04-007.png)
 **Bước 3: Vào Integration Response → Mapping Templates → thêm template:**
 Content-Type:   application/json
 Template body:
@@ -238,7 +238,7 @@ Click Create resource
 Method type:        GET
 Integration type:   Mock
 Click Create method
-![Setup API Gateway 8](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-008.png)
+![Setup API Gateway 8](//images/5-Workshop/IRMS/section-04-008.png)
 **Bước 3: Vào Integration Response → Mapping Templates → thêm template:**
 Content-Type:   application/json
 Template body:
@@ -247,7 +247,7 @@ Template body:
 "auth": true
 }
 Click Save
-![Setup API Gateway 9](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-009.png)
+![Setup API Gateway 9](//images/5-Workshop/IRMS/section-04-009.png)
 **Bước 4: Gắn Authorizer vào /ping-auth:**
 - Click method GET của /ping-auth
 - Tab Method request → Authorization → click Edit
@@ -260,8 +260,8 @@ Click Save
 Stage:       *New stage*
 Stage name:  dev
 Click Deploy
-![Setup API Gateway 10](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-010.png)
-![Setup API Gateway 11](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-011.png)
+![Setup API Gateway 10](//images/5-Workshop/IRMS/section-04-010.png)
+![Setup API Gateway 11](//images/5-Workshop/IRMS/section-04-011.png)
 **Bước 3: Trang Stage Editor hiện ra → lưu Invoke URL:**
 Invoke URL: https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev
 ⚠️ URL này chỉ dùng để test Authorizer trong 4. URL thật của hệ thống sẽ do SAM tạo ở 7 và có giá trị khác — lúc đó dùng URL của SAM, bỏ URL này đi.
@@ -278,7 +278,7 @@ aws cognito-idp initiate-auth \
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
-![Setup API Gateway 12](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-012.png)
+![Setup API Gateway 12](//images/5-Workshop/IRMS/section-04-012.png)
 Copy toàn bộ chuỗi IdToken (bắt đầu bằng eyJ...) vào notepad.
 
 Test 1 — /ping không cần token:
@@ -292,7 +292,7 @@ Kết quả mong đợi:
 "message": "pong",
 "auth": false
 }
-![Setup API Gateway 13](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-013.png)
+![Setup API Gateway 13](//images/5-Workshop/IRMS/section-04-013.png)
 Status: 200 OK → ✅ API Gateway hoạt động
 
 Test 2 — /ping-auth không có token:
@@ -304,7 +304,7 @@ Kết quả mong đợi:
 {
 "message": "Unauthorized"
 }
-![Setup API Gateway 14](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-014.png)
+![Setup API Gateway 14](//images/5-Workshop/IRMS/section-04-014.png)
 Status: 401 Unauthorized → ✅ Authorizer đang chặn đúng
 
 Test 3 — /ping-auth có token:
@@ -319,7 +319,7 @@ Kết quả mong đợi:
 "message": "Authorized",
 "auth": true
 }
-![Setup API Gateway 15](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-015.png)
+![Setup API Gateway 15](//images/5-Workshop/IRMS/section-04-015.png)
 Status: 200 OK → ✅ Authorizer xác thực JWT thành công
 
 Test 4 — /ping-auth với token sai:
@@ -330,7 +330,7 @@ Kết quả mong đợi:
 {
 "message": "Unauthorized"
 }
-![Setup API Gateway 16](///images/5-Workshop/5.2-Prerequisite/IRMS/section-04-016.png)
+![Setup API Gateway 16](//images/5-Workshop/IRMS/section-04-016.png)
 Status: 401 Unauthorized → ✅ Authorizer từ chối token không hợp lệ
 
 #### 5.3.4.6 Checklist 4
@@ -409,29 +409,29 @@ createdAt     String
 Table name:           irms-incidents
 Partition key:        incidentId    Type: String
 Sort key:             (để trống)
-![Setup DynamoDB 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-001.png)
+![Setup DynamoDB 1](//images/5-Workshop/IRMS/section-05-001.png)
 **Bước 4: Table settings → chọn Customize settings**
 **Bước 5: Table class: DynamoDB Standard**
 **Bước 6: Read/write capacity settings:**
 Capacity mode: On-demand
-![Setup DynamoDB 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-002.png)
+![Setup DynamoDB 2](//images/5-Workshop/IRMS/section-05-002.png)
 Chọn On-demand vì demo không có traffic ổn định, chỉ trả phí theo lượt request thực tế — tránh bị tính phí khi bảng không dùng.
 **Bước 7: Encryption: Owned by Amazon DynamoDB (mặc định, đủ cho demo)**
-![Setup DynamoDB 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-003.png)
+![Setup DynamoDB 3](//images/5-Workshop/IRMS/section-05-003.png)
 **Bước 8: Click Create table, chờ khoảng 30 giây đến khi Status chuyển sang Active**
-![Setup DynamoDB 4](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-004.png)
+![Setup DynamoDB 4](//images/5-Workshop/IRMS/section-05-004.png)
 
 #### 5.3.5.3 Tạo GSI cho bảng Incidents
 Sau khi bảng Active, tạo Global Secondary Index để query nhanh theo status và assignedTo:
 **Bước 1: Click vào bảng irms-incidents → tab Indexes → click Create index**
-![Setup DynamoDB 5](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-005.png)
+![Setup DynamoDB 5](//images/5-Workshop/IRMS/section-05-005.png)
 Tạo GSI 1 — query theo status:
 Partition key:   status      Type: String
 Sort key:        createdAt   Type: String
 Index name:      status-index
 Projected attributes: All
 Click Create index → chờ Status chuyển sang Active
-![Setup DynamoDB 6](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-006.png)
+![Setup DynamoDB 6](//images/5-Workshop/IRMS/section-05-006.png)
 Tạo GSI 2 — query theo người được phân công:
 Click Create index lần nữa:
 Partition key:   assignedTo   Type: String
@@ -439,7 +439,7 @@ Sort key:        createdAt    Type: String
 Index name:      assignedTo-index
 Projected attributes: All
 Click Create index → chờ Active
-![Setup DynamoDB 7](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-007.png)
+![Setup DynamoDB 7](//images/5-Workshop/IRMS/section-05-007.png)
 
 #### 5.3.5.4 Tạo bảng Timeline
 **Bước 1: Click Create table**
@@ -450,7 +450,7 @@ Sort key:        timestamp     Type: String
 Sort key là timestamp vì trong 1 incident có nhiều mốc thời gian, sort key giúp tự động sắp xếp theo thứ tự thời gian.
 **Bước 3: Table settings → Customize settings → Capacity mode: On-demand**
 **Bước 4: Click Create table → chờ Active**
-![Setup DynamoDB 8](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-008.png)
+![Setup DynamoDB 8](//images/5-Workshop/IRMS/section-05-008.png)
 
 #### 5.3.5.5 Tạo bảng EvidenceMetadata
 **Bước 1: Click Create table**
@@ -467,7 +467,7 @@ Sort key:        uploadedAt    Type: String
 Index name:      incidentId-index
 Projected attributes: All
 Click Create index → chờ Active
-![Setup DynamoDB 9](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-009.png)
+![Setup DynamoDB 9](//images/5-Workshop/IRMS/section-05-009.png)
 
 #### 5.3.5.6 Tạo bảng Users
 **Bước 1: Click Create table**
@@ -477,12 +477,12 @@ Partition key:   email    Type: String
 Sort key:        (để trống)
 **Bước 3: Table settings → Customize settings → Capacity mode: On-demand**
 **Bước 4: Click Create table → chờ Active**
-![Setup DynamoDB 10](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-010.png)
+![Setup DynamoDB 10](//images/5-Workshop/IRMS/section-05-010.png)
 
 #### 5.3.5.7 Thêm dữ liệu mẫu để test
 Sau khi tạo đủ 4 bảng, thêm vài record mẫu vào bảng Incidents để test Lambda sau này:
 **Bước 1: Click vào bảng irms-incidents → tab Explore items → click Create item**
-![Setup DynamoDB 11](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-011.png)
+![Setup DynamoDB 11](//images/5-Workshop/IRMS/section-05-011.png)
 **Bước 2: Chọn JSON view, paste nội dung sau:**
 {
 "incidentId": { "S": "INC-001" },
@@ -509,20 +509,20 @@ Click Create item
 "updatedAt": "2026-06-02T11:00:00Z"
 }
 Click Create item
-![Setup DynamoDB 12](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-012.png)
-![Setup DynamoDB 13](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-013.png)
+![Setup DynamoDB 12](//images/5-Workshop/IRMS/section-05-012.png)
+![Setup DynamoDB 13](//images/5-Workshop/IRMS/section-05-013.png)
 
 #### 5.3.5.8 Verify bằng Console
 **Bước 1: Click vào bảng irms-incidents → tab Explore items**
 **Bước 2: Thấy 2 record INC-001 và INC-002 → ✅**
-![Setup DynamoDB 14](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-014.png)
+![Setup DynamoDB 14](//images/5-Workshop/IRMS/section-05-014.png)
 **Bước 3: Test query theo GSI:**
 - Click Scan/Query → chọn Query
 - Index: chọn status-index
 - Partition key value: Open
 - Click Run
 - Kết quả phải trả về INC-001 → ✅ GSI hoạt động đúng
-![Setup DynamoDB 15](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-015.png)
+![Setup DynamoDB 15](//images/5-Workshop/IRMS/section-05-015.png)
 
 #### 5.3.5.9 Hybrid Deployment với AWS SAM
 Trong workshop này, các bảng Amazon DynamoDB được tạo thủ công bằng AWS Console ở các bước trước nhằm giúp người học hiểu rõ cách thiết kế schema, Partition Key, Sort Key và Global Secondary Index (GSI).
@@ -571,7 +571,7 @@ sam validate ^
   --region ap-southeast-1
 Kết quả mong đợi:
 Template provided at 'infrastructure/template.yaml' was successfully validated.
-![Setup DynamoDB 16](///images/5-Workshop/5.2-Prerequisite/IRMS/section-05-016.png)
+![Setup DynamoDB 16](//images/5-Workshop/IRMS/section-05-016.png)
 
 #### 5.3.5.10 Checklist 5
 - ✅ Đã tạo thành công 4 bảng DynamoDB:
@@ -690,7 +690,7 @@ EvidenceBucketName:
 Type: String
 Default: irms-evidence-031577240048-ap-southeast-1
 Nếu thấy đúng 2 tên này → ✅ tiếp tục.
-![Setup S3 & Storage 1](///images/5-Workshop/5.2-Prerequisite/IRMS/section-06-001.png)
+![Setup S3 & Storage 1](//images/5-Workshop/IRMS/section-06-001.png)
 
 #### 5.3.6.5 Kiểm tra Environment Variables Lambda trong template.yaml
 Lambda cần biết tên Evidence bucket để tạo Presigned URL. Tìm phần Globals xác nhận có:
@@ -731,7 +731,7 @@ parameter_overrides = [
 "EvidenceBucketName=irms-evidence-031577240048-ap-southeast-1"
 ]
 Thay các giá trị XXXXXXXXX bằng giá trị thật đã lưu ở 3.
-![Setup S3 & Storage 2](///images/5-Workshop/5.2-Prerequisite/IRMS/section-06-002.png)
+![Setup S3 & Storage 2](//images/5-Workshop/IRMS/section-06-002.png)
 
 #### 5.3.6.7 Validate Template
 Sau khi xác nhận đủ các mục trên, chạy lệnh validate để kiểm tra template không có lỗi cú pháp:
@@ -743,7 +743,7 @@ sam validate ^
 --region ap-southeast-1
 Kết quả mong đợi:
 Template provided at 'infrastructure/template.yaml' was successfully validated.
-![Setup S3 & Storage 3](///images/5-Workshop/5.2-Prerequisite/IRMS/section-06-003.png)
+![Setup S3 & Storage 3](//images/5-Workshop/IRMS/section-06-003.png)
 Xử lý lỗi thường gặp:
 Nếu thấy:
 Error: Template format error: YAML not well-formed

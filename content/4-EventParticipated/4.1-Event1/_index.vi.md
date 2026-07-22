@@ -65,4 +65,3 @@ vào quá trình thiết kế và phát triển các chức năng thực tế tr
 
 ## Hình ảnh tham gia Event
 
-![GenAI Workshop](//images/5-Workshop/5.2-Prerequisite/genai-workshop.jpg)

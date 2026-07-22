@@ -1,6 +1,6 @@
 baseURL = "https://dantruong209.github.io/Internship-Report/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Hugo theme

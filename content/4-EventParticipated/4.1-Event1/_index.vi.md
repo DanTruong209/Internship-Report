@@ -64,4 +64,4 @@ vào quá trình thiết kế và phát triển các chức năng thực tế tr
 # Một Số Hình Ảnh Khi Tham Gia Sự Kiện
 
 ## Hình ảnh tham gia Event
-
+![AWS Event](/images/Event/aws-event.jpg)

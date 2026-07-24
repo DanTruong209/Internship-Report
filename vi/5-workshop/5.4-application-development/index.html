@@ -1,0 +1,361 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content="Internship Report - First Cloud AI Journey"><meta name=author content="nguyendantruong12a9@gmail.com"><link rel=icon href=https://dantruong209.github.io/Internship-Report/images/favicon.png type=image/png><title>Phát triển ứng dụng :: Báo cáo thực tập</title>
+<link href=https://dantruong209.github.io/Internship-Report/css/nucleus.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/fontawesome-all.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hybrid.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/featherlight.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/perfect-scrollbar.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/auto-complete.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/atom-one-dark-reasonable.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hugo-theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme-workshop.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/js/jquery-3.3.1.min.js?1784897816></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=https://dantruong209.github.io/Internship-Report/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/lunr.min.js?1784897816></script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/auto-complete.js?1784897816></script><script type=text/javascript>var baseurl="https://dantruong209.github.io/Internship-Report//vi"</script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/search.js?1784897816></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký thực tập" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/><b>1. </b>Nhật ký thực tập
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Đề xuất" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/2-proposal/><b>2. </b>Đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/ title="Các bài blogs đã dịch" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/><b>3. </b>Các bài blogs đã dịch
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogsposted/3.1-blog1/ title="Shift-left Security với Amazon Bedrock" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.1-blog1/><b>3.1. </b>Shift-left Security với Amazon Bedrock
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/3.2-blog2/ title="Amazon RDS + AI + MCP" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.2-blog2/><b>3.2. </b>Amazon RDS + AI + MCP
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-introduction/ title="Giới thiệu" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.1-introduction/><b>5.1. </b>Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-environment-setup/ title="Chuẩn bị môi trường" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.2-environment-setup/><b>5.2. </b>Chuẩn bị môi trường
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-infrastructure-configuration/ title="Cấu hình hạ tầng" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/><b>5.3. </b>Cấu hình hạ tầng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-application-development/ title="Phát triển ứng dụng" class="dd-item
+active"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/><b>5.4. </b>Phát triển ứng dụng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.5-deployment-and-testing/ title="Triển khai và kiểm thử" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/><b>5.5. </b>Triển khai và kiểm thử
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-frontend-integration-web-deployment/ title="Tích hợp frontend và triển khai web" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.6-frontend-integration-web-deployment/><b>5.6. </b>Tích hợp frontend và triển khai web
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-project-demo-and-testing/ title="Demo và kiểm thử dự án" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.7-project-demo-and-testing/><b>5.7. </b>Demo và kiểm thử dự án
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/ title="Kết quả, chi phí và dọn dẹp" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/><b>5.8. </b>Kết quả, chi phí và dọn dẹp
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://dantruong209.github.io/Internship-Report/5-workshop/5.4-application-development/>English</option><option id=vi value=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>24-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title='Edit this page' href=https://github.com/DanTruong209/Internship-Report/edit/main/5-Workshop/5.4-Application-Development/_index.vi.md target=blank><i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=https://dantruong209.github.io/Internship-Report/vi/>Báo cáo thực tập</a> > <a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/>Workshop</a> > Phát triển ứng dụng</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#54-phát-triển-ứng-dụng>5.4. Phát triển ứng dụng</a><ul><li></li><li><a href=#547-lambda-functions>5.4.7 Lambda Functions</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Phát triển ứng dụng</h1><h2 id=54-phát-triển-ứng-dụng>5.4. Phát triển ứng dụng</h2><h4 id=nội-dung>Nội dung</h4><ul><li>5.4.7 Lambda Functions</li></ul><h3 id=547-lambda-functions>5.4.7 Lambda Functions</h3><h4 id=5471-tổng-quan-compute-layer>5.4.7.1 Tổng quan Compute Layer</h4><p>AWS Lambda là trung tâm xử lý nghiệp vụ của IRMS. Thay vì duy trì server chạy liên tục như EC2, Lambda chỉ khởi động khi có request hoặc event, xử lý xong thì tự dừng. Cách này phù hợp với hệ thống demo/internship vì chi phí phụ thuộc vào số lần thực thi thực tế.</p><p><strong>Luồng request qua Compute Layer:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Browser
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>API Gateway (Production)
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  +--&gt; Lambda Incident CRUD
+</span></span><span style=display:flex><span>  |      +--&gt; DynamoDB: irms-incidents, irms-timeline
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  +--&gt; Lambda Upload Evidence
+</span></span><span style=display:flex><span>  |      +--&gt; S3 Evidence Store: presigned URL
+</span></span><span style=display:flex><span>  |      +--&gt; DynamoDB: irms-evidence-metadata
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  +--&gt; Lambda Generate Report
+</span></span><span style=display:flex><span>  |      +--&gt; DynamoDB: đọc dữ liệu tổng hợp
+</span></span><span style=display:flex><span>  |      +--&gt; S3 Evidence Store: lưu file CSV
+</span></span><span style=display:flex><span>  |      +--&gt; Trigger: EventBridge Scheduler
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  +--&gt; Lambda Alert Handler
+</span></span><span style=display:flex><span>  |      +--&gt; DynamoDB: tạo incident từ alert
+</span></span><span style=display:flex><span>  |      +--&gt; SNS: gửi thông báo
+</span></span><span style=display:flex><span>  |      +--&gt; Trigger: EventBridge
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  +--&gt; Lambda AI Assistant
+</span></span><span style=display:flex><span>         +--&gt; Secrets Manager: đọc Groq API key
+</span></span><span style=display:flex><span>         +--&gt; Groq API: phân tích AI
+</span></span><span style=display:flex><span>         +--&gt; Rule-based fallback khi provider không khả dụng
+</span></span></code></pre></div><p><strong>Vai trò của từng Lambda:</strong></p><table><thead><tr><th style=text-align:left>Lambda</th><th style=text-align:left>Trách nhiệm chính</th><th style=text-align:left>Dịch vụ liên quan</th></tr></thead><tbody><tr><td style=text-align:left><code>incident-crud</code></td><td style=text-align:left>Tạo, đọc, cập nhật, xóa Incident và Timeline</td><td style=text-align:left>API Gateway, DynamoDB</td></tr><tr><td style=text-align:left><code>upload-evidence</code></td><td style=text-align:left>Tạo presigned URL và ghi metadata bằng chứng</td><td style=text-align:left>API Gateway, S3, DynamoDB</td></tr><tr><td style=text-align:left><code>generate-report</code></td><td style=text-align:left>Tổng hợp dữ liệu và xuất báo cáo CSV</td><td style=text-align:left>EventBridge, DynamoDB, S3</td></tr><tr><td style=text-align:left><code>alert-handler</code></td><td style=text-align:left>Nhận alert/security event và tạo Incident tự động</td><td style=text-align:left>EventBridge, DynamoDB, SNS</td></tr><tr><td style=text-align:left><code>ai-assistant</code></td><td style=text-align:left>Phân tích incident, giải thích severity và hỏi đáp về incident</td><td style=text-align:left>Secrets Manager, Groq API, rule-based fallback</td></tr></tbody></table><p><strong>Vì sao chọn Lambda thay vì EC2:</strong></p><table><thead><tr><th style=text-align:left>Tiêu chí</th><th style=text-align:left>Lambda</th><th style=text-align:left>EC2</th></tr></thead><tbody><tr><td style=text-align:left>Chi phí</td><td style=text-align:left>Trả theo lượt gọi</td><td style=text-align:left>Trả theo giờ chạy dù không có request</td></tr><tr><td style=text-align:left>Scale</td><td style=text-align:left>Tự động scale theo request/event</td><td style=text-align:left>Cần cấu hình Auto Scaling Group</td></tr><tr><td style=text-align:left>Vận hành</td><td style=text-align:left>Không cần quản lý OS, patch, update</td><td style=text-align:left>Phải tự quản lý hệ điều hành và runtime</td></tr><tr><td style=text-align:left>Phù hợp với</td><td style=text-align:left>Traffic không đều, demo internship, event-driven workload</td><td style=text-align:left>Server chạy liên tục 24/7</td></tr></tbody></table><h4 id=5472-cấu-trúc-thư-mục-backend>5.4.7.2 Cấu trúc thư mục backend/</h4><p>Mở repo, kiểm tra cấu trúc thư mục backend/:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>backend/
+</span></span><span style=display:flex><span>├── incident-crud/
+</span></span><span style=display:flex><span>│   ├── handler.py
+</span></span><span style=display:flex><span>│   └── requirements.txt
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── upload-evidence/
+</span></span><span style=display:flex><span>│   ├── handler.py
+</span></span><span style=display:flex><span>│   └── requirements.txt
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── generate-report/
+</span></span><span style=display:flex><span>│   ├── handler.py
+</span></span><span style=display:flex><span>│   └── requirements.txt
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── alert-handler/
+</span></span><span style=display:flex><span>│   ├── handler.py
+</span></span><span style=display:flex><span>│   └── requirements.txt
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>└── ai-assistant/
+</span></span><span style=display:flex><span>├── handler.py
+</span></span><span style=display:flex><span>└── requirements.txt
+</span></span></code></pre></div><p>Nhiệm vụ từng Lambda:</p><table><thead><tr><th style=text-align:left>Lambda</th><th style=text-align:left>Nhiệm vụ</th><th style=text-align:left>Trigger</th></tr></thead><tbody><tr><td style=text-align:left>incident-crud</td><td style=text-align:left>CRUD Incident, Timeline</td><td style=text-align:left>API Gateway</td></tr><tr><td style=text-align:left>upload-evidence</td><td style=text-align:left>Tạo Presigned URL, ghi metadata</td><td style=text-align:left>API Gateway</td></tr><tr><td style=text-align:left>generate-report</td><td style=text-align:left>Tổng hợp dữ liệu, xuất CSV lên S3</td><td style=text-align:left>EventBridge Scheduler</td></tr><tr><td style=text-align:left>alert-handler</td><td style=text-align:left>Tạo Incident tự động, gửi thông báo</td><td style=text-align:left>EventBridge</td></tr><tr><td style=text-align:left>ai-assistant</td><td style=text-align:left>Phân tích sự cố, gợi ý severity</td><td style=text-align:left>API Gateway</td></tr></tbody></table><h4 id=5473-incident-crud-lambda>5.4.7.3 Incident CRUD Lambda</h4><p>Nhiệm vụ: Xử lý toàn bộ vòng đời của một Incident — từ tạo mới, đọc danh sách, cập nhật trạng thái đến xóa.
+Flow từng operation:
+GET /incidents — Lấy danh sách:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Request (có JWT token)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda đọc query string: ?status=Open&amp;assignedTo=analyst@...
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Query DynamoDB bảng irms-incidents
+</span></span><span style=display:flex><span>- Nếu có filter status   → dùng GSI status-index
+</span></span><span style=display:flex><span>- Nếu có filter assigned → dùng GSI assignedTo-index
+</span></span><span style=display:flex><span>- Không có filter        → Scan toàn bảng
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về danh sách Incident dạng JSON
+</span></span><span style=display:flex><span>POST /incidents — Tạo mới:
+</span></span><span style=display:flex><span>Request body: {title, severity, description}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda validate input (thiếu title → 400 Bad Request)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Generate incidentId: &#34;INC-&#34; + timestamp
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>PutItem vào irms-incidents
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>PutItem vào irms-timeline (action: &#34;Incident Created&#34;)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về incidentId vừa tạo
+</span></span><span style=display:flex><span>PUT /incidents/{id} — Cập nhật:
+</span></span><span style=display:flex><span>Request body: {status, assignedTo, ...}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda kiểm tra incidentId tồn tại
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>UpdateItem irms-incidents (chỉ update field được gửi lên)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>PutItem irms-timeline (action: &#34;Status Changed&#34; / &#34;Assigned&#34;)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về record đã cập nhật
+</span></span><span style=display:flex><span>DELETE /incidents/{id} — Xóa:
+</span></span><span style=display:flex><span>Request params: incidentId
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>DeleteItem irms-incidents
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về 204 No Content
+</span></span></code></pre></div><h4 id=5474-upload-evidence-lambda>5.4.7.4 Upload Evidence Lambda</h4><p>Nhiệm vụ: Tạo Presigned URL để browser upload file bằng chứng thẳng lên S3, sau đó ghi metadata vào DynamoDB. File không đi qua Lambda.
+Cách Lambda tạo Presigned URL: Lambda dùng AWS SDK (boto3) kết hợp với IAM Role được gán cho Lambda để ký Presigned URL. Người dùng không cần có quyền S3 — họ chỉ dùng URL đã được Lambda ký sẵn để upload trong thời gian cho phép (300 giây).
+Flow chi tiết:
+Bước 1 — Lấy Presigned URL:
+POST /evidence</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Body: {incidentId, fileName, fileType}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda generate evidenceId (UUID)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda dùng boto3 + IAM Role của Lambda để ký Presigned URL:
+</span></span><span style=display:flex><span>- Bucket: irms-evidence-031577240048-ap-southeast-1
+</span></span><span style=display:flex><span>- Key: {incidentId}/{evidenceId}/{fileName}
+</span></span><span style=display:flex><span>- Expiry: 300 giây
+</span></span><span style=display:flex><span>- Method: PUT
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về {evidenceId, presignedUrl}
+</span></span><span style=display:flex><span>Bước 2 — Browser upload thẳng lên S3:
+</span></span><span style=display:flex><span>Browser nhận presignedUrl
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Browser PUT request THẲNG lên S3 (không qua Lambda, không qua API Gateway)
+</span></span><span style=display:flex><span>- URL: presignedUrl
+</span></span><span style=display:flex><span>- Body: file binary
+</span></span><span style=display:flex><span>- Header: Content-Type: image/png (hoặc đúng type)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>S3 lưu file → trả về 200 OK cho browser
+</span></span><span style=display:flex><span>Bước 3 — Xác nhận và ghi metadata:
+</span></span><span style=display:flex><span>POST /evidence/{id}
+</span></span><span style=display:flex><span>Body: {evidenceId, incidentId}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda PutItem vào irms-evidence-metadata:
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>evidenceId, incidentId, fileName,
+</span></span><span style=display:flex><span>fileType, s3Key, uploadedBy,
+</span></span><span style=display:flex><span>uploadedAt, fileSize
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Trả về 200 OK
+</span></span></code></pre></div><h4 id=5475-generate-report-lambda>5.4.7.5 Generate Report Lambda</h4><p>Nhiệm vụ: Đọc dữ liệu tổng hợp từ DynamoDB, tạo file CSV và lưu lên S3. Với MVP hiện tại, Lambda này chủ yếu được gọi tự động bởi EventBridge Scheduler.
+Lưu ý MVP: Xuất CSV là scope hiện tại. Xuất PDF là Future Enhancement.
+Trigger:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>EventBridge Scheduler (cron hàng tháng)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda Generate Report
+</span></span><span style=display:flex><span>Nếu user muốn xem hoặc tải report, dùng GET /reports để đọc danh sách file report từ S3 hoặc metadata — không gọi generate trực tiếp.
+</span></span><span style=display:flex><span>Flow:
+</span></span><span style=display:flex><span>EventBridge Scheduler trigger
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda xác định khoảng thời gian báo cáo
+</span></span><span style=display:flex><span>(mặc định: tháng hiện tại)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Query / Scan DynamoDB irms-incidents:
+</span></span><span style=display:flex><span>- Tổng số incident theo severity
+</span></span><span style=display:flex><span>- Tổng số incident theo status
+</span></span><span style=display:flex><span>- Thời gian xử lý trung bình
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Tạo file CSV bằng thư viện csv của Python
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>PutObject lên S3:
+</span></span><span style=display:flex><span>Key: reports/{year}/{month}/irms-report-{timestamp}.csv
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span></code></pre></div><p>Ghi xong, Lambda kết thúc
+(không cần trả về HTTP response vì trigger là EventBridge)</p><h4 id=5476-alert-handler-lambda>5.4.7.6 Alert Handler Lambda</h4><p>Nhiệm vụ: Nhận event từ EventBridge, tự động tạo Incident trong DynamoDB và gửi thông báo qua SNS. Chi tiết cấu hình GuardDuty và EventBridge rule sẽ làm ở 9.
+Flow:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>EventBridge Event (GuardDuty Finding)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Lambda parse event:
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>&#34;detail-type&#34;: &#34;GuardDuty Finding&#34;,
+</span></span><span style=display:flex><span>&#34;detail&#34;: {
+</span></span><span style=display:flex><span>&#34;severity&#34;: 8.0,
+</span></span><span style=display:flex><span>&#34;type&#34;: &#34;UnauthorizedAccess:EC2/SSHBruteForce&#34;,
+</span></span><span style=display:flex><span>&#34;description&#34;: &#34;...&#34;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Map severity GuardDuty → IRMS:
+</span></span><span style=display:flex><span>7.0 - 10.0  →  Critical
+</span></span><span style=display:flex><span>4.0 - 6.9   →  High
+</span></span><span style=display:flex><span>1.0 - 3.9   →  Medium
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├──► PutItem irms-incidents:
+</span></span><span style=display:flex><span>│    {
+</span></span><span style=display:flex><span>│      incidentId: &#34;INC-AUTO-{timestamp}&#34;,
+</span></span><span style=display:flex><span>│      title: &#34;Auto-detected: {finding.type}&#34;,
+</span></span><span style=display:flex><span>│      severity: &#34;Critical/High/Medium&#34;,
+</span></span><span style=display:flex><span>│      status: &#34;Open&#34;,
+</span></span><span style=display:flex><span>│      source: &#34;GuardDuty&#34;
+</span></span><span style=display:flex><span>│    }
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>└──► SNS Publish:
+</span></span><span style=display:flex><span>Topic: irms-alert-topic
+</span></span><span style=display:flex><span>Message: &#34;New {severity} incident: {title}&#34;
+</span></span><span style=display:flex><span>Subject: &#34;[IRMS ALERT] {severity} - {title}&#34;
+</span></span></code></pre></div><h4 id=5477-ai-assistant-lambda>5.4.7.7 AI Assistant Lambda</h4><p>Nhiệm vụ: nhận ngữ cảnh incident từ frontend đã xác thực, xử lý qua lớp provider abstraction, gọi Groq với model <code>llama-3.1-8b-instant</code>, sau đó trả về kết quả JSON có cấu trúc cho giao diện người dùng.</p><p>Frontend không lưu và không gửi provider API key. Groq API key chỉ được lưu trong AWS Secrets Manager và Lambda đọc secret này khi chạy.</p><p><strong>Kiến trúc provider:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Frontend
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Lambda AI Assistant
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Groq API
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Structured JSON Response
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Frontend
+</span></span></code></pre></div><p><strong>Kiến trúc fallback:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Nếu Groq không khả dụng
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Rule-based analysis
+</span></span><span style=display:flex><span>  |
+</span></span><span style=display:flex><span>  v
+</span></span><span style=display:flex><span>Người dùng nhận thông báo fallback
+</span></span></code></pre></div><p>Amazon Bedrock vẫn được giữ như một lựa chọn mở rộng trong tương lai vì provider abstraction giúp frontend không cần thay đổi contract API.</p><p><strong>Các AI endpoint đã triển khai:</strong></p><table><thead><tr><th style=text-align:left>Endpoint</th><th style=text-align:left>Chức năng</th></tr></thead><tbody><tr><td style=text-align:left><code>POST /ai/analyze</code></td><td style=text-align:left>Tóm tắt incident, đánh giá severity, đề xuất hành động và bước tiếp theo</td></tr><tr><td style=text-align:left><code>POST /ai/explain</code></td><td style=text-align:left>Giải thích vì sao chọn severity, reasoning, confidence, risk factors và điều kiện tăng/giảm severity</td></tr><tr><td style=text-align:left><code>POST /ai/chat</code></td><td style=text-align:left>Hỏi đáp về incident hiện tại, containment, investigation, evidence collection, reporting và recovery</td></tr></tbody></table><p>Tất cả AI endpoint đều yêu cầu Cognito authentication thông qua API Gateway.</p><p>Ví dụ response cho <code>POST /ai/analyze</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;severity&#34;</span>: <span style=color:#e6db74>&#34;High&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;confidence&#34;</span>: <span style=color:#ae81ff>85</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;summary&#34;</span>: <span style=color:#e6db74>&#34;Multiple failed SSH login attempts indicate a likely brute force attempt.&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;recommendedActions&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Block the suspicious source IP&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Review authentication logs&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Verify whether any account was compromised&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;nextSteps&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Collect SSH logs as evidence&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Update the incident timeline&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Notify the responsible security analyst&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#e6db74>&#34;groq&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;model&#34;</span>: <span style=color:#e6db74>&#34;llama-3.1-8b-instant&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;fallback&#34;</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><strong>Vì sao không hardcode API key:</strong></p><ul><li>Scanner tự động có thể phát hiện key bị lộ rất nhanh.</li><li>Secrets Manager hỗ trợ xoay vòng key mà không cần deploy lại Lambda.</li><li>Frontend React không chứa API key.</li><li>Cách làm này phù hợp với AWS Well-Architected Framework, Security Pillar.</li></ul><h4 id=5478-environment-variables>5.4.7.8 Environment Variables</h4><p>Mở <code>infrastructure/template.yaml</code>, kiểm tra phần <code>Globals</code> hoặc từng Lambda function và xác nhận các biến môi trường sau:</p><table><thead><tr><th style=text-align:left>Environment Variable</th><th style=text-align:left>Giá trị</th><th style=text-align:left>Lambda sử dụng</th></tr></thead><tbody><tr><td style=text-align:left><code>ENVIRONMENT</code></td><td style=text-align:left><code>dev</code></td><td style=text-align:left>Xác định môi trường triển khai</td></tr><tr><td style=text-align:left><code>INCIDENTS_TABLE</code></td><td style=text-align:left><code>irms-incidents</code></td><td style=text-align:left><code>incident-crud</code>, <code>alert-handler</code></td></tr><tr><td style=text-align:left><code>TIMELINE_TABLE</code></td><td style=text-align:left><code>irms-timeline</code></td><td style=text-align:left><code>incident-crud</code></td></tr><tr><td style=text-align:left><code>EVIDENCE_METADATA_TABLE</code></td><td style=text-align:left><code>irms-evidence-metadata</code></td><td style=text-align:left><code>upload-evidence</code></td></tr><tr><td style=text-align:left><code>USERS_TABLE</code></td><td style=text-align:left><code>irms-users</code></td><td style=text-align:left><code>incident-crud</code></td></tr><tr><td style=text-align:left><code>EVIDENCE_BUCKET</code></td><td style=text-align:left><code>irms-evidence-031577240048-ap-southeast-1</code></td><td style=text-align:left><code>upload-evidence</code>, <code>generate-report</code></td></tr><tr><td style=text-align:left><code>AIProvider</code></td><td style=text-align:left><code>groq</code></td><td style=text-align:left><code>ai-assistant</code></td></tr><tr><td style=text-align:left><code>GroqSecretName</code></td><td style=text-align:left>Tên secret trong Secrets Manager chứa Groq API key</td><td style=text-align:left><code>ai-assistant</code></td></tr><tr><td style=text-align:left><code>GroqModel</code></td><td style=text-align:left><code>llama-3.1-8b-instant</code></td><td style=text-align:left><code>ai-assistant</code></td></tr><tr><td style=text-align:left><code>GroqTimeoutSeconds</code></td><td style=text-align:left>Timeout khi gọi provider</td><td style=text-align:left><code>ai-assistant</code></td></tr></tbody></table><p>Lý do dùng environment variables thay vì hardcode:</p><ul><li>Chuyển provider hoặc môi trường chỉ cần đổi cấu hình.</li><li>Frontend không có API key.</li><li>Tên tài nguyên và secret có thể thay đổi mà không sửa code.</li><li>Cách làm này phù hợp với nguyên tắc 12-Factor App.</li></ul><p>Ví dụ trong Python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> os
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>TABLE_NAME <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;INCIDENTS_TABLE&#34;</span>)
+</span></span><span style=display:flex><span>BUCKET_NAME <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;EVIDENCE_BUCKET&#34;</span>)
+</span></span><span style=display:flex><span>AI_PROVIDER <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;AIProvider&#34;</span>, <span style=color:#e6db74>&#34;groq&#34;</span>)
+</span></span><span style=display:flex><span>GROQ_SECRET_NAME <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;GroqSecretName&#34;</span>)
+</span></span><span style=display:flex><span>GROQ_MODEL <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;GroqModel&#34;</span>, <span style=color:#e6db74>&#34;llama-3.1-8b-instant&#34;</span>)
+</span></span><span style=display:flex><span>GROQ_TIMEOUT_SECONDS <span style=color:#f92672>=</span> int(os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;GroqTimeoutSeconds&#34;</span>, <span style=color:#e6db74>&#34;20&#34;</span>))
+</span></span></code></pre></div><h4 id=5479-iam-permissions--nguyên-tắc-least-privilege>5.4.7.9 IAM Permissions — Nguyên tắc Least Privilege</h4><p>Mỗi Lambda chỉ được cấp đúng quyền cần thiết. Nếu một Lambda bị tấn công, attacker chỉ làm được đúng những gì Lambda đó được phép — không hơn.
+incident-crud</p><ul><li>✅ dynamodb:GetItem → irms-incidents</li><li>✅ dynamodb:PutItem → irms-incidents, irms-timeline</li><li>✅ dynamodb:UpdateItem → irms-incidents</li><li>✅ dynamodb:DeleteItem → irms-incidents</li><li>✅ dynamodb:Query → irms-incidents (GSI)
+❌ dynamodb:* → không cần toàn bộ quyền
+❌ s3:* → không cần S3</li></ul><p>upload-evidence</p><ul><li>✅ s3:PutObject → irms-evidence-031577240048-ap-southeast-1</li><li>✅ s3:GetObject → irms-evidence-031577240048-ap-southeast-1</li><li>✅ dynamodb:PutItem → irms-evidence-metadata
+❌ s3:DeleteObject → không cần xóa
+❌ dynamodb:DeleteItem → không cần xóa</li></ul><p>generate-report</p><ul><li>✅ dynamodb:Query → irms-incidents</li><li>✅ dynamodb:Scan → irms-incidents (tổng hợp toàn bảng cho demo)</li><li>✅ s3:PutObject → irms-evidence-031577240048-ap-southeast-1/reports/
+❌ dynamodb:DeleteItem → không cần xóa
+❌ dynamodb:UpdateItem → không cần sửa</li></ul><p>alert-handler</p><ul><li>✅ dynamodb:PutItem → irms-incidents, irms-timeline</li><li>✅ sns:Publish → topic irms-alerts (chỉ topic này)
+❌ sns:CreateTopic → không cần tạo topic mới
+❌ dynamodb:DeleteItem → không cần xóa</li></ul><p>ai-assistant</p><ul><li>✅ secretsmanager:GetSecretValue -> chỉ secret Groq đã cấu hình
+❌ secretsmanager:* → không cần tạo/xóa secret
+❌ dynamodb:* → không cần đọc ghi DB
+❌ s3:* → không cần S3</li></ul><h4 id=54710-logging--error-handling>5.4.7.10 Logging & Error Handling</h4><p>Tất cả Lambda tự động ghi log vào Amazon CloudWatch Logs — không cần cấu hình thêm. Mỗi Lambda có 1 Log Group riêng, tên theo dạng /aws/lambda/<function-name>.
+Dùng logger thay vì print:
+import logging</p><p>logger = logging.getLogger()
+logger.setLevel(logging.INFO)</p><p><code># Ghi log thông thường</code>
+logger.info(&ldquo;Creating incident&rdquo;, extra={&ldquo;incidentId&rdquo;: incident_id})</p><p><code># Ghi log lỗi kèm stack trace</code>
+logger.error(&ldquo;Failed to create incident&rdquo;, exc_info=True)
+Nên log những gì:</p><ul><li>✅ requestId → để trace lại request khi có lỗi</li><li>✅ user email → lấy từ JWT claims, biết ai đang thao tác</li><li>✅ incidentId → để trace lại record liên quan</li><li>✅ action → &ldquo;Creating incident&rdquo;, &ldquo;Updating status&rdquo;&mldr;</li><li>✅ error message → khi có exception
+Tuyệt đối không log:
+❌ JWT token đầy đủ → attacker lấy được token từ log
+❌ Groq API key → lộ secret
+❌ Presigned URL đầy đủ → ai có URL là upload được file
+❌ Password, thông tin cá nhân nhạy cảm</li></ul><h4 id=54711-validate-source-code>5.4.7.11 Validate Source Code</h4><p>này không chạy sam build hay sam deploy — chỉ kiểm tra cấu trúc repo.
+<strong>Bước 1: Mở Command Prompt (CMD) trên Windows.</strong>
+Nhấn phím Windows → gõ cmd → Enter.
+<strong>Bước 2: Di chuyển vào thư mục repo:</strong>
+cd /d &ldquo;D:\Thực Tập\irms-serverless&rdquo;
+Thay đường dẫn bằng đường dẫn thật trên máy bạn.
+<strong>Bước 3: Kiểm tra thư mục backend có đủ 5 Lambda:</strong>
+dir backend
+Kết quả mong đợi:
+Directory of D:\Thực Tập\irms-serverless\backend</p><p>incident-crud
+upload-evidence
+generate-report
+alert-handler
+ai-assistant
+<strong>Bước 4: Kiểm tra từng Lambda có đủ file:</strong>
+dir backend\incident-crud
+dir backend\upload-evidence
+dir backend\generate-report
+dir backend\alert-handler
+dir backend\ai-assistant
+Mỗi thư mục phải có ít nhất:
+handler.py
+requirements.txt
+<strong>Bước 5: Kiểm tra template.yaml tham chiếu đúng Handler:</strong>
+findstr /C:&ldquo;Handler:&rdquo; infrastructure\template.yaml
+Kết quả mong đợi (5 dòng, mỗi Lambda 1 dòng):
+Handler: handler.handler
+Handler: handler.handler
+Handler: handler.handler
+Handler: handler.handler
+Handler: handler.handler
+<strong>Bước 6: Kiểm tra CodeUri trỏ đúng thư mục:</strong>
+findstr /C:&ldquo;CodeUri:&rdquo; infrastructure\template.yaml
+Kết quả mong đợi:
+CodeUri: ../backend/incident-crud/
+CodeUri: ../backend/upload-evidence/
+CodeUri: ../backend/generate-report/
+CodeUri: ../backend/ai-assistant/
+CodeUri: ../backend/alert-handler/
+<strong>Bước 7: Chạy sam validate lần cuối:</strong>
+sam validate &ndash;template-file infrastructure\template.yaml &ndash;region ap-southeast-1
+Kết quả mong đợi:
+Template provided at &lsquo;infrastructure\template.yaml&rsquo; was successfully validated.</p><h4 id=54712-checklist-7>5.4.7.12 Checklist 7</h4><ul><li>✅ Hiểu vai trò AWS Lambda trong kiến trúc IRMS</li><li>✅ Hiểu vì sao chọn Lambda thay vì EC2</li><li>✅ Hiểu nhiệm vụ 5 Lambda:</li><li>✅ incident-crud → CRUD Incident + Timeline</li><li>✅ upload-evidence → Presigned URL + ghi metadata (file không qua Lambda)</li><li>✅ generate-report → EventBridge trigger → tổng hợp DynamoDB → xuất CSV → S3</li><li>✅ alert-handler → nhận EventBridge event → tạo Incident → SNS</li><li>✅ ai-assistant → đọc Secrets Manager → gọi Groq API</li><li>✅ Hiểu 7 Environment Variables và lý do không hardcode</li><li>✅ Hiểu nguyên tắc Least Privilege, từng Lambda chỉ có quyền cần thiết</li><li>✅ Không có s3:GeneratePresignedUrl trong IAM (không phải IAM action hợp lệ)</li><li>✅ Đã hiểu CloudWatch Logs tự động ghi log cho Lambda</li><li>✅ Không log JWT token, API Key, Presigned URL, dữ liệu nhạy cảm</li><li>✅ Đã kiểm tra cấu trúc thư mục backend/ có đủ 5 Lambda</li><li>✅ Đã kiểm tra handler.py và requirements.txt tồn tại</li><li>✅ Đã kiểm tra CodeUri trỏ đúng backend/ trong template.yaml</li><li>✅ sam validate chạy thành công</li><li>✅ Chưa chạy sam build</li><li>✅ Chưa chạy sam deploy</li><li>✅ Chưa tạo bất kỳ resource production nào</li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/ title="Cấu hình hạ tầng"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/ title="Triển khai và kiểm thử" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=https://dantruong209.github.io/Internship-Report/js/clipboard.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.jquery.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/jquery.sticky.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/featherlight.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/highlight.pack.js?1784897816></script><script>hljs.initHighlightingOnLoad()</script><script src=https://dantruong209.github.io/Internship-Report/js/modernizr.custom-3.6.0.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/learn.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/hugo-learn.js?1784897816></script><link href=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.js?1784897816></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>

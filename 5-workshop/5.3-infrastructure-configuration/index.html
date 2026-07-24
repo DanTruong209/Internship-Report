@@ -1,0 +1,475 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content="Internship Report - First Cloud AI Journey"><meta name=author content="nguyendantruong12a9@gmail.com"><link rel=icon href=https://dantruong209.github.io/Internship-Report/images/favicon.png type=image/png><title>Infrastructure Configuration :: Internship Report</title>
+<link href=https://dantruong209.github.io/Internship-Report/css/nucleus.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/fontawesome-all.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hybrid.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/featherlight.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/perfect-scrollbar.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/auto-complete.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/atom-one-dark-reasonable.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hugo-theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme-workshop.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/js/jquery-3.3.1.min.js?1784897816></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=https://dantruong209.github.io/Internship-Report/5-workshop/5.3-infrastructure-configuration/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=https://dantruong209.github.io/Internship-Report/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/lunr.min.js?1784897816></script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/auto-complete.js?1784897816></script><script type=text/javascript>var baseurl="https://dantruong209.github.io/Internship-Report/"</script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/search.js?1784897816></script></div><div class=highlightable><ul class=topics><li data-nav-id=/1-worklog/ title=Worklog class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/><b>1. </b>Worklog
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/2-proposal/ title=Proposal class=dd-item><a href=https://dantruong209.github.io/Internship-Report/2-proposal/><b>2. </b>Proposal
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/3-blogsposted/ title="Translated Blogs" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/3-blogsposted/><b>3. </b>Translated Blogs
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/3-blogsposted/3.1-blog1/ title="Shift-left Security with Amazon Bedrock" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/3-blogsposted/3.1-blog1/><b>3.1. </b>Shift-left Security with Amazon Bedrock
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/3-blogsposted/3.2-blog2/ title="Amazon RDS + AI + MCP" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/3-blogsposted/3.2-blog2/><b>3.2. </b>Amazon RDS + AI + MCP
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/4-eventparticipated/ title="Events Participated" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/4-eventparticipated/><b>4. </b>Events Participated
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/4-eventparticipated/4.1-event1/ title="Event Experience - GenAI-powered App-DB Modernization Workshop" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/4-eventparticipated/4.1-event1/><b>4.1. </b>Event Experience - GenAI-powered App-DB Modernization Workshop
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/5-workshop/ title=Workshop class="dd-item
+parent"><a href=https://dantruong209.github.io/Internship-Report/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/5-workshop/5.1-introduction/ title=Introduction class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.1-introduction/><b>5.1. </b>Introduction
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.2-environment-setup/ title="Environment Setup" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.2-environment-setup/><b>5.2. </b>Environment Setup
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.3-infrastructure-configuration/ title="Infrastructure Configuration" class="dd-item
+active"><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.3-infrastructure-configuration/><b>5.3. </b>Infrastructure Configuration
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.4-application-development/ title="Application Development" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.4-application-development/><b>5.4. </b>Application Development
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.5-deployment-and-testing/ title="Deployment and Testing" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.5-deployment-and-testing/><b>5.5. </b>Deployment and Testing
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.6-frontend-integration-web-deployment/ title="Frontend Integration and Web Deployment" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.6-frontend-integration-web-deployment/><b>5.6. </b>Frontend Integration and Web Deployment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.7-project-demo-and-testing/ title="Project Demo and Testing" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.7-project-demo-and-testing/><b>5.7. </b>Project Demo and Testing
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/5-workshop/5.8-results-cost-analysis-and-cleanup/ title="Results, Cost Analysis, and Cleanup" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/5-workshop/5.8-results-cost-analysis-and-cleanup/><b>5.8. </b>Results, Cost Analysis, and Cleanup
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/6-self-evaluation/ title=Self-Assessment class=dd-item><a href=https://dantruong209.github.io/Internship-Report/6-self-evaluation/><b>6. </b>Self-Assessment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/7-feedback/ title="Sharing and Feedback" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/7-feedback/><b>7. </b>Sharing and Feedback
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://dantruong209.github.io/Internship-Report/5-workshop/5.3-infrastructure-configuration/ selected>English</option><option id=vi value=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>24-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title='Edit this page' href=https://github.com/DanTruong209/Internship-Report/edit/main/5-Workshop/5.3-Infrastructure-Configuration/_index.md target=blank><i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=https://dantruong209.github.io/Internship-Report/>Internship Report</a> > <a href=https://dantruong209.github.io/Internship-Report/5-workshop/>Workshop</a> > Infrastructure Configuration</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#3-infrastructure-configuration>3. Infrastructure Configuration</a><ul><li></li><li><a href=#533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</a></li><li><a href=#534-setup-api-gateway>5.3.4 Setup API Gateway</a></li><li><a href=#535-setup-dynamodb>5.3.5 Setup DynamoDB</a></li><li><a href=#536-setup-s3--storage>5.3.6 Setup S3 & Storage</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Infrastructure Configuration</h1><h2 id=3-infrastructure-configuration>3. Infrastructure Configuration</h2><h4 id=contents>Contents</h4><ul><li>5.3.3 Setup Authentication</li><li>5.3.4 Setup API Gateway</li><li>5.3.5 Setup DynamoDB</li><li>5.3.6 Setup S3 & Storage</li></ul><h3 id=533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</h3><h4 id=5331-prepare-before-starting>5.3.3.1 Prepare Before Starting</h4><p>Open these two things first:
+Thu 1 — AWS Console in the browser:</p><ul><li>Open the browser (Chrome/Edge), vao dia chi: <a href=https://console.aws.amazon.com>https://console.aws.amazon.com</a></li><li>Sign in with your IAM user</li><li>In the top-right corner, check the selected region — phai is Asia Pacific (Singapore) ap-southeast-1. If it is not correct, click vao ten region → select Asia Pacific (Singapore)
+Thu 2 — Terminal on the local machine:
+Windows: Nhan phim Windows → go PowerShell → Enter. or open Git Bash if da install Git.
+Mac: Nhan Cmd + Space → go Terminal → Enter.
+Configure AWS CLI
+-Create an access key
+-Create a profile, then nhap accsess key and secret key
+Verify that AWS CLI is configured correctly with this command:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws sts get-caller-identity --profile irms-shared
+</span></span></code></pre></div><blockquote><p>Expected result: the AWS CLI should return your account ID and user ARN, confirming that the profile is valid and the credentials are active.</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;UserId&#34;</span>: <span style=color:#e6db74>&#34;AIDXXXXXXXXXXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Account&#34;</span>: <span style=color:#e6db74>&#34;123456789012&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Arn&#34;</span>: <span style=color:#e6db74>&#34;arn:aws:iam::123456789012:user/your-username&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=5332-create-a-cognito-user-pool-in-the-aws-console>5.3.3.2 Create a Cognito User Pool (in the AWS Console)</h4><p><strong>Step 1: Tren AWS Console, thanh tim kiem phia tren go Cognito → click Amazon Cognito</strong>
+<strong>Step 2: Click nut Create user pool (goc tren ben phai)</strong>
+<strong>Step 3: Trang Configure sign-in experience:</strong></p><ul><li>Authentication providers: select Cognito user pool</li><li>Cognito user pool sign-in options: tich ✅ vao Email</li><li>Click Next
+<strong>Step 4: Trang Configure security requirements:</strong></li><li>Password policy mode: select Custom</li><li>Minimum length: 8</li><li>Tich ✅: Contains at least 1 uppercase, 1 lowercase, 1 number, 1 special character</li><li>Multi-factor authentication: select No MFA (demo not can)</li><li>Click Next
+<strong>Step 5: Trang Configure sign-up experience:</strong></li><li>Keep the default settings tat ca</li><li>Click Next
+<strong>Step 6: Trang Configure message delivery:</strong></li><li>Email provider: select Send email with Cognito (mien phi, du dung for demo)</li><li>Click Next
+<strong>Step 7: Trang Integrate your app:</strong></li><li>User pool name: irms-user-pool</li><li>App client name: irms-web-client</li><li>Client secret: select Don&rsquo;t generate a client secret</li><li>Click Next
+<strong>Step 8: Trang Review and create:</strong></li><li>Scroll down xem lai toan bo</li><li>Click Create user pool
+<strong>Step 9: after khi create xong, trang hien ra User Pool moi. Save 2 gia tri nay vao file notepad/txt tren may:</strong>
+User Pool ID: ap-southeast-1_XXXXXXXXX ← thay o tab &ldquo;Overview&rdquo;
+Client ID: XXXXXXXXXXXXXXXXXXXXXXXXXX ← vao tab &ldquo;App clients&rdquo; de xem
+2 gia tri nay se dung nhieu lan o the step after, save can than.</li></ul><h4 id=5333-create-four-groups-rbac>5.3.3.3 Create Four Groups (RBAC)</h4><p>Van o trang Cognito User Pool vua create:
+<strong>Step 1: Click tab Groups → Click Create group</strong>
+<strong>Step 2: Create Group 1:</strong>
+Group name: Admin
+Description: Toan quyen system
+Precedence: 1
+Click Create group
+<strong>Step 3: Lap lai, create them 3 group:</strong>
+Group name: SecurityManager
+Description: Xem tat ca Incident, phan cong, xem report
+Precedence: 2</p><p>Group name: SecurityAnalyst
+Description: Dieu tra, upload evidence, cap nhat trang thai
+Precedence: 3</p><p>Group name: Auditor
+Description: Chi xem, not chinh sua
+Precedence: 4
+after khi xong, tab Groups phai hien du 4 group nhu after:
+Admin (Precedence: 1)
+SecurityManager (Precedence: 2)
+SecurityAnalyst (Precedence: 3)
+Auditor (Precedence: 4)</p><blockquote><p>If the console UI differs slightly, the important part is that the four groups exist with the expected precedence order.</p></blockquote><h4 id=5334-create-a-test-user>5.3.3.4 Create a Test User</h4><p>Van o trang User Pool, click tab Users → Create user:
+User 1 (Admin):
+Invitation message: Don&rsquo;t send an invitation
+Email address: <a href=mailto:admin@irms-demo.com>admin@irms-demo.com</a>
+Email address verified: tich ✅
+Temporary password: select &ldquo;Set a password&rdquo;
+Password: Admin@123456
+User must create a new password: bo tich ✅
+Click Create user → click vao user vua create → Add user to group → select Admin</p><p>Lap lai tuong tu for 3 user con lai, gan vao dung group:
+<a href=mailto:manager@irms-demo.com>manager@irms-demo.com</a> → group SecurityManager → pass: Manager@123456
+<a href=mailto:analyst@irms-demo.com>analyst@irms-demo.com</a> → group SecurityAnalyst → pass: Analyst@123456
+<a href=mailto:auditor@irms-demo.com>auditor@irms-demo.com</a> → group Auditor → pass: Auditor@123456</p><blockquote><p>Keep the credentials in a safe note if you plan to test the API later.</p></blockquote><h4 id=5335-verify-from-the-terminal>5.3.3.5 Verify from the Terminal</h4><p>Open Terminal tren may, chay lenh after (thay YOUR_CLIENT_ID with Client ID da luu o step 3.2):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws cognito-idp initiate-auth <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--auth-flow USER_PASSWORD_AUTH <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--auth-parameters USERNAME<span style=color:#f92672>=</span>analyst@irms-demo.com,PASSWORD<span style=color:#f92672>=</span>Analyst@123456 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--client-id YOUR_CLIENT_ID <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--region ap-southeast-1 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--profile irms-shared
+</span></span><span style=display:flex><span>Expected result — seeing three tokens means success:
+</span></span></code></pre></div><p>json
+{
+&ldquo;AuthenticationResult&rdquo;: {
+&ldquo;AccessToken&rdquo;: &ldquo;eyJraWQiOi&mldr;&rdquo;,
+&ldquo;IdToken&rdquo;: &ldquo;eyJraWQiOi&mldr;&rdquo;,
+&ldquo;RefreshToken&rdquo;: &ldquo;eyJjdHki&mldr;&rdquo;,
+&ldquo;ExpiresIn&rdquo;: 3600,
+&ldquo;TokenType&rdquo;: &ldquo;Bearer&rdquo;
+}
+}
+<img alt="Setup Authentication 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-005.png>
+<img alt="Setup Authentication 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-006.png>
+<img alt="Setup Authentication 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-007.png>
+if thay loi NotAuthorizedException → verify lai password or email.
+if thay loi UserNotFoundException → verify lai email da create dung chua.
+Verify JWT token:</p><ul><li>Copy toan bo chuoi IdToken (dai, bat dau with eyJ&mldr;)</li><li>Open the browser, vao <a href=https://jwt.io>https://jwt.io</a></li><li>Paste vao o Encoded ben trai</li><li>Ben phai muc Payload phai thay:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;analyst@irms-demo.com&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;cognito:groups&#34;</span>: [<span style=color:#e6db74>&#34;SecurityAnalyst&#34;</span>],
+</span></span></code></pre></div><p>&mldr;
+}
+Thay dung 2 field tren → Cognito complete.</p><blockquote><p>This confirms that the user pool is working and that the issued token contains the expected group claims.</p></blockquote><h3 id=534-setup-api-gateway>5.3.4 Setup API Gateway</h3><p>Luu y ve cach tiep can: nay chi dung Console de hieu co che Cognito Authorizer and test JWT token. Toan bo API routes that (/incidents, /evidence, /reports, /ai) se do SAM tu sinh o 7 khi deploy Lambda — not create tay o day de tranh conflict.</p><h4 id=5341-create-the-rest-api>5.3.4.1 Create the REST API</h4><p><strong>Step 1: Tren AWS Console, thanh tim kiem go API Gateway → click API Gateway</strong>
+<strong>Step 2: Click Create API</strong>
+<strong>Step 3: Trang select loai API:</strong></p><ul><li>Select REST API (not phai REST API Private, not phai HTTP API)</li><li>Click Build
+<strong>Step 4: Dien thong tin:</strong>
+API details: New API
+API name: irms-api-learning
+Description: Dung de learn Authorizer, se delete after khi sang 7
+API endpoint type: Regional
+Click Create API
+⚠ API nay dat ten irms-api-learning de phan biet with API that do SAM create after. after khi test xong Authorizer o nay, API nay has the delete di — not anh huong gi to system.</li></ul><h4 id=5342-create-a-cognito-authorizer>5.3.4.2 Create a Cognito Authorizer</h4><p><strong>Step 1: Menu ben trai → click Authorizers → click Create authorizer</strong>
+<strong>Step 2: Dien thong tin:</strong>
+Authorizer name: irms-cognito-authorizer
+Authorizer type: Cognito
+Cognito user pool: select &ldquo;irms-user-pool&rdquo;
+Token source: Authorization
+Token validation: (de trong)
+Click Create authorizer</p><h4 id=5343-create-two-test-routes>5.3.4.3 Create Two Test Routes</h4><p>Vao Resources o menu ben trai. Muc tieu create 2 route de test ro rang:
+GET /ping → not has Authorizer → luon tra 200
+GET /ping-auth → has Authorizer → 401 if not has token, 200 if has token
+Create /ping (not has Authorizer):
+<strong>Step 1: Click vao / (root) → click Create resource</strong>
+Resource name: ping
+Resource path: /ping
+CORS: not tich (de SAM management after)
+Click Create resource
+<strong>Step 2: Click vao /ping → click Create method</strong>
+Method type: GET
+Integration type: Mock
+Click Create method
+<strong>Step 3: Vao Integration Response → Mapping Templates → them template:</strong>
+Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+Click Save
+<strong>Step 4: Xac nhan /ping not gan Authorizer:</strong></p><ul><li>Click method GET</li><li>Tab Method request → Authorization: phai is NONE</li></ul><p>Create /ping-auth (has Authorizer):
+<strong>Step 1: Click vao / (root) → click Create resource</strong>
+Resource name: ping-auth
+Resource path: /ping-auth
+CORS: not tich
+Click Create resource
+<strong>Step 2: Click vao /ping-auth → click Create method</strong>
+Method type: GET
+Integration type: Mock
+Click Create method
+<strong>Step 3: Vao Integration Response → Mapping Templates → them template:</strong>
+Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+Click Save
+<strong>Step 4: Gan Authorizer vao /ping-auth:</strong></p><ul><li>Click method GET of /ping-auth</li><li>Tab Method request → Authorization → click Edit</li><li>Select irms-cognito-authorizer</li><li>Click Save de luu</li></ul><h4 id=5344-deploy-the-dev-stage>5.3.4.4 Deploy the dev Stage</h4><p><strong>Step 1: Click Deploy API (goc tren ben phai)</strong>
+<strong>Step 2: Cua so Deploy API:</strong>
+Stage: <em>New stage</em>
+Stage name: dev
+Click Deploy
+<strong>Step 3: Trang Stage Editor hien ra → luu Invoke URL:</strong>
+Invoke URL: <a href=https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev>https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev</a>
+⚠ URL nay chi dung de test Authorizer in 4. URL that of system se do SAM create o 7 and has gia tri khac — luc do dung URL of SAM, bo URL nay di.</p><h4 id=5345-test-with-postman>5.3.4.5 Test with Postman</h4><p>Install Postman if chua has:</p><ul><li>Vao <a href=https://www.postman.com/downloads/>https://www.postman.com/downloads/</a></li><li>Download → install dat → open len → select Skip (not can create account)
+Lay JWT token from Cognito:
+Open Terminal (Windows: PowerShell or Git Bash / Mac: Terminal), chay lenh after (thay YOUR_CLIENT_ID with Client ID da luu o 3):
+aws cognito-idp initiate-auth<br>&ndash;auth-flow USER_PASSWORD_AUTH<br>&ndash;auth-parameters <a href="mailto:USERNAME=analyst@irms-demo.com">USERNAME=analyst@irms-demo.com</a>,PASSWORD=Analyst@123456!<br>&ndash;client-id YOUR_CLIENT_ID<br>&ndash;region ap-southeast-1<br>&ndash;profile irms-shared
+<img alt="Setup API Gateway 12" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-012.png>
+Copy toan bo chuoi IdToken (bat dau with eyJ&mldr;) vao notepad.</li></ul><p>Test 1 — /ping not can token:
+Open Postman:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping</a></li><li>not them gi o Headers</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+<img alt="Setup API Gateway 13" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-013.png>
+Status: 200 OK → ✅ API Gateway hoat dong</li></ul><p>Test 2 — /ping-auth not has token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>not them gi o Headers</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img alt="Setup API Gateway 14" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-014.png>
+Status: 401 Unauthorized → ✅ Authorizer dang chan dung</li></ul><p>Test 3 — /ping-auth has token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>Tab Headers → them:
+Key: Authorization
+Value: Bearer &lt;eyJraWQiOi&mldr;> ← paste IdToken vao day</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+<img alt="Setup API Gateway 15" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-015.png>
+Status: 200 OK → ✅ Authorizer authentication JWT thanh cong</li></ul><p>Test 4 — /ping-auth with token sai:</p><ul><li>Giu nguyen setup Test 3 nhung sua token thanh chuoi bat ky:
+Authorization: Bearer thisisafaketoken</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img alt="Setup API Gateway 16" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-016.png>
+Status: 401 Unauthorized → ✅ Authorizer from choi token not hop le</li></ul><h4 id=5346-checklist-4>5.3.4.6 Checklist 4</h4><p>before khi sang 5, xac nhan du the muc after:</p><ul><li>✅ API Gateway (Regional) da create ten irms-api-learning</li><li>✅ Cognito Authorizer da create, tro dung vao irms-user-pool</li><li>✅ GET /ping → Mock, not has Authorizer</li><li>✅ GET /ping-auth → Mock, has Cognito Authorizer</li><li>✅ Da deploy stage dev</li><li>✅ Test Postman:
+/ping → 200 (not can token)
+/ping-auth → 401 (not has token)
+/ping-auth → 200 (has token hop le)
+/ping-auth → 401 (token sai)</li><li>✅ Da luu Invoke URL (chi dung tam for nay)</li></ul><h3 id=535-setup-dynamodb>5.3.5 Setup DynamoDB</h3><h4 id=5351-design-the-schema-before-creation>5.3.5.1 Design the Schema Before Creation</h4><p>before khi vao Console, can hieu ro cau truc data. IRMS dung 4 bang:
+Incidents → luu thong tin incident
+Timeline → luu lich su tung step xu ly
+EvidenceMetadata → luu thong tin file evidence
+Users → luu thong tin user
+Chi tiet tung bang:
+Bang Incidents:
+Partition key: incidentId (String)
+GSI 1: status-index → query theo trang thai (Open/Investigating/Closed)
+GSI 2: assignedTo-index → query theo nguoi is phan cong
+Attributes:
+incidentId String &ldquo;INC-001&rdquo;
+title String &ldquo;SQL Injection Attack&rdquo;
+severity String &ldquo;Critical / High / Medium / Low&rdquo;
+status String &ldquo;Open / Investigating / Containment / Resolved / Closed&rdquo;
+description String mo ta chi tiet
+assignedTo String email nguoi xu ly
+createdBy String email nguoi create
+createdAt String ISO timestamp
+updatedAt String ISO timestamp</p><p>Bang Timeline:
+Partition key: incidentId (String)
+Sort key: timestamp (String)
+Attributes:
+incidentId String
+timestamp String ISO timestamp
+action String &ldquo;Created / Assigned / Status Changed / Note Added&rdquo;
+description String mo ta hanh dong
+performedBy String email nguoi thuc hien</p><p>Bang EvidenceMetadata:
+Partition key: evidenceId (String)
+GSI 1: incidentId-index → query evidence theo incident
+Attributes:
+evidenceId String UUID
+incidentId String &ldquo;INC-001&rdquo;
+fileName String &ldquo;screenshot.png&rdquo;
+fileType String &ldquo;image/png&rdquo;
+s3Key String duong dan in S3
+uploadedBy String email nguoi upload
+uploadedAt String ISO timestamp
+fileSize Number bytes</p><p>Bang Users:
+Partition key: email (String)
+Attributes:
+email String
+fullName String
+role String &ldquo;Admin / SecurityManager / SecurityAnalyst / Auditor&rdquo;
+createdAt String</p><h4 id=5352-create-table-incidents>5.3.5.2 Create Table Incidents</h4><p><strong>Step 1: Tren AWS Console, thanh tim kiem go DynamoDB → click DynamoDB</strong>
+<strong>Step 2: Click Create table</strong>
+<strong>Step 3: Dien thong tin co ban:</strong>
+Table name: irms-incidents
+Partition key: incidentId Type: String
+Sort key: (de trong)
+<strong>Step 4: Table settings → select Customize settings</strong>
+<strong>Step 5: Table class: DynamoDB Standard</strong>
+<strong>Step 6: Read/write capacity settings:</strong>
+Capacity mode: On-demand
+Select On-demand vi demo not has traffic on dinh, chi tra phi theo luot request thuc te — tranh bi tinh phi khi bang not dung.
+<strong>Step 7: Encryption: Owned by Amazon DynamoDB (mac dinh, du for demo)</strong>
+<strong>Step 8: Click Create table, cho khoang 30 giay to khi Status chuyen sang Active</strong></p><h4 id=5353-create-the-gsi-for-the-incidents-table>5.3.5.3 Create the GSI for the Incidents Table</h4><p>after khi bang Active, create Global Secondary Index de query nhanh theo status and assignedTo:
+<strong>Step 1: Click vao bang irms-incidents → tab Indexes → click Create index</strong>
+Create GSI 1 — query theo status:
+Partition key: status Type: String
+Sort key: createdAt Type: String
+Index name: status-index
+Projected attributes: All
+Click Create index → cho Status chuyen sang Active
+Create GSI 2 — query theo nguoi is phan cong:
+Click Create index lan nua:
+Partition key: assignedTo Type: String
+Sort key: createdAt Type: String
+Index name: assignedTo-index
+Projected attributes: All
+Click Create index → cho Active</p><h4 id=5354-create-table-timeline>5.3.5.4 Create Table Timeline</h4><p><strong>Step 1: Click Create table</strong>
+<strong>Step 2:</strong>
+Table name: irms-timeline
+Partition key: incidentId Type: String
+Sort key: timestamp Type: String
+Sort key is timestamp vi in 1 incident has nhieu moc thoi gian, sort key giup automatic sap xep theo thu tu thoi gian.
+<strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Step 4: Click Create table → cho Active</strong></p><h4 id=5355-create-table-evidencemetadata>5.3.5.5 Create Table EvidenceMetadata</h4><p><strong>Step 1: Click Create table</strong>
+<strong>Step 2:</strong>
+Table name: irms-evidence-metadata
+Partition key: evidenceId Type: String
+Sort key: (de trong)
+<strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Step 4: Click Create table → cho Active</strong>
+<strong>Step 5: Create GSI de query evidence theo incidentId:</strong>
+Tab Indexes → Create index:
+Partition key: incidentId Type: String
+Sort key: uploadedAt Type: String
+Index name: incidentId-index
+Projected attributes: All
+Click Create index → cho Active</p><h4 id=5356-create-table-users>5.3.5.6 Create Table Users</h4><p><strong>Step 1: Click Create table</strong>
+<strong>Step 2:</strong>
+Table name: irms-users
+Partition key: email Type: String
+Sort key: (de trong)
+<strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Step 4: Click Create table → cho Active</strong></p><h4 id=5357-add-sample-data-for-testing>5.3.5.7 Add Sample Data for Testing</h4><p>after khi create du 4 bang, them vai record mau vao bang Incidents de test Lambda after nay:
+<strong>Step 1: Click vao bang irms-incidents → tab Explore items → click Create item</strong>
+<strong>Step 2: Select JSON view, paste noi dung after:</strong>
+{
+&ldquo;incidentId&rdquo;: { &ldquo;S&rdquo;: &ldquo;INC-001&rdquo; },
+&ldquo;title&rdquo;: { &ldquo;S&rdquo;: &ldquo;Public S3 Bucket Detected&rdquo; },
+&ldquo;severity&rdquo;: { &ldquo;S&rdquo;: &ldquo;Critical&rdquo; },
+&ldquo;status&rdquo;: { &ldquo;S&rdquo;: &ldquo;Open&rdquo; },
+&ldquo;description&rdquo;: { &ldquo;S&rdquo;: &ldquo;S3 bucket company-data dang bi public access, has the lo data khach hang&rdquo; },
+&ldquo;assignedTo&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:analyst@irms-demo.com>analyst@irms-demo.com</a>&rdquo; },
+&ldquo;createdBy&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:admin@irms-demo.com>admin@irms-demo.com</a>&rdquo; },
+&ldquo;createdAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; },
+&ldquo;updatedAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; }
+}
+Click Create item
+<strong>Step 3: Create them record thu 2:</strong>
+{
+&ldquo;incidentId&rdquo;: &ldquo;INC-002&rdquo;,
+&ldquo;title&rdquo;: &ldquo;SSH Brute Force Attack&rdquo;,
+&ldquo;severity&rdquo;: &ldquo;High&rdquo;,
+&ldquo;status&rdquo;: &ldquo;Investigating&rdquo;,
+&ldquo;description&rdquo;: &ldquo;Phat hien 500 lan dang enter SSH that bai from IP 203.0.113.42 in 10 phut&rdquo;,
+&ldquo;assignedTo&rdquo;: &ldquo;<a href=mailto:analyst@irms-demo.com>analyst@irms-demo.com</a>&rdquo;,
+&ldquo;createdBy&rdquo;: &ldquo;<a href=mailto:manager@irms-demo.com>manager@irms-demo.com</a>&rdquo;,
+&ldquo;createdAt&rdquo;: &ldquo;2026-06-02T10:30:00Z&rdquo;,
+&ldquo;updatedAt&rdquo;: &ldquo;2026-06-02T11:00:00Z&rdquo;
+}
+Click Create item</p><h4 id=5358-verify-from-the-console>5.3.5.8 Verify from the Console</h4><p><strong>Step 1: Click vao bang irms-incidents → tab Explore items</strong>
+<strong>Step 2: Thay 2 record INC-001 and INC-002 → ✅</strong>
+<strong>Step 3: Test query theo GSI:</strong></p><ul><li>Click Scan/Query → select Query</li><li>Index: select status-index</li><li>Partition key value: Open</li><li>Click Run</li><li>Results phai tra ve INC-001 → ✅ GSI hoat dong dung</li></ul><h4 id=5359-hybrid-deployment-with-aws-sam>5.3.5.9 Hybrid Deployment with AWS SAM</h4><p>in workshop nay, the bang Amazon DynamoDB is create thu cong with AWS Console o the step before nham giup nguoi learn hieu ro cach thiet ke schema, Partition Key, Sort Key and Global Secondary Index (GSI).
+after khi complete phan thuc hanh with Console, du an IRMS chuyen sang mo hinh Hybrid Deployment.
+O mo hinh nay:</p><ul><li>Amazon Cognito and Amazon DynamoDB is giu nguyen from the step cau hinh with Console.</li><li>AWS SAM se chi trien khai the thanh phan con lai of system nhu:</li><li>Amazon API Gateway</li><li>AWS Lambda</li><li>Amazon S3</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+Dieu nay giup:</li><li>Tranh create trung the bang DynamoDB.</li><li>Dam bao data mau da create o 5 van is giu nguyen.</li><li>Giup nguoi learn vua hieu cach cau hinh thu cong, vua lam quen with Infrastructure as Code (IaC) with AWS SAM.
+the bang DynamoDB is SAM su dung
+Thay vi create moi, template AWS SAM se tham chieu truc tiep to the bang da ton tai:</li></ul><table><thead><tr><th style=text-align:left>Table</th><th style=text-align:left>Purpose</th></tr></thead><tbody><tr><td style=text-align:left>irms-incidents</td><td style=text-align:left>Luu thong tin Incident</td></tr><tr><td style=text-align:left>irms-timeline</td><td style=text-align:left>Luu Timeline xu ly</td></tr><tr><td style=text-align:left>irms-evidence-metadata</td><td style=text-align:left>Luu metadata Evidence</td></tr><tr><td style=text-align:left>irms-users</td><td style=text-align:left>Luu thong tin user</td></tr></tbody></table><p>Ten the bang se is truyen vao Lambda thong qua SAM Parameters and Environment Variables, vi vay not can create lai with CloudFormation.
+File template su dung
+in repository IRMS Source Code, toan bo ha tang is management boi:
+infrastructure/template.yaml
+Template nay da is cau hinh theo mo hinh Hybrid Deployment, bao gom:</p><ul><li>Su dung Amazon Cognito User Pool da create san.</li><li>Su dung the DynamoDB Tables da create o 5.</li><li>Create moi:</li><li>Amazon API Gateway</li><li>AWS Lambda Functions</li><li>Amazon S3 Buckets</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+Verify Configuration
+has the verify template before khi trien khai with lenh:
+sam validate ^
+&ndash;template-file infrastructure/template.yaml ^
+&ndash;region ap-southeast-1
+Expected result:
+Template provided at &lsquo;infrastructure/template.yaml&rsquo; was successfully validated.</li></ul><h4 id=53510-checklist-5>5.3.5.10 Checklist 5</h4><ul><li>✅ Da create thanh cong 4 bang DynamoDB:</li><li>irms-incidents</li><li>irms-timeline</li><li>irms-evidence-metadata</li><li>irms-users</li><li>✅ Hai Global Secondary Index of bang irms-incidents hoat dong:</li><li>status-index</li><li>assignedTo-index</li><li>✅ Global Secondary Index of bang irms-evidence-metadata hoat dong:</li><li>incidentId-index</li><li>✅ Da them 2 ban ghi mau (INC-001, INC-002) vao bang irms-incidents.</li><li>✅ Da verify truy van thong qua status-index tra ve dung ket qua.</li><li>✅ Da authentication (sam validate) thanh cong Hybrid SAM Template for giai doan trien khai tiep theo.</li></ul><h3 id=536-setup-s3--storage>5.3.6 Setup S3 & Storage</h3><h4 id=5361-storage-design>5.3.6.1 Storage Design</h4><p>IRMS su dung 2 S3 bucket with muc dich hoan toan khac nhau:
+irms-frontend-031577240048-ap-southeast-1 → luu React SPA (public qua CloudFront)
+irms-evidence-031577240048-ap-southeast-1 → luu file evidence (private, chi Lambda truy cap)
+Ly do them Account ID and Region vao ten bucket: S3 bucket name is unique toan cau — dung Account ID + Region dam bao ten luon doc nhat, tranh conflict with nguoi khac.
+So sanh 2 bucket:</p><table><thead><tr><th style=text-align:left></th><th style=text-align:left>irms-frontend-&mldr;</th><th style=text-align:left>irms-evidence-&mldr;</th></tr></thead><tbody><tr><td style=text-align:left>Public access</td><td style=text-align:left>Block (chi CloudFront is doc)</td><td style=text-align:left>Block hoan toan</td></tr><tr><td style=text-align:left>Ai truy cap</td><td style=text-align:left>CloudFront</td><td style=text-align:left>Lambda function</td></tr><tr><td style=text-align:left>Luu gi</td><td style=text-align:left>HTML, CSS, JS, assets</td><td style=text-align:left>Screenshot, log, PCAP, PDF report</td></tr><tr><td style=text-align:left>Versioning</td><td style=text-align:left>not can</td><td style=text-align:left>Bat (bao ve evidence)</td></tr><tr><td style=text-align:left>CORS</td><td style=text-align:left>not can</td><td style=text-align:left>Can (presigned URL upload from browser)</td></tr></tbody></table><h4 id=5362-evidence-upload-flow>5.3.6.2 Evidence Upload Flow</h4><p>Can hieu luong upload file evidence de hieu tai sao Evidence bucket can CORS:
+Browser Lambda S3
+│ │ │
+│──POST /evidence──────►│ │
+│ (filename, type) │ │
+│ │──GeneratePresignedURL─►│
+│ │◄──presignedUrl─────────│
+│◄──presignedUrl────────│ │
+│ │ │
+│──PUT presignedUrl──────────────────────────────►│
+│ (file binary) │ file saved
+│◄──200 OK──────────────────────────────────────│
+│ │ │
+│──POST /evidence/{id} ►│ │
+│ (evidenceId) │──PutItem──────────────►DynamoDB
+│◄──200 OK──────────────│
+Uu diem of Presigned URL: File upload thang from browser len S3, not di qua Lambda — tranh gioi han 6MB payload of Lambda and tiet kiem bandwidth.</p><h4 id=5363-verify-configuration-s3-in-templateyaml>5.3.6.3 Verify Configuration S3 in template.yaml</h4><p>Template da has san in repo — nay chi doc hieu cau hinh, not them resource moi.
+Open file infrastructure/template.yaml, tim phan S3 and doc tung thuoc tinh:
+Frontend Bucket:
+FrontendBucket:
+Type: AWS::S3::Bucket
+Properties:
+BucketName: !Ref FrontendBucketName
+<code># Block toan bo public access</code>
+<code># CloudFront se truy cap qua OAC (setup o phan after)</code>
+PublicAccessBlockConfiguration:
+BlockPublicAcls: true
+BlockPublicPolicy: true
+IgnorePublicAcls: true
+RestrictPublicBuckets: true
+Nhung diem can luu y:</p><ul><li>BlockPublicAcls: true → not ai is set ACL public for object</li><li>BlockPublicPolicy: true → not ai is create bucket policy for phep public</li><li>not has WebsiteConfiguration vi frontend phan phoi qua CloudFront, not phai S3 static website hosting truc tiep
+Evidence Bucket:
+EvidenceBucket:
+Type: AWS::S3::Bucket
+Properties:
+BucketName: !Ref EvidenceBucketName
+PublicAccessBlockConfiguration:
+BlockPublicAcls: true
+BlockPublicPolicy: true
+IgnorePublicAcls: true
+RestrictPublicBuckets: true
+<code># Versioning ON: bao ve evidence khoi bi delete/ghi de</code>
+VersioningConfiguration:
+Status: Enabled
+<code># CORS: for phep browser PUT file qua Presigned URL</code>
+CorsConfiguration:
+CorsRules:</li><li>AllowedHeaders:</li><li>&ldquo;*&rdquo;
+AllowedMethods:</li><li>PUT</li><li>GET
+AllowedOrigins:</li><li>&ldquo;*&rdquo;
+MaxAge: 3600
+Nhung diem can luu y:</li><li>VersioningConfiguration: Enabled → moi lan upload file cung ten se create version moi, not ghi de — quan trong with evidence phap ly</li><li>CorsRules for phep PUT from AllowedOrigins: &ldquo;*&rdquo; → browser has the upload thang qua Presigned URL</li><li>MaxAge: 3600 → browser cache CORS preflight response 1 tieng, giam so lan OPTIONS request</li></ul><h4 id=5364-verify-parameters-in-templateyaml>5.3.6.4 Verify Parameters in template.yaml</h4><p>Tim phan Parameters, xac nhan has du 2 bucket name and the gia tri default dung:
+Parameters:</p><p><code># ── S3 ──────────────────────────────────────────────────────</code>
+FrontendBucketName:
+Type: String
+Default: irms-frontend-031577240048-ap-southeast-1</p><p>EvidenceBucketName:
+Type: String
+Default: irms-evidence-031577240048-ap-southeast-1
+if thay dung 2 ten nay → ✅ tiep tuc.</p><h4 id=5365-verify-environment-variables-lambda-in-templateyaml>5.3.6.5 Verify Environment Variables Lambda in template.yaml</h4><p>Lambda can biet ten Evidence bucket de create Presigned URL. Tim phan Globals xac nhan has:
+Globals:
+Function:
+Environment:
+Variables:
+EVIDENCE_BUCKET: !Ref EvidenceBucketName
+or tung Lambda Upload Evidence has rieng:
+UploadEvidenceFunction:
+Type: AWS::Serverless::Function
+Properties:
+Environment:
+Variables:
+EVIDENCE_BUCKET: !Ref EvidenceBucketName</p><h4 id=5366-verify-samconfigtoml>5.3.6.6 Verify samconfig.toml</h4><p>Open file infrastructure/samconfig.toml, xac nhan dung cau hinh:
+version = 0.1</p><p>[default.deploy.parameters]
+stack_name = &ldquo;irms-dev&rdquo;
+region = &ldquo;ap-southeast-1&rdquo;
+confirm_changeset = false
+capabilities = &ldquo;CAPABILITY_IAM CAPABILITY_NAMED_IAM&rdquo;
+profile = &ldquo;irms-shared&rdquo;</p><p>parameter_overrides = [
+&ldquo;Environment=dev&rdquo;,
+&ldquo;UserPoolId=ap-southeast-1_XXXXXXXXX&rdquo;,
+&ldquo;UserPoolClientId=XXXXXXXXXXXXXXXXXXXXXXXXXX&rdquo;,
+&ldquo;UserPoolArn=arn:aws:cognito-idp:ap-southeast-1:031577240048:userpool/ap-southeast-1_XXXXXXXXX&rdquo;,
+&ldquo;IncidentsTableName=irms-incidents&rdquo;,
+&ldquo;TimelineTableName=irms-timeline&rdquo;,
+&ldquo;EvidenceMetadataTableName=irms-evidence-metadata&rdquo;,
+&ldquo;UsersTableName=irms-users&rdquo;,
+&ldquo;FrontendBucketName=irms-frontend-031577240048-ap-southeast-1&rdquo;,
+&ldquo;EvidenceBucketName=irms-evidence-031577240048-ap-southeast-1&rdquo;
+]
+Thay the gia tri XXXXXXXXX with gia tri that da luu o 3.</p><h4 id=5367-validate-template>5.3.6.7 Validate Template</h4><p>after khi xac nhan du the muc tren, chay lenh validate de verify template not has loi cu phap:
+Open Terminal, di chuyen vao thu muc root of repo:
+cd irms
+Chay validate:
+sam validate ^
+&ndash;template-file infrastructure/template.yaml ^
+&ndash;region ap-southeast-1
+Expected result:
+Template provided at &lsquo;infrastructure/template.yaml&rsquo; was successfully validated.</p><p>Xu ly loi thuong gap:
+if thay:
+Error: Template format error: YAML not well-formed
+→ Loi cu phap YAML, thuong do indent sai. Open template.yaml verify lai dong is chi ra in notification loi. Moi cap indent phai is 2 spaces, not dung tab.
+if thay:
+Error: [InvalidResourceException] Resource &lsquo;XYZ&rsquo; not found
+→ a resource dang tham chieu to resource chua has in template. Binh thuong if is tham chieu CloudFront/WAF (se them o after), can hoi lai team.</p><h4 id=5369-checklist-6>5.3.6.9 Checklist 6</h4><ul><li>✅ Hieu ro muc dich 2 bucket:
+irms-frontend-031577240048-ap-southeast-1 → React SPA, qua CloudFront
+irms-evidence-031577240048-ap-southeast-1 → file evidence, qua Lambda</li><li>✅ Hieu luong Presigned URL (Browser → Lambda lay URL → PUT thang len S3)</li><li>✅ Doc hieu cau hinh FrontendBucket in template.yaml:
+BlockPublicAcls, BlockPublicPolicy = true</li><li>✅ Doc hieu cau hinh EvidenceBucket in template.yaml:
+Versioning ON, CORS for PUT</li><li>✅ Xac nhan Parameters FrontendBucketName and EvidenceBucketName dung ten</li><li>✅ Xac nhan EVIDENCE_BUCKET has in Environment Variables of Lambda</li><li>✅ Xac nhan samconfig.toml dung stack_name = &ldquo;irms-dev&rdquo;</li><li>✅ sam validate chay thanh cong</li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=https://dantruong209.github.io/Internship-Report/5-workshop/5.2-environment-setup/ title="Environment Setup"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=https://dantruong209.github.io/Internship-Report/5-workshop/5.4-application-development/ title="Application Development" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=https://dantruong209.github.io/Internship-Report/js/clipboard.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.jquery.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/jquery.sticky.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/featherlight.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/highlight.pack.js?1784897816></script><script>hljs.initHighlightingOnLoad()</script><script src=https://dantruong209.github.io/Internship-Report/js/modernizr.custom-3.6.0.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/learn.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/hugo-learn.js?1784897816></script><link href=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.js?1784897816></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>

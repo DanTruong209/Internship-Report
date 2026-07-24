@@ -1,0 +1,512 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content="Internship Report - First Cloud AI Journey"><meta name=author content="nguyendantruong12a9@gmail.com"><link rel=icon href=https://dantruong209.github.io/Internship-Report/images/favicon.png type=image/png><title>Cấu hình hạ tầng :: Báo cáo thực tập</title>
+<link href=https://dantruong209.github.io/Internship-Report/css/nucleus.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/fontawesome-all.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hybrid.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/featherlight.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/perfect-scrollbar.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/auto-complete.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/atom-one-dark-reasonable.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hugo-theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme-workshop.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/js/jquery-3.3.1.min.js?1784897816></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=https://dantruong209.github.io/Internship-Report/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/lunr.min.js?1784897816></script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/auto-complete.js?1784897816></script><script type=text/javascript>var baseurl="https://dantruong209.github.io/Internship-Report//vi"</script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/search.js?1784897816></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký thực tập" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/><b>1. </b>Nhật ký thực tập
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Đề xuất" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/2-proposal/><b>2. </b>Đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/ title="Các bài blogs đã dịch" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/><b>3. </b>Các bài blogs đã dịch
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogsposted/3.1-blog1/ title="Shift-left Security với Amazon Bedrock" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.1-blog1/><b>3.1. </b>Shift-left Security với Amazon Bedrock
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/3.2-blog2/ title="Amazon RDS + AI + MCP" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.2-blog2/><b>3.2. </b>Amazon RDS + AI + MCP
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-introduction/ title="Giới thiệu" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.1-introduction/><b>5.1. </b>Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-environment-setup/ title="Chuẩn bị môi trường" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.2-environment-setup/><b>5.2. </b>Chuẩn bị môi trường
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-infrastructure-configuration/ title="Cấu hình hạ tầng" class="dd-item
+active"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/><b>5.3. </b>Cấu hình hạ tầng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-application-development/ title="Phát triển ứng dụng" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/><b>5.4. </b>Phát triển ứng dụng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.5-deployment-and-testing/ title="Triển khai và kiểm thử" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/><b>5.5. </b>Triển khai và kiểm thử
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-frontend-integration-web-deployment/ title="Tích hợp frontend và triển khai web" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.6-frontend-integration-web-deployment/><b>5.6. </b>Tích hợp frontend và triển khai web
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-project-demo-and-testing/ title="Demo và kiểm thử dự án" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.7-project-demo-and-testing/><b>5.7. </b>Demo và kiểm thử dự án
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/ title="Kết quả, chi phí và dọn dẹp" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/><b>5.8. </b>Kết quả, chi phí và dọn dẹp
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://dantruong209.github.io/Internship-Report/5-workshop/5.3-infrastructure-configuration/>English</option><option id=vi value=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>24-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title='Edit this page' href=https://github.com/DanTruong209/Internship-Report/edit/main/5-Workshop/5.3-Infrastructure-Configuration/_index.vi.md target=blank><i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=https://dantruong209.github.io/Internship-Report/vi/>Báo cáo thực tập</a> > <a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/>Workshop</a> > Cấu hình hạ tầng</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#53-cấu-hình-hạ-tầng>5.3. Cấu hình hạ tầng</a><ul><li></li><li><a href=#533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</a></li><li><a href=#534-setup-api-gateway>5.3.4 Setup API Gateway</a></li><li><a href=#535-setup-dynamodb>5.3.5 Setup DynamoDB</a></li><li><a href=#536-setup-s3--storage>5.3.6 Setup S3 & Storage</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Cấu hình hạ tầng</h1><h2 id=53-cấu-hình-hạ-tầng>5.3. Cấu hình hạ tầng</h2><h4 id=nội-dung>Nội dung</h4><ul><li>5.3.3 Setup Authentication</li><li>5.3.4 Setup API Gateway</li><li>5.3.5 Setup DynamoDB</li><li>5.3.6 Setup S3 & Storage</li></ul><h3 id=533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</h3><h4 id=5331-chuẩn-bị-trước-khi-bắt-đầu>5.3.3.1 Chuẩn bị trước khi bắt đầu</h4><p>Mở sẵn 2 thứ này trước:
+Thứ 1 — AWS Console trên trình duyệt:</p><ul><li>Mở trình duyệt (Chrome/Edge), vào địa chỉ: <a href=https://console.aws.amazon.com>https://console.aws.amazon.com</a></li><li>Đăng nhập bằng IAM User của bạn</li><li>Góc trên bên phải, kiểm tra region đang chọn — phải là Asia Pacific (Singapore) ap-southeast-1. Nếu không đúng, click vào tên region → chọn Asia Pacific (Singapore)
+Thứ 2 — Terminal trên máy tính:
+Windows: Nhấn phím Windows → gõ PowerShell → Enter. Hoặc mở Git Bash nếu đã cài Git.
+Mac: Nhấn Cmd + Space → gõ Terminal → Enter.
+Cấu hình AWS CLI
+-Tạo accesskey
+-Tạo profile, sau đó nhâp accsess key và secret key
+Kiểm tra AWS CLI đã cấu hình đúng chưa bằng lệnh:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws sts get-caller-identity --profile irms-shared
+</span></span></code></pre></div><p><img alt="Setup Authentication 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-001.png>
+Kết quả mong đợi (thấy Account ID và UserId là đúng):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;UserId&#34;</span>: <span style=color:#e6db74>&#34;AIDXXXXXXXXXXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Account&#34;</span>: <span style=color:#e6db74>&#34;123456789012&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Arn&#34;</span>: <span style=color:#e6db74>&#34;arn:aws:iam::123456789012:user/your-username&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=5332-tạo-cognito-user-pool-trên-aws-console>5.3.3.2 Tạo Cognito User Pool (trên AWS Console)</h4><p><strong>Bước 1: Trên AWS Console, thanh tìm kiếm phía trên gõ Cognito → click Amazon Cognito</strong>
+<strong>Bước 2: Click nút Create user pool (góc trên bên phải)</strong>
+<strong>Bước 3: Trang Configure sign-in experience:</strong></p><ul><li>Authentication providers: chọn Cognito user pool</li><li>Cognito user pool sign-in options: tích ✅ vào Email</li><li>Click Next
+<strong>Bước 4: Trang Configure security requirements:</strong></li><li>Password policy mode: chọn Custom</li><li>Minimum length: 8</li><li>Tích ✅: Contains at least 1 uppercase, 1 lowercase, 1 number, 1 special character</li><li>Multi-factor authentication: chọn No MFA (demo không cần)</li><li>Click Next
+<strong>Bước 5: Trang Configure sign-up experience:</strong></li><li>Giữ mặc định tất cả</li><li>Click Next
+<strong>Bước 6: Trang Configure message delivery:</strong></li><li>Email provider: chọn Send email with Cognito (miễn phí, đủ dùng cho demo)</li><li>Click Next
+<strong>Bước 7: Trang Integrate your app:</strong></li><li>User pool name: irms-user-pool</li><li>App client name: irms-web-client</li><li>Client secret: chọn Don&rsquo;t generate a client secret</li><li>Click Next
+<strong>Bước 8: Trang Review and create:</strong></li><li>Kéo xuống xem lại toàn bộ</li><li>Click Create user pool
+<strong>Bước 9: Sau khi tạo xong, trang hiện ra User Pool mới. Lưu lại 2 giá trị này vào file notepad/txt trên máy:</strong>
+User Pool ID: ap-southeast-1_XXXXXXXXX ← thấy ở tab &ldquo;Overview&rdquo;
+Client ID: XXXXXXXXXXXXXXXXXXXXXXXXXX ← vào tab &ldquo;App clients&rdquo; để xem
+2 giá trị này sẽ dùng nhiều lần ở các bước sau, lưu lại cẩn thận.</li></ul><h4 id=5333-tạo-4-groups-rbac>5.3.3.3 Tạo 4 Groups (RBAC)</h4><p>Vẫn ở trang Cognito User Pool vừa tạo:
+<strong>Bước 1: Click tab Groups → Click Create group</strong>
+<strong>Bước 2: Tạo Group 1:</strong>
+Group name: Admin
+Description: Toàn quyền hệ thống
+Precedence: 1
+Click Create group
+<strong>Bước 3: Lặp lại, tạo thêm 3 group:</strong>
+Group name: SecurityManager
+Description: Xem tất cả Incident, phân công, xem báo cáo
+Precedence: 2</p><p>Group name: SecurityAnalyst
+Description: Điều tra, upload bằng chứng, cập nhật trạng thái
+Precedence: 3</p><p>Group name: Auditor
+Description: Chỉ xem, không chỉnh sửa
+Precedence: 4
+Sau khi xong, tab Groups phải hiện đủ 4 group như sau:
+Admin (Precedence: 1)
+SecurityManager (Precedence: 2)
+SecurityAnalyst (Precedence: 3)
+Auditor (Precedence: 4)
+<img alt="Setup Authentication 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-002.png></p><h4 id=5334-tạo-user-test>5.3.3.4 Tạo User test</h4><p>Vẫn ở trang User Pool, click tab Users → Create user:
+User 1 (Admin):
+Invitation message: Don&rsquo;t send an invitation
+Email address: <a href=mailto:admin@example.com>admin@example.com</a>
+Email address verified: tích ✅
+Temporary password: chọn &ldquo;Set a password&rdquo;
+Password: YOUR_TEMP_PASSWORD
+User must create a new password: bỏ tích ✅
+Click Create user → click vào user vừa tạo → Add user to group → chọn Admin
+<img alt="Setup Authentication 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-003.png>
+Lặp lại tương tự cho 3 user còn lại, gắn vào đúng group:
+<a href=mailto:manager@example.com>manager@example.com</a> → group SecurityManager → pass: YOUR_TEMP_PASSWORD
+<a href=mailto:analyst@example.com>analyst@example.com</a> → group SecurityAnalyst → pass: YOUR_TEMP_PASSWORD
+<a href=mailto:auditor@example.com>auditor@example.com</a> → group Auditor → pass: YOUR_TEMP_PASSWORD
+<img alt="Setup Authentication 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-004.png></p><h4 id=5335-verify-bằng-terminal>5.3.3.5 Verify bằng Terminal</h4><p>Mở Terminal trên máy, chạy lệnh sau (thay YOUR_CLIENT_ID bằng Client ID đã lưu ở bước 3.2):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws cognito-idp initiate-auth <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--auth-flow USER_PASSWORD_AUTH <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--auth-parameters USERNAME<span style=color:#f92672>=</span>analyst@example.com,PASSWORD<span style=color:#f92672>=</span>YOUR_TEMP_PASSWORD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--client-id YOUR_CLIENT_ID <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--region ap-southeast-1 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--profile irms-shared
+</span></span><span style=display:flex><span>Kết quả mong đợi — thấy <span style=color:#ae81ff>3</span> token là thành công:
+</span></span></code></pre></div><p>json
+{
+&ldquo;AuthenticationResult&rdquo;: {
+&ldquo;AccessToken&rdquo;: &ldquo;eyJraWQiOi&mldr;&rdquo;,
+&ldquo;IdToken&rdquo;: &ldquo;eyJraWQiOi&mldr;&rdquo;,
+&ldquo;RefreshToken&rdquo;: &ldquo;eyJjdHki&mldr;&rdquo;,
+&ldquo;ExpiresIn&rdquo;: 3600,
+&ldquo;TokenType&rdquo;: &ldquo;Bearer&rdquo;
+}
+}
+<img alt="Setup Authentication 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-005.png>
+<img alt="Setup Authentication 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-006.png>
+<img alt="Setup Authentication 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-007.png>
+Nếu thấy lỗi NotAuthorizedException → kiểm tra lại password hoặc email.
+Nếu thấy lỗi UserNotFoundException → kiểm tra lại email đã tạo đúng chưa.
+Kiểm tra JWT token:</p><ul><li>Copy toàn bộ chuỗi IdToken (dài, bắt đầu bằng eyJ&mldr;)</li><li>Mở trình duyệt, vào <a href=https://jwt.io>https://jwt.io</a></li><li>Paste vào ô Encoded bên trái</li><li>Bên phải mục Payload phải thấy:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;analyst@example.com&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;cognito:groups&#34;</span>: [<span style=color:#e6db74>&#34;SecurityAnalyst&#34;</span>],
+</span></span></code></pre></div><p>&mldr;
+}
+Thấy đúng 2 field trên → Cognito hoàn thành.
+<img alt="Setup Authentication 8" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-03-008.png>
+Nhận xét này rất chính xác — tất cả 8 điểm đều đúng. Tớ viết lại 4 theo đúng hướng đó:</p><h3 id=534-setup-api-gateway>5.3.4 Setup API Gateway</h3><p>Lưu ý về cách tiếp cận: này chỉ dùng Console để hiểu cơ chế Cognito Authorizer và test JWT token. Toàn bộ API routes thật (/incidents, /evidence, /reports, /ai) sẽ do SAM tự sinh ở 7 khi deploy Lambda — không tạo tay ở đây để tránh conflict.</p><h4 id=5341-tạo-rest-api>5.3.4.1 Tạo REST API</h4><p><strong>Bước 1: Trên AWS Console, thanh tìm kiếm gõ API Gateway → click API Gateway</strong>
+<strong>Bước 2: Click Create API</strong>
+<img alt="Setup API Gateway 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-001.png>
+<strong>Bước 3: Trang chọn loại API:</strong></p><ul><li>Chọn REST API (không phải REST API Private, không phải HTTP API)</li><li>Click Build
+<img alt="Setup API Gateway 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-002.png>
+<strong>Bước 4: Điền thông tin:</strong>
+API details: New API
+API name: irms-api-learning
+Description: Dùng để học Authorizer, sẽ xóa sau khi sang 7
+API endpoint type: Regional
+Click Create API
+<img alt="Setup API Gateway 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-003.png>
+⚠️ API này đặt tên irms-api-learning để phân biệt với API thật do SAM tạo sau. Sau khi test xong Authorizer ở này, API này có thể xóa đi — không ảnh hưởng gì đến hệ thống.</li></ul><h4 id=5342-tạo-cognito-authorizer>5.3.4.2 Tạo Cognito Authorizer</h4><p><strong>Bước 1: Menu bên trái → click Authorizers → click Create authorizer</strong>
+<strong>Bước 2: Điền thông tin:</strong>
+Authorizer name: irms-cognito-authorizer
+Authorizer type: Cognito
+Cognito user pool: chọn &ldquo;irms-user-pool&rdquo;
+Token source: Authorization
+Token validation: (để trống)
+Click Create authorizer
+<img alt="Setup API Gateway 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-004.png>
+<img alt="Setup API Gateway 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-005.png></p><h4 id=5343-tạo-2-routes-test>5.3.4.3 Tạo 2 routes test</h4><p>Vào Resources ở menu bên trái. Mục tiêu tạo 2 route để test rõ ràng:
+GET /ping → không có Authorizer → luôn trả 200
+GET /ping-auth → có Authorizer → 401 nếu không có token, 200 nếu có token
+Tạo /ping (không có Authorizer):
+<strong>Bước 1: Click vào / (root) → click Create resource</strong>
+Resource name: ping
+Resource path: /ping
+CORS: KHÔNG tích (để SAM quản lý sau)
+Click Create resource
+<strong>Bước 2: Click vào /ping → click Create method</strong>
+Method type: GET
+Integration type: Mock
+<img alt="Setup API Gateway 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-006.png>
+Click Create method
+<img alt="Setup API Gateway 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-007.png>
+<strong>Bước 3: Vào Integration Response → Mapping Templates → thêm template:</strong>
+Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+Click Save
+<strong>Bước 4: Xác nhận /ping không gắn Authorizer:</strong></p><ul><li>Click method GET</li><li>Tab Method request → Authorization: phải là NONE</li></ul><p>Tạo /ping-auth (có Authorizer):
+<strong>Bước 1: Click vào / (root) → click Create resource</strong>
+Resource name: ping-auth
+Resource path: /ping-auth
+CORS: KHÔNG tích
+Click Create resource
+<strong>Bước 2: Click vào /ping-auth → click Create method</strong>
+Method type: GET
+Integration type: Mock
+Click Create method
+<img alt="Setup API Gateway 8" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-008.png>
+<strong>Bước 3: Vào Integration Response → Mapping Templates → thêm template:</strong>
+Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+Click Save
+<img alt="Setup API Gateway 9" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-009.png>
+<strong>Bước 4: Gắn Authorizer vào /ping-auth:</strong></p><ul><li>Click method GET của /ping-auth</li><li>Tab Method request → Authorization → click Edit</li><li>Chọn irms-cognito-authorizer</li><li>Click Save để lưu</li></ul><h4 id=5344-deploy-stage-dev>5.3.4.4 Deploy stage dev</h4><p><strong>Bước 1: Click Deploy API (góc trên bên phải)</strong>
+<strong>Bước 2: Cửa sổ Deploy API:</strong>
+Stage: <em>New stage</em>
+Stage name: dev
+Click Deploy
+<img alt="Setup API Gateway 10" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-010.png>
+<img alt="Setup API Gateway 11" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-011.png>
+<strong>Bước 3: Trang Stage Editor hiện ra → lưu Invoke URL:</strong>
+Invoke URL: <a href=https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev>https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev</a>
+⚠️ URL này chỉ dùng để test Authorizer trong 4. URL thật của hệ thống sẽ do SAM tạo ở 7 và có giá trị khác — lúc đó dùng URL của SAM, bỏ URL này đi.</p><h4 id=5345-test-bằng-postman>5.3.4.5 Test bằng Postman</h4><p>Cài Postman nếu chưa có:</p><ul><li>Vào <a href=https://www.postman.com/downloads/>https://www.postman.com/downloads/</a></li><li>Download → cài đặt → mở lên → chọn Skip (không cần tạo account)
+Lấy JWT token từ Cognito:
+Mở Terminal (Windows: PowerShell hoặc Git Bash / Mac: Terminal), chạy lệnh sau (thay YOUR_CLIENT_ID bằng Client ID đã lưu ở 3):
+aws cognito-idp initiate-auth<br>&ndash;auth-flow USER_PASSWORD_AUTH<br>&ndash;auth-parameters <a href="mailto:USERNAME=analyst@example.com">USERNAME=analyst@example.com</a>,PASSWORD=YOUR_PASSWORD<br>&ndash;client-id YOUR_CLIENT_ID<br>&ndash;region ap-southeast-1<br>&ndash;profile irms-shared
+<img alt="Setup API Gateway 12" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-012.png>
+Copy toàn bộ chuỗi IdToken (bắt đầu bằng eyJ&mldr;) vào notepad.</li></ul><p>Test 1 — /ping không cần token:
+Mở Postman:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping</a></li><li>Không thêm gì ở Headers</li><li>Click Send
+Kết quả mong đợi:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+<img alt="Setup API Gateway 13" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-013.png>
+Status: 200 OK → ✅ API Gateway hoạt động</li></ul><p>Test 2 — /ping-auth không có token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>Không thêm gì ở Headers</li><li>Click Send
+Kết quả mong đợi:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img alt="Setup API Gateway 14" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-014.png>
+Status: 401 Unauthorized → ✅ Authorizer đang chặn đúng</li></ul><p>Test 3 — /ping-auth có token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>Tab Headers → thêm:
+Key: Authorization
+Value: Bearer &lt;eyJraWQiOi&mldr;> ← paste IdToken vào đây</li><li>Click Send
+Kết quả mong đợi:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+<img alt="Setup API Gateway 15" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-015.png>
+Status: 200 OK → ✅ Authorizer xác thực JWT thành công</li></ul><p>Test 4 — /ping-auth với token sai:</p><ul><li>Giữ nguyên setup Test 3 nhưng sửa token thành chuỗi bất kỳ:
+Authorization: Bearer thisisafaketoken</li><li>Click Send
+Kết quả mong đợi:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img alt="Setup API Gateway 16" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-04-016.png>
+Status: 401 Unauthorized → ✅ Authorizer từ chối token không hợp lệ</li></ul><h4 id=5346-checklist-4>5.3.4.6 Checklist 4</h4><p>Trước khi sang 5, xác nhận đủ các mục sau:</p><ul><li>✅ API Gateway (Regional) đã tạo tên irms-api-learning</li><li>✅ Cognito Authorizer đã tạo, trỏ đúng vào irms-user-pool</li><li>✅ GET /ping → Mock, không có Authorizer</li><li>✅ GET /ping-auth → Mock, có Cognito Authorizer</li><li>✅ Đã deploy stage dev</li><li>✅ Test Postman:
+/ping → 200 (không cần token)
+/ping-auth → 401 (không có token)
+/ping-auth → 200 (có token hợp lệ)
+/ping-auth → 401 (token sai)</li><li>✅ Đã lưu Invoke URL (chỉ dùng tạm cho này)</li></ul><h3 id=535-setup-dynamodb>5.3.5 Setup DynamoDB</h3><h4 id=5351-thiết-kế-schema-trước-khi-tạo>5.3.5.1 Thiết kế Schema trước khi tạo</h4><p>Trước khi vào Console, cần hiểu rõ cấu trúc dữ liệu. IRMS dùng 4 bảng:
+Incidents → lưu thông tin sự cố
+Timeline → lưu lịch sử từng bước xử lý
+EvidenceMetadata → lưu thông tin file bằng chứng
+Users → lưu thông tin người dùng
+Chi tiết từng bảng:
+Bảng Incidents:
+Partition key: incidentId (String)
+GSI 1: status-index → query theo trạng thái (Open/Investigating/Closed)
+GSI 2: assignedTo-index → query theo người được phân công
+Attributes:
+incidentId String &ldquo;INC-001&rdquo;
+title String &ldquo;SQL Injection Attack&rdquo;
+severity String &ldquo;Critical / High / Medium / Low&rdquo;
+status String &ldquo;Open / Investigating / Containment / Resolved / Closed&rdquo;
+description String mô tả chi tiết
+assignedTo String email người xử lý
+createdBy String email người tạo
+createdAt String ISO timestamp
+updatedAt String ISO timestamp</p><p>Bảng Timeline:
+Partition key: incidentId (String)
+Sort key: timestamp (String)
+Attributes:
+incidentId String
+timestamp String ISO timestamp
+action String &ldquo;Created / Assigned / Status Changed / Note Added&rdquo;
+description String mô tả hành động
+performedBy String email người thực hiện</p><p>Bảng EvidenceMetadata:
+Partition key: evidenceId (String)
+GSI 1: incidentId-index → query evidence theo incident
+Attributes:
+evidenceId String UUID
+incidentId String &ldquo;INC-001&rdquo;
+fileName String &ldquo;screenshot.png&rdquo;
+fileType String &ldquo;image/png&rdquo;
+s3Key String đường dẫn trong S3
+uploadedBy String email người upload
+uploadedAt String ISO timestamp
+fileSize Number bytes</p><p>Bảng Users:
+Partition key: email (String)
+Attributes:
+email String
+fullName String
+role String &ldquo;Admin / SecurityManager / SecurityAnalyst / Auditor&rdquo;
+createdAt String</p><h4 id=5352-tạo-bảng-incidents>5.3.5.2 Tạo bảng Incidents</h4><p><strong>Bước 1: Trên AWS Console, thanh tìm kiếm gõ DynamoDB → click DynamoDB</strong>
+<strong>Bước 2: Click Create table</strong>
+<strong>Bước 3: Điền thông tin cơ bản:</strong>
+Table name: irms-incidents
+Partition key: incidentId Type: String
+Sort key: (để trống)
+<img alt="Setup DynamoDB 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-001.png>
+<strong>Bước 4: Table settings → chọn Customize settings</strong>
+<strong>Bước 5: Table class: DynamoDB Standard</strong>
+<strong>Bước 6: Read/write capacity settings:</strong>
+Capacity mode: On-demand
+<img alt="Setup DynamoDB 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-002.png>
+Chọn On-demand vì demo không có traffic ổn định, chỉ trả phí theo lượt request thực tế — tránh bị tính phí khi bảng không dùng.
+<strong>Bước 7: Encryption: Owned by Amazon DynamoDB (mặc định, đủ cho demo)</strong>
+<img alt="Setup DynamoDB 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-003.png>
+<strong>Bước 8: Click Create table, chờ khoảng 30 giây đến khi Status chuyển sang Active</strong>
+<img alt="Setup DynamoDB 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-004.png></p><h4 id=5353-tạo-gsi-cho-bảng-incidents>5.3.5.3 Tạo GSI cho bảng Incidents</h4><p>Sau khi bảng Active, tạo Global Secondary Index để query nhanh theo status và assignedTo:
+<strong>Bước 1: Click vào bảng irms-incidents → tab Indexes → click Create index</strong>
+<img alt="Setup DynamoDB 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-005.png>
+Tạo GSI 1 — query theo status:
+Partition key: status Type: String
+Sort key: createdAt Type: String
+Index name: status-index
+Projected attributes: All
+Click Create index → chờ Status chuyển sang Active
+<img alt="Setup DynamoDB 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-006.png>
+Tạo GSI 2 — query theo người được phân công:
+Click Create index lần nữa:
+Partition key: assignedTo Type: String
+Sort key: createdAt Type: String
+Index name: assignedTo-index
+Projected attributes: All
+Click Create index → chờ Active
+<img alt="Setup DynamoDB 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-007.png></p><h4 id=5354-tạo-bảng-timeline>5.3.5.4 Tạo bảng Timeline</h4><p><strong>Bước 1: Click Create table</strong>
+<strong>Bước 2:</strong>
+Table name: irms-timeline
+Partition key: incidentId Type: String
+Sort key: timestamp Type: String
+Sort key là timestamp vì trong 1 incident có nhiều mốc thời gian, sort key giúp tự động sắp xếp theo thứ tự thời gian.
+<strong>Bước 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Bước 4: Click Create table → chờ Active</strong>
+<img alt="Setup DynamoDB 8" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-008.png></p><h4 id=5355-tạo-bảng-evidencemetadata>5.3.5.5 Tạo bảng EvidenceMetadata</h4><p><strong>Bước 1: Click Create table</strong>
+<strong>Bước 2:</strong>
+Table name: irms-evidence-metadata
+Partition key: evidenceId Type: String
+Sort key: (để trống)
+<strong>Bước 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Bước 4: Click Create table → chờ Active</strong>
+<strong>Bước 5: Tạo GSI để query evidence theo incidentId:</strong>
+Tab Indexes → Create index:
+Partition key: incidentId Type: String
+Sort key: uploadedAt Type: String
+Index name: incidentId-index
+Projected attributes: All
+Click Create index → chờ Active
+<img alt="Setup DynamoDB 9" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-009.png></p><h4 id=5356-tạo-bảng-users>5.3.5.6 Tạo bảng Users</h4><p><strong>Bước 1: Click Create table</strong>
+<strong>Bước 2:</strong>
+Table name: irms-users
+Partition key: email Type: String
+Sort key: (để trống)
+<strong>Bước 3: Table settings → Customize settings → Capacity mode: On-demand</strong>
+<strong>Bước 4: Click Create table → chờ Active</strong>
+<img alt="Setup DynamoDB 10" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-010.png></p><h4 id=5357-thêm-dữ-liệu-mẫu-để-test>5.3.5.7 Thêm dữ liệu mẫu để test</h4><p>Sau khi tạo đủ 4 bảng, thêm vài record mẫu vào bảng Incidents để test Lambda sau này:
+<strong>Bước 1: Click vào bảng irms-incidents → tab Explore items → click Create item</strong>
+<img alt="Setup DynamoDB 11" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-011.png>
+<strong>Bước 2: Chọn JSON view, paste nội dung sau:</strong>
+{
+&ldquo;incidentId&rdquo;: { &ldquo;S&rdquo;: &ldquo;INC-001&rdquo; },
+&ldquo;title&rdquo;: { &ldquo;S&rdquo;: &ldquo;Public S3 Bucket Detected&rdquo; },
+&ldquo;severity&rdquo;: { &ldquo;S&rdquo;: &ldquo;Critical&rdquo; },
+&ldquo;status&rdquo;: { &ldquo;S&rdquo;: &ldquo;Open&rdquo; },
+&ldquo;description&rdquo;: { &ldquo;S&rdquo;: &ldquo;S3 bucket company-data đang bị public access, có thể lộ dữ liệu khách hàng&rdquo; },
+&ldquo;assignedTo&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:analyst@example.com>analyst@example.com</a>&rdquo; },
+&ldquo;createdBy&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:admin@example.com>admin@example.com</a>&rdquo; },
+&ldquo;createdAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; },
+&ldquo;updatedAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; }
+}
+Click Create item
+<strong>Bước 3: Tạo thêm record thứ 2:</strong>
+{
+&ldquo;incidentId&rdquo;: &ldquo;INC-002&rdquo;,
+&ldquo;title&rdquo;: &ldquo;SSH Brute Force Attack&rdquo;,
+&ldquo;severity&rdquo;: &ldquo;High&rdquo;,
+&ldquo;status&rdquo;: &ldquo;Investigating&rdquo;,
+&ldquo;description&rdquo;: &ldquo;Phát hiện 500 lần đăng nhập SSH thất bại từ IP 203.0.113.42 trong 10 phút&rdquo;,
+&ldquo;assignedTo&rdquo;: &ldquo;<a href=mailto:analyst@example.com>analyst@example.com</a>&rdquo;,
+&ldquo;createdBy&rdquo;: &ldquo;<a href=mailto:manager@example.com>manager@example.com</a>&rdquo;,
+&ldquo;createdAt&rdquo;: &ldquo;2026-06-02T10:30:00Z&rdquo;,
+&ldquo;updatedAt&rdquo;: &ldquo;2026-06-02T11:00:00Z&rdquo;
+}
+Click Create item
+<img alt="Setup DynamoDB 12" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-012.png>
+<img alt="Setup DynamoDB 13" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-013.png></p><h4 id=5358-verify-bằng-console>5.3.5.8 Verify bằng Console</h4><p><strong>Bước 1: Click vào bảng irms-incidents → tab Explore items</strong>
+<strong>Bước 2: Thấy 2 record INC-001 và INC-002 → ✅</strong>
+<img alt="Setup DynamoDB 14" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-014.png>
+<strong>Bước 3: Test query theo GSI:</strong></p><ul><li>Click Scan/Query → chọn Query</li><li>Index: chọn status-index</li><li>Partition key value: Open</li><li>Click Run</li><li>Kết quả phải trả về INC-001 → ✅ GSI hoạt động đúng
+<img alt="Setup DynamoDB 15" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-015.png></li></ul><h4 id=5359-hybrid-deployment-với-aws-sam>5.3.5.9 Hybrid Deployment với AWS SAM</h4><p>Trong workshop này, các bảng Amazon DynamoDB được tạo thủ công bằng AWS Console ở các bước trước nhằm giúp người học hiểu rõ cách thiết kế schema, Partition Key, Sort Key và Global Secondary Index (GSI).
+Sau khi hoàn thành phần thực hành với Console, dự án IRMS chuyển sang mô hình Hybrid Deployment.
+Ở mô hình này:</p><ul><li>Amazon Cognito và Amazon DynamoDB được giữ nguyên từ các bước cấu hình bằng Console.</li><li>AWS SAM sẽ chỉ triển khai các thành phần còn lại của hệ thống như:</li><li>Amazon API Gateway</li><li>AWS Lambda</li><li>Amazon S3</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+Điều này giúp:</li><li>Tránh tạo trùng các bảng DynamoDB.</li><li>Đảm bảo dữ liệu mẫu đã tạo ở 5 vẫn được giữ nguyên.</li><li>Giúp người học vừa hiểu cách cấu hình thủ công, vừa làm quen với Infrastructure as Code (IaC) bằng AWS SAM.
+Các bảng DynamoDB được SAM sử dụng
+Thay vì tạo mới, template AWS SAM sẽ tham chiếu trực tiếp đến các bảng đã tồn tại:</li></ul><table><thead><tr><th style=text-align:left>Table</th><th style=text-align:left>Mục đích</th></tr></thead><tbody><tr><td style=text-align:left>irms-incidents</td><td style=text-align:left>Lưu thông tin Incident</td></tr><tr><td style=text-align:left>irms-timeline</td><td style=text-align:left>Lưu Timeline xử lý</td></tr><tr><td style=text-align:left>irms-evidence-metadata</td><td style=text-align:left>Lưu metadata Evidence</td></tr><tr><td style=text-align:left>irms-users</td><td style=text-align:left>Lưu thông tin người dùng</td></tr></tbody></table><p>Tên các bảng sẽ được truyền vào Lambda thông qua SAM Parameters và Environment Variables, vì vậy không cần tạo lại bằng CloudFormation.
+File template sử dụng
+Trong repository IRMS Source Code, toàn bộ hạ tầng được quản lý bởi:
+infrastructure/template.yaml
+Template này đã được cấu hình theo mô hình Hybrid Deployment, bao gồm:</p><ul><li>Sử dụng Amazon Cognito User Pool đã tạo sẵn.</li><li>Sử dụng các DynamoDB Tables đã tạo ở 5.</li><li>Tạo mới:</li><li>Amazon API Gateway</li><li>AWS Lambda Functions</li><li>Amazon S3 Buckets</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+Kiểm tra cấu hình
+Có thể kiểm tra template trước khi triển khai bằng lệnh:
+sam validate ^
+&ndash;template-file infrastructure/template.yaml ^
+&ndash;region ap-southeast-1
+Kết quả mong đợi:
+Template provided at &lsquo;infrastructure/template.yaml&rsquo; was successfully validated.
+<img alt="Setup DynamoDB 16" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-05-016.png></li></ul><h4 id=53510-checklist-5>5.3.5.10 Checklist 5</h4><ul><li>✅ Đã tạo thành công 4 bảng DynamoDB:</li><li>irms-incidents</li><li>irms-timeline</li><li>irms-evidence-metadata</li><li>irms-users</li><li>✅ Hai Global Secondary Index của bảng irms-incidents hoạt động:</li><li>status-index</li><li>assignedTo-index</li><li>✅ Global Secondary Index của bảng irms-evidence-metadata hoạt động:</li><li>incidentId-index</li><li>✅ Đã thêm 2 bản ghi mẫu (INC-001, INC-002) vào bảng irms-incidents.</li><li>✅ Đã kiểm tra truy vấn thông qua status-index trả về đúng kết quả.</li><li>✅ Đã xác thực (sam validate) thành công Hybrid SAM Template cho giai đoạn triển khai tiếp theo.</li></ul><h3 id=536-setup-s3--storage>5.3.6 Setup S3 & Storage</h3><h4 id=5361-storage-design>5.3.6.1 Storage Design</h4><p>IRMS sử dụng 2 S3 bucket với mục đích hoàn toàn khác nhau:
+irms-frontend-031577240048-ap-southeast-1 → lưu React SPA (public qua CloudFront)
+irms-evidence-031577240048-ap-southeast-1 → lưu file bằng chứng (private, chỉ Lambda truy cập)
+Lý do thêm Account ID và Region vào tên bucket: S3 bucket name là unique toàn cầu — dùng Account ID + Region đảm bảo tên luôn độc nhất, tránh conflict với người khác.
+So sánh 2 bucket:</p><table><thead><tr><th style=text-align:left></th><th style=text-align:left>irms-frontend-&mldr;</th><th style=text-align:left>irms-evidence-&mldr;</th></tr></thead><tbody><tr><td style=text-align:left>Public access</td><td style=text-align:left>Block (chỉ CloudFront được đọc)</td><td style=text-align:left>Block hoàn toàn</td></tr><tr><td style=text-align:left>Ai truy cập</td><td style=text-align:left>CloudFront</td><td style=text-align:left>Lambda function</td></tr><tr><td style=text-align:left>Lưu gì</td><td style=text-align:left>HTML, CSS, JS, assets</td><td style=text-align:left>Screenshot, log, PCAP, PDF report</td></tr><tr><td style=text-align:left>Versioning</td><td style=text-align:left>Không cần</td><td style=text-align:left>Bật (bảo vệ bằng chứng)</td></tr><tr><td style=text-align:left>CORS</td><td style=text-align:left>Không cần</td><td style=text-align:left>Cần (presigned URL upload từ browser)</td></tr></tbody></table><h4 id=5362-evidence-upload-flow>5.3.6.2 Evidence Upload Flow</h4><p>Cần hiểu luồng upload file bằng chứng để hiểu tại sao Evidence bucket cần CORS:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Browser                Lambda                    S3
+</span></span><span style=display:flex><span>│                      │                       │
+</span></span><span style=display:flex><span>│──POST /evidence──────►│                       │
+</span></span><span style=display:flex><span>│  (filename, type)     │                       │
+</span></span><span style=display:flex><span>│                       │──GeneratePresignedURL─►│
+</span></span><span style=display:flex><span>│                       │◄──presignedUrl─────────│
+</span></span><span style=display:flex><span>│◄──presignedUrl────────│                       │
+</span></span><span style=display:flex><span>│                       │                       │
+</span></span><span style=display:flex><span>│──PUT presignedUrl──────────────────────────────►│
+</span></span><span style=display:flex><span>│  (file binary)        │                  file saved
+</span></span><span style=display:flex><span>│◄──200 OK──────────────────────────────────────│
+</span></span><span style=display:flex><span>│                       │                       │
+</span></span><span style=display:flex><span>│──POST /evidence/{id} ►│                      │
+</span></span><span style=display:flex><span>│  (evidenceId)         │──PutItem──────────────►DynamoDB
+</span></span><span style=display:flex><span>│◄──200 OK──────────────│
+</span></span></code></pre></div><p>Ưu điểm của Presigned URL: File upload thẳng từ browser lên S3, không đi qua Lambda — tránh giới hạn 6MB payload của Lambda và tiết kiệm bandwidth.</p><h4 id=5363-kiểm-tra-cấu-hình-s3-trong-templateyaml>5.3.6.3 Kiểm tra cấu hình S3 trong template.yaml</h4><p>Template đã có sẵn trong repo — này chỉ đọc hiểu cấu hình, không thêm resource mới.
+Mở file infrastructure/template.yaml, tìm phần S3 và đọc từng thuộc tính:
+Frontend Bucket:
+FrontendBucket:
+Type: AWS::S3::Bucket
+Properties:
+BucketName: !Ref FrontendBucketName
+<code># Block toàn bộ public access</code>
+<code># CloudFront sẽ truy cập qua OAC (setup ở phần sau)</code>
+PublicAccessBlockConfiguration:
+BlockPublicAcls: true
+BlockPublicPolicy: true
+IgnorePublicAcls: true
+RestrictPublicBuckets: true
+Những điểm cần lưu ý:</p><ul><li>BlockPublicAcls: true → không ai được set ACL public cho object</li><li>BlockPublicPolicy: true → không ai được tạo bucket policy cho phép public</li><li>Không có WebsiteConfiguration vì frontend phân phối qua CloudFront, không phải S3 static website hosting trực tiếp
+Evidence Bucket:
+EvidenceBucket:
+Type: AWS::S3::Bucket
+Properties:
+BucketName: !Ref EvidenceBucketName
+PublicAccessBlockConfiguration:
+BlockPublicAcls: true
+BlockPublicPolicy: true
+IgnorePublicAcls: true
+RestrictPublicBuckets: true
+<code># Versioning ON: bảo vệ bằng chứng khỏi bị xóa/ghi đè</code>
+VersioningConfiguration:
+Status: Enabled
+<code># CORS: cho phép browser PUT file qua Presigned URL</code>
+CorsConfiguration:
+CorsRules:</li><li>AllowedHeaders:</li><li>&ldquo;*&rdquo;
+AllowedMethods:</li><li>PUT</li><li>GET
+AllowedOrigins:</li><li>&ldquo;*&rdquo;
+MaxAge: 3600
+Những điểm cần lưu ý:</li><li>VersioningConfiguration: Enabled → mỗi lần upload file cùng tên sẽ tạo version mới, không ghi đè — quan trọng với bằng chứng pháp lý</li><li>CorsRules cho phép PUT từ AllowedOrigins: &ldquo;*&rdquo; → browser có thể upload thẳng qua Presigned URL</li><li>MaxAge: 3600 → browser cache CORS preflight response 1 tiếng, giảm số lần OPTIONS request</li></ul><h4 id=5364-kiểm-tra-parameters-trong-templateyaml>5.3.6.4 Kiểm tra Parameters trong template.yaml</h4><p>Tìm phần Parameters, xác nhận có đủ 2 bucket name và các giá trị default đúng:
+Parameters:</p><p><code># ── S3 ──────────────────────────────────────────────────────</code>
+FrontendBucketName:
+Type: String
+Default: irms-frontend-031577240048-ap-southeast-1</p><p>EvidenceBucketName:
+Type: String
+Default: irms-evidence-031577240048-ap-southeast-1
+Nếu thấy đúng 2 tên này → ✅ tiếp tục.
+<img alt="Setup S3 & Storage 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-06-001.png></p><h4 id=5365-kiểm-tra-environment-variables-lambda-trong-templateyaml>5.3.6.5 Kiểm tra Environment Variables Lambda trong template.yaml</h4><p>Lambda cần biết tên Evidence bucket để tạo Presigned URL. Tìm phần Globals xác nhận có:
+Globals:
+Function:
+Environment:
+Variables:
+EVIDENCE_BUCKET: !Ref EvidenceBucketName
+Hoặc từng Lambda Upload Evidence có riêng:
+UploadEvidenceFunction:
+Type: AWS::Serverless::Function
+Properties:
+Environment:
+Variables:
+EVIDENCE_BUCKET: !Ref EvidenceBucketName</p><h4 id=5366-kiểm-tra-samconfigtoml>5.3.6.6 Kiểm tra samconfig.toml</h4><p>Mở file infrastructure/samconfig.toml, xác nhận đúng cấu hình:
+version = 0.1</p><p>[default.deploy.parameters]
+stack_name = &ldquo;irms-dev&rdquo;
+region = &ldquo;ap-southeast-1&rdquo;
+confirm_changeset = false
+capabilities = &ldquo;CAPABILITY_IAM CAPABILITY_NAMED_IAM&rdquo;
+profile = &ldquo;irms-shared&rdquo;</p><p>parameter_overrides = [
+&ldquo;Environment=dev&rdquo;,
+&ldquo;UserPoolId=ap-southeast-1_XXXXXXXXX&rdquo;,
+&ldquo;UserPoolClientId=XXXXXXXXXXXXXXXXXXXXXXXXXX&rdquo;,
+&ldquo;UserPoolArn=arn:aws:cognito-idp:ap-southeast-1:031577240048:userpool/ap-southeast-1_XXXXXXXXX&rdquo;,
+&ldquo;IncidentsTableName=irms-incidents&rdquo;,
+&ldquo;TimelineTableName=irms-timeline&rdquo;,
+&ldquo;EvidenceMetadataTableName=irms-evidence-metadata&rdquo;,
+&ldquo;UsersTableName=irms-users&rdquo;,
+&ldquo;FrontendBucketName=irms-frontend-031577240048-ap-southeast-1&rdquo;,
+&ldquo;EvidenceBucketName=irms-evidence-031577240048-ap-southeast-1&rdquo;
+]
+Thay các giá trị XXXXXXXXX bằng giá trị thật đã lưu ở 3.
+<img alt="Setup S3 & Storage 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-06-002.png></p><h4 id=5367-validate-template>5.3.6.7 Validate Template</h4><p>Sau khi xác nhận đủ các mục trên, chạy lệnh validate để kiểm tra template không có lỗi cú pháp:
+Mở Terminal, di chuyển vào thư mục root của repo:
+cd irms
+Chạy validate:
+sam validate ^
+&ndash;template-file infrastructure/template.yaml ^
+&ndash;region ap-southeast-1
+Kết quả mong đợi:
+Template provided at &lsquo;infrastructure/template.yaml&rsquo; was successfully validated.
+<img alt="Setup S3 & Storage 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-06-003.png>
+Xử lý lỗi thường gặp:
+Nếu thấy:
+Error: Template format error: YAML not well-formed
+→ Lỗi cú pháp YAML, thường do indent sai. Mở template.yaml kiểm tra lại dòng được chỉ ra trong thông báo lỗi. Mỗi cấp indent phải là 2 spaces, không dùng tab.
+Nếu thấy:
+Error: [InvalidResourceException] Resource &lsquo;XYZ&rsquo; not found
+→ Một resource đang tham chiếu đến resource chưa có trong template. Bình thường nếu là tham chiếu CloudFront/WAF (sẽ thêm ở sau), cần hỏi lại team.</p><h4 id=5368-checklist-6>5.3.6.8 Checklist 6</h4><ul><li>✅ Hiểu rõ mục đích 2 bucket:
+irms-frontend-031577240048-ap-southeast-1 → React SPA, qua CloudFront
+irms-evidence-031577240048-ap-southeast-1 → file bằng chứng, qua Lambda</li><li>✅ Hiểu luồng Presigned URL (Browser → Lambda lấy URL → PUT thẳng lên S3)</li><li>✅ Đọc hiểu cấu hình FrontendBucket trong template.yaml:
+BlockPublicAcls, BlockPublicPolicy = true</li><li>✅ Đọc hiểu cấu hình EvidenceBucket trong template.yaml:
+Versioning ON, CORS cho PUT</li><li>✅ Xác nhận Parameters FrontendBucketName và EvidenceBucketName đúng tên</li><li>✅ Xác nhận EVIDENCE_BUCKET có trong Environment Variables của Lambda</li><li>✅ Xác nhận samconfig.toml dùng stack_name = &ldquo;irms-dev&rdquo;</li><li>✅ sam validate chạy thành công</li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.2-environment-setup/ title="Chuẩn bị môi trường"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/ title="Phát triển ứng dụng" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=https://dantruong209.github.io/Internship-Report/js/clipboard.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.jquery.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/jquery.sticky.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/featherlight.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/highlight.pack.js?1784897816></script><script>hljs.initHighlightingOnLoad()</script><script src=https://dantruong209.github.io/Internship-Report/js/modernizr.custom-3.6.0.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/learn.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/hugo-learn.js?1784897816></script><link href=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.js?1784897816></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>

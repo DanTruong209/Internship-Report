@@ -1,0 +1,730 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content="Internship Report - First Cloud AI Journey"><meta name=author content="nguyendantruong12a9@gmail.com"><link rel=icon href=https://dantruong209.github.io/Internship-Report/images/favicon.png type=image/png><title>Triển khai và kiểm thử :: Báo cáo thực tập</title>
+<link href=https://dantruong209.github.io/Internship-Report/css/nucleus.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/fontawesome-all.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hybrid.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/featherlight.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/perfect-scrollbar.min.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/auto-complete.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/atom-one-dark-reasonable.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/hugo-theme.css?1784897816 rel=stylesheet><link href=https://dantruong209.github.io/Internship-Report/css/theme-workshop.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/js/jquery-3.3.1.min.js?1784897816></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=https://dantruong209.github.io/Internship-Report/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/lunr.min.js?1784897816></script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/auto-complete.js?1784897816></script><script type=text/javascript>var baseurl="https://dantruong209.github.io/Internship-Report//vi"</script><script type=text/javascript src=https://dantruong209.github.io/Internship-Report/js/search.js?1784897816></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký thực tập" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/><b>1. </b>Nhật ký thực tập
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Đề xuất" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/2-proposal/><b>2. </b>Đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/ title="Các bài blogs đã dịch" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/><b>3. </b>Các bài blogs đã dịch
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogsposted/3.1-blog1/ title="Shift-left Security với Amazon Bedrock" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.1-blog1/><b>3.1. </b>Shift-left Security với Amazon Bedrock
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/3.2-blog2/ title="Amazon RDS + AI + MCP" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/3-blogsposted/3.2-blog2/><b>3.2. </b>Amazon RDS + AI + MCP
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-introduction/ title="Giới thiệu" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.1-introduction/><b>5.1. </b>Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-environment-setup/ title="Chuẩn bị môi trường" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.2-environment-setup/><b>5.2. </b>Chuẩn bị môi trường
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-infrastructure-configuration/ title="Cấu hình hạ tầng" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.3-infrastructure-configuration/><b>5.3. </b>Cấu hình hạ tầng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-application-development/ title="Phát triển ứng dụng" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/><b>5.4. </b>Phát triển ứng dụng
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.5-deployment-and-testing/ title="Triển khai và kiểm thử" class="dd-item
+active"><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/><b>5.5. </b>Triển khai và kiểm thử
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-frontend-integration-web-deployment/ title="Tích hợp frontend và triển khai web" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.6-frontend-integration-web-deployment/><b>5.6. </b>Tích hợp frontend và triển khai web
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-project-demo-and-testing/ title="Demo và kiểm thử dự án" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.7-project-demo-and-testing/><b>5.7. </b>Demo và kiểm thử dự án
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/ title="Kết quả, chi phí và dọn dẹp" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.8-results-cost-analysis-and-cleanup/><b>5.8. </b>Kết quả, chi phí và dọn dẹp
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=https://dantruong209.github.io/Internship-Report/vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://dantruong209.github.io/Internship-Report/5-workshop/5.5-deployment-and-testing/>English</option><option id=vi value=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.5-deployment-and-testing/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>24-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title='Edit this page' href=https://github.com/DanTruong209/Internship-Report/edit/main/5-Workshop/5.5-Deployment-and-Testing/_index.vi.md target=blank><i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=https://dantruong209.github.io/Internship-Report/vi/>Báo cáo thực tập</a> > <a href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/>Workshop</a> > Triển khai và kiểm thử</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#55-triển-khai-và-kiểm-thử>5.5. Triển khai và kiểm thử</a><ul><li></li><li><a href=#558-api-gateway-production-sam>5.5.8 API Gateway Production (SAM)</a></li><li><a href=#559-eventbridge-guardduty-simulation-và-alert-automation>5.5.9 EventBridge, GuardDuty Simulation và Alert Automation</a></li><li><a href=#5510-build--deploy-với-aws-sam>5.5.10 Build & Deploy với AWS SAM</a></li><li><a href=#5511-functional-testing--validation>5.5.11 Functional Testing & Validation</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Triển khai và kiểm thử</h1><h2 id=55-triển-khai-và-kiểm-thử>5.5. Triển khai và kiểm thử</h2><h4 id=nội-dung>Nội dung</h4><ul><li>5.5.8 API Gateway Production</li><li>5.5.9 EventBridge & GuardDuty</li><li>5.5.10 Build & Deploy</li><li>5.5.11 Testing & Validation</li></ul><h3 id=558-api-gateway-production-sam>5.5.8 API Gateway Production (SAM)</h3><h4 id=5581-tổng-quan-api-layer>5.5.8.1 Tổng quan API Layer</h4><p>Amazon API Gateway là lớp trung gian giữa frontend React SPA và các Lambda backend của IRMS.
+Thay vì browser gọi trực tiếp Lambda, mọi request sẽ đi qua API Gateway:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>React SPA
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── GET    /incidents          → incident-crud Lambda
+</span></span><span style=display:flex><span>├── POST   /incidents          → incident-crud Lambda
+</span></span><span style=display:flex><span>├── PUT    /incidents/{id}     → incident-crud Lambda
+</span></span><span style=display:flex><span>├── DELETE /incidents/{id}     → incident-crud Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── POST   /evidence           → upload-evidence Lambda
+</span></span><span style=display:flex><span>├── POST   /evidence/{id}→ upload-evidence Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── GET    /reports            → generate-report Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>|-- POST   /ai/analyze         -&gt; ai-assistant Lambda
+</span></span><span style=display:flex><span>|-- POST   /ai/explain         -&gt; ai-assistant Lambda
+</span></span><span style=display:flex><span>└── POST   /ai/chat            -&gt; ai-assistant Lambda
+</span></span></code></pre></div><p>API Gateway giúp IRMS:</p><table><thead><tr><th style=text-align:left>Vai trò</th><th style=text-align:left>Ý nghĩa</th></tr></thead><tbody><tr><td style=text-align:left>Routing</td><td style=text-align:left>Điều hướng từng endpoint đến đúng Lambda</td></tr><tr><td style=text-align:left>Authentication</td><td style=text-align:left>Kiểm tra JWT token từ Cognito</td></tr><tr><td style=text-align:left>CORS</td><td style=text-align:left>Cho phép React SPA gọi API</td></tr><tr><td style=text-align:left>Security</td><td style=text-align:left>Không expose Lambda trực tiếp</td></tr><tr><td style=text-align:left>Production URL</td><td style=text-align:left>Cung cấp HTTPS endpoint cho frontend</td></tr></tbody></table><h4 id=5582-vì-sao-cần-api-gateway>5.5.8.2 Vì sao cần API Gateway?</h4><p>Nếu không có API Gateway, frontend sẽ không có endpoint chuẩn để gọi backend.
+API Gateway đóng vai trò như “cửa chính” của hệ thống:
+User -> Browser -> API Gateway -> Lambda -> DynamoDB / S3 / Groq API
+Ưu điểm:</p><ul><li>Có HTTPS endpoint tự động.</li><li>Tích hợp được Cognito Authorizer.</li><li>Dễ quản lý route.</li><li>Dễ log request.</li><li>Dễ mở rộng thêm endpoint mới.</li><li>Phù hợp serverless architecture.</li></ul><h4 id=5583-api-gateway-trong-sam-template>5.5.8.3 API Gateway trong SAM Template</h4><p>Trong infrastructure/template.yaml, API Gateway thường được khai báo bằng resource dạng:
+IrmsApi:
+Type: AWS::Serverless::Api
+Properties:
+Name: irms-api
+StageName: prod
+Cors:
+AllowMethods: &ldquo;&lsquo;GET,POST,PUT,DELETE,OPTIONS&rsquo;&rdquo;
+AllowHeaders: &ldquo;&lsquo;Content-Type,Authorization&rsquo;&rdquo;
+AllowOrigin: &ldquo;&rsquo;<em>&rsquo;&rdquo;
+Trong MVP, có thể dùng:
+AllowOrigin: &ldquo;&rsquo;</em>&rsquo;&rdquo;
+Để dễ test frontend local.
+Khi lên production thật, nên đổi thành domain frontend cụ thể, ví dụ:
+AllowOrigin: &ldquo;&lsquo;<a href=https://your-domain.com>https://your-domain.com</a>&rsquo;&rdquo;</p><h4 id=5584-api-routes-cho-incident-crud>5.5.8.4 API Routes cho Incident CRUD</h4><p>Các route Incident dùng chung Lambda incident-crud.
+Events:
+GetIncidents:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /incidents
+Method: GET</p><p>CreateIncident:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /incidents
+Method: POST</p><p>UpdateIncident:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /incidents/{id}
+Method: PUT</p><p>DeleteIncident:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /incidents/{id}
+Method: DELETE
+Ý nghĩa:</p><table><thead><tr><th style=text-align:left>Method</th><th style=text-align:left>Path</th><th style=text-align:left>Chức năng</th></tr></thead><tbody><tr><td style=text-align:left>GET</td><td style=text-align:left>/incidents</td><td style=text-align:left>Lấy danh sách incident</td></tr><tr><td style=text-align:left>POST</td><td style=text-align:left>/incidents</td><td style=text-align:left>Tạo incident mới</td></tr><tr><td style=text-align:left>PUT</td><td style=text-align:left>/incidents/{id}</td><td style=text-align:left>Cập nhật incident</td></tr><tr><td style=text-align:left>DELETE</td><td style=text-align:left>/incidents/{id}</td><td style=text-align:left>Xóa incident</td></tr></tbody></table><h4 id=5585-api-routes-cho-evidence>5.5.8.5 API Routes cho Evidence</h4><p>Evidence upload gồm 2 bước:</p><ul><li>Lấy presigned URL.</li><li>Xác nhận metadata sau khi upload.
+Events:
+CreateEvidenceUploadUrl:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /evidence
+Method: POST</li></ul><p>ConfirmEvidenceUpload:
+Type: Api
+Properties:
+RestApiId: !Ref IrmsApi
+Path: /evidence/{id}
+Method: POST
+Flow:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Browser
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── POST /evidence
+</span></span><span style=display:flex><span>│       └── Lambda trả presigned URL
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── PUT file thẳng lên S3 bằng presigned URL
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>└── POST /evidence/{id}
+</span></span><span style=display:flex><span>└── Lambda ghi metadata vào DynamoDB
+</span></span></code></pre></div><p>File không đi qua API Gateway, giúp giảm tải và giảm chi phí.</p><h4 id=5586-api-routes-cho-ai-assistant>5.5.8.6 API Routes cho AI Assistant</h4><p>AI Assistant sử dụng ba endpoint được bảo vệ bằng Cognito:</p><table><thead><tr><th style=text-align:left>Endpoint</th><th style=text-align:left>Mục đích</th></tr></thead><tbody><tr><td style=text-align:left><code>POST /ai/analyze</code></td><td style=text-align:left>Phân tích incident, tóm tắt, đánh giá severity, đề xuất hành động và bước tiếp theo</td></tr><tr><td style=text-align:left><code>POST /ai/explain</code></td><td style=text-align:left>Giải thích vì sao chọn severity, confidence, risk factors và điều kiện tăng/giảm severity</td></tr><tr><td style=text-align:left><code>POST /ai/chat</code></td><td style=text-align:left>Hỏi đáp theo incident hiện tại về containment, investigation, evidence collection, reporting và recovery</td></tr></tbody></table><p>Ví dụ khai báo SAM:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>Events</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>AnalyzeIncident</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>Api</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>RestApiId</span>: !<span style=color:#ae81ff>Ref IrmsApi</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Path</span>: <span style=color:#ae81ff>/ai/analyze</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Method</span>: <span style=color:#ae81ff>POST</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ExplainSeverity</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>Api</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>RestApiId</span>: !<span style=color:#ae81ff>Ref IrmsApi</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Path</span>: <span style=color:#ae81ff>/ai/explain</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Method</span>: <span style=color:#ae81ff>POST</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ChatWithAI</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>Api</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>RestApiId</span>: !<span style=color:#ae81ff>Ref IrmsApi</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Path</span>: <span style=color:#ae81ff>/ai/chat</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Method</span>: <span style=color:#ae81ff>POST</span>
+</span></span></code></pre></div><p>Ví dụ request cho <code>POST /ai/analyze</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;incidentId&#34;</span>: <span style=color:#e6db74>&#34;INC-001&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;Multiple failed SSH login attempts from unknown IP&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Ví dụ response:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;severity&#34;</span>: <span style=color:#e6db74>&#34;High&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;confidence&#34;</span>: <span style=color:#ae81ff>85</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;summary&#34;</span>: <span style=color:#e6db74>&#34;Possible SSH brute force attack&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;recommendedActions&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Block suspicious IP&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Review SSH logs&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Enable MFA&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;nextSteps&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Collect evidence&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Update the incident timeline&#34;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#e6db74>&#34;groq&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;model&#34;</span>: <span style=color:#e6db74>&#34;llama-3.1-8b-instant&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;fallback&#34;</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=5587-cognito-authorizer>5.5.8.7 Cognito Authorizer</h4><p>Để bảo vệ API, API Gateway cần kiểm tra JWT token từ Amazon Cognito.
+Luồng xác thực:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>User login bằng Cognito
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Frontend nhận Access Token / ID Token
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Frontend gọi API kèm header:
+</span></span><span style=display:flex><span>Authorization: Bearer &lt;JWT_TOKEN&gt;
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>API Gateway Cognito Authorizer kiểm tra token
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── Token hợp lệ   → Cho gọi Lambda
+</span></span><span style=display:flex><span>└── Token không hợp lệ → Trả 401 Unauthorized
+</span></span></code></pre></div><p>Ví dụ cấu hình trong SAM:
+Auth:
+DefaultAuthorizer: CognitoAuthorizer
+Authorizers:
+CognitoAuthorizer:
+UserPoolArn: !GetAtt IrmsUserPool.Arn
+Khi đó các endpoint mặc định sẽ yêu cầu Cognito token.</p><h4 id=5588-cors-configuration>5.5.8.8 CORS Configuration</h4><p>CORS cần thiết vì frontend React SPA và API Gateway có domain khác nhau.
+Ví dụ:
+Frontend local:
+http://localhost:3000</p><p>API Gateway:
+<a href=https://abc123.execute-api.ap-southeast-1.amazonaws.com/prod>https://abc123.execute-api.ap-southeast-1.amazonaws.com/prod</a>
+Nếu không bật CORS, browser sẽ chặn request.
+Cấu hình CORS trong SAM:
+Cors:
+AllowMethods: &ldquo;&lsquo;GET,POST,PUT,DELETE,OPTIONS&rsquo;&rdquo;
+AllowHeaders: &ldquo;&lsquo;Content-Type,Authorization&rsquo;&rdquo;
+AllowOrigin: &ldquo;&rsquo;*&rsquo;&rdquo;
+Trong production thật, không nên dùng *, mà nên giới hạn theo domain frontend.</p><h4 id=5589-validate-api-gateway-trong-templateyaml>5.5.8.9 Validate API Gateway trong template.yaml</h4><p>này chưa cần deploy. Trước tiên chỉ kiểm tra template đã khai báo API Gateway và route đúng chưa.
+<strong>Bước 1: Mở CMD và vào repo:</strong>
+cd /d &ldquo;D:\Thực Tập\irms-serverless&rdquo;
+<strong>Bước 2: Kiểm tra có khai báo AWS::Serverless::Api:</strong>
+findstr /C:&ldquo;AWS::Serverless::Api&rdquo; infrastructure\template.yaml
+Kết quả mong đợi:
+Type: AWS::Serverless::Api
+<img alt="API Gateway Production 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-001.png>
+<strong>Bước 3: Kiểm tra route /incidents:</strong>
+findstr /C:"/incidents" infrastructure\template.yaml
+Kết quả mong đợi có các route:
+Path: /incidents
+Path: /incidents/{id}
+<img alt="API Gateway Production 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-002.png>
+<strong>Bước 4: Kiểm tra route /evidence:</strong>
+findstr /C:"/evidence" infrastructure\template.yaml
+Kết quả mong đợi:
+Path: /evidence
+Path: /evidence/{id}
+<img alt="API Gateway Production 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-003.png>
+<strong>Bước 5: Kiểm tra route AI:</strong>
+findstr /C:"/ai/analyze" infrastructure\template.yaml
+findstr /C:"/ai/explain" infrastructure\template.yaml
+findstr /C:"/ai/chat" infrastructure\template.yaml
+Kết quả mong đợi:
+Path: /ai/analyze
+Path: /ai/explain
+Path: /ai/chat
+<img alt="API Gateway Production 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-004.png>
+<strong>Bước 6: Kiểm tra CORS:</strong>
+findstr /C:&ldquo;Cors:&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;AllowOrigin&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;AllowHeaders&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;AllowMethods&rdquo; infrastructure\template.yaml
+<img alt="API Gateway Production 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-005.png>
+<strong>Bước 7: Kiểm tra Cognito Authorizer:</strong>
+findstr /C:&ldquo;Authorizer&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;UserPoolArn&rdquo; infrastructure\template.yaml
+Nếu template đã có Cognito Authorizer, kết quả sẽ có các dòng liên quan đến:
+DefaultAuthorizer
+CognitoAuthorizer
+UserPoolArn
+<img alt="API Gateway Production 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-006.png>
+<strong>Bước 8: Validate SAM template:</strong>
+sam validate &ndash;template-file infrastructure\template.yaml &ndash;region ap-southeast-1
+Kết quả mong đợi:
+D:\Thực Tập\irms-serverless\infrastructure\template.yaml is a valid SAM Template.
+<img alt="API Gateway Production 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-08-007.png></p><h4 id=55810-checklist-8>5.5.8.10 Checklist 8</h4><ul><li>✅ Hiểu vai trò API Gateway trong kiến trúc IRMS</li><li>✅ Hiểu vì sao frontend không gọi trực tiếp Lambda</li><li>✅ Hiểu API Gateway route request đến từng Lambda</li><li>✅ Đã kiểm tra AWS::Serverless::Api trong template.yaml</li><li>✅ Đã kiểm tra route /incidents</li><li>✅ Đã kiểm tra route /incidents/{id}</li><li>✅ Đã kiểm tra route /evidence</li><li>✅ Đã kiểm tra route /evidence/{id}</li><li>✅ Đã kiểm tra route /ai/analyze</li><li>✅ Đã kiểm tra route /ai/explain</li><li>✅ Đã kiểm tra route /ai/chat</li><li>✅ Đã hiểu CORS và lý do frontend cần CORS</li><li>✅ Đã hiểu Cognito Authorizer bảo vệ API bằng JWT token</li><li>✅ Đã kiểm tra cấu hình Authorizer trong template.yaml</li><li>✅ sam validate chạy thành công</li><li>✅ Chưa chạy sam build</li><li>✅ Chưa chạy sam deploy</li><li>✅ Chưa tạo API Gateway production thật</li></ul><h3 id=559-eventbridge-guardduty-simulation-và-alert-automation>5.5.9 EventBridge, GuardDuty Simulation và Alert Automation</h3><h4 id=5591-tổng-quan-event-driven-alert-automation>5.5.9.1 Tổng quan Event-driven Alert Automation</h4><p>này kiểm tra phần tự động tạo incident khi có security event.
+Luồng xử lý:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>GuardDuty Finding / Simulated Event
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Amazon EventBridge
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Alert Handler Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── Tạo incident mới trong DynamoDB
+</span></span><span style=display:flex><span>└── Gửi thông báo qua SNS
+</span></span></code></pre></div><p>Trong MVP, có thể dùng simulated event thay cho GuardDuty thật để giảm chi phí và dễ demo.</p><h4 id=5592-vai-trò-của-eventbridge>5.5.9.2 Vai trò của EventBridge</h4><p>EventBridge giúp IRMS nhận sự kiện bảo mật theo kiểu event-driven.
+Thay vì analyst phải tạo incident thủ công, hệ thống có thể tự động tạo incident khi có event phù hợp.
+Ví dụ event:
+{
+&ldquo;source&rdquo;: &ldquo;aws.guardduty&rdquo;,
+&ldquo;detail-type&rdquo;: &ldquo;GuardDuty Finding&rdquo;,
+&ldquo;detail&rdquo;: {
+&ldquo;severity&rdquo;: 8.0,
+&ldquo;type&rdquo;: &ldquo;UnauthorizedAccess:EC2/SSHBruteForce&rdquo;,
+&ldquo;description&rdquo;: &ldquo;SSH brute force attack detected&rdquo;
+}
+}</p><h4 id=5593-alert-handler-lambda>5.5.9.3 Alert Handler Lambda</h4><p>Lambda alert-handler nhận event từ EventBridge, sau đó:</p><ol><li>Parse event</li><li>Map severity</li><li>Tạo incidentId tự động</li><li>Ghi incident vào bảng irms-incidents</li><li>Ghi timeline vào bảng irms-timeline</li><li>Gửi SNS notification
+Mapping severity:
+7.0 - 10.0 → Critical
+4.0 - 6.9 → High
+1.0 - 3.9 → Medium</li></ol><h4 id=5594-sns-notification>5.5.9.4 SNS Notification</h4><p>SNS dùng để gửi thông báo khi có incident tự động.
+Ví dụ:
+Topic: irms-alert-topic
+Subject: [IRMS ALERT] Critical - Auto-detected GuardDuty Finding
+Message: New Critical incident created from GuardDuty finding.
+Trong demo internship, có thể subscribe email cá nhân vào SNS topic để nhận cảnh báo.</p><h4 id=5595-validate-eventbridge-trong-templateyaml>5.5.9.5 Validate EventBridge trong template.yaml</h4><p><strong>Bước 1: Vào repo:</strong>
+cd /d &ldquo;D:\Thực Tập\irms-serverless&rdquo;
+<strong>Bước 2: Kiểm tra có EventBridge rule không:</strong>
+findstr /C:&ldquo;AWS::Events::Rule&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-001.png>
+<strong>Bước 3: Kiểm tra có EventBridge pattern không:</strong>
+findstr /C:&ldquo;EventPattern&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;aws.guardduty&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;GuardDuty Finding&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-002.png>
+<strong>Bước 4: Kiểm tra alert-handler có được trigger bởi EventBridge không:</strong>
+findstr /C:&ldquo;alert-handler&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;AlertHandler&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-003.png>
+<strong>Bước 5: Kiểm tra SNS topic:</strong>
+findstr /C:&ldquo;TopicName&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-004.png>
+findstr /C:&ldquo;SNS&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-005.png>
+<strong>Bước 6: Kiểm tra quyền SNS publish:</strong>
+findstr /C:&ldquo;SNS&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-006.png>
+<strong>Bước 7: Kiểm tra quyền Lambda invoke từ EventBridge:</strong>
+findstr /C:&ldquo;AWS::Lambda::Permission&rdquo; infrastructure\template.yaml
+findstr /C:&ldquo;events.amazonaws.com&rdquo; infrastructure\template.yaml
+<img alt="EventBridge & GuardDuty 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-09-007.png>
+<strong>Bước 8: Validate SAM template:</strong>
+sam validate &ndash;template-file infrastructure\template.yaml &ndash;region ap-southeast-1
+Kết quả mong đợi:
+D:\Thực Tập\irms-serverless\infrastructure\template.yaml is a valid SAM Template.</p><h4 id=5596-checklist-9>5.5.9.6 Checklist 9</h4><ul><li>✅ Hiểu EventBridge dùng để nhận security event</li><li>✅ Hiểu Alert Handler Lambda tự động tạo incident</li><li>✅ Hiểu severity mapping từ GuardDuty sang IRMS</li><li>✅ Hiểu SNS dùng để gửi cảnh báo</li><li>✅ Đã kiểm tra AWS::Events::Rule</li><li>✅ Đã kiểm tra EventPattern</li><li>✅ Đã kiểm tra GuardDuty Finding pattern</li><li>✅ Đã kiểm tra alert-handler trong template.yaml</li><li>✅ Đã kiểm tra SNS Topic</li><li>✅ Đã kiểm tra SNSPublishMessagePolicy</li><li>✅ Đã kiểm tra Lambda permission cho EventBridge</li><li>✅ sam validate chạy thành công</li><li>✅ Chưa chạy sam build</li><li>✅ Chưa chạy sam deploy</li></ul><h3 id=5510-build--deploy-với-aws-sam>5.5.10 Build & Deploy với AWS SAM</h3><h4 id=55101-mục-tiêu>5.5.10.1 Mục tiêu</h4><p>Sau section này hệ thống sẽ được deploy lên AWS.
+Các resource sẽ được tạo gồm:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>CloudFormation Stack
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├── API Gateway
+</span></span><span style=display:flex><span>├── Lambda Functions
+</span></span><span style=display:flex><span>├── DynamoDB Tables
+</span></span><span style=display:flex><span>├── SNS Topic
+</span></span><span style=display:flex><span>├── EventBridge Rules
+</span></span><span style=display:flex><span>├── IAM Roles
+</span></span><span style=display:flex><span>├── CloudWatch Log Groups
+</span></span><span style=display:flex><span>└── Permissions
+</span></span></code></pre></div><p>Frontend React vẫn chưa deploy ở section này.</p><h4 id=55102-kiểm-tra-aws-cli>5.5.10.2 Kiểm tra AWS CLI</h4><p>aws &ndash;version
+Ví dụ:
+aws-cli/2.xx.x</p><h4 id=55103-kiểm-tra-sam-cli>5.5.10.3 Kiểm tra SAM CLI</h4><p>sam &ndash;version
+Ví dụ
+SAM CLI, version 1.xx.x</p><h4 id=55104-kiểm-tra-profile>5.5.10.4 Kiểm tra Profile</h4><p>aws configure list-profiles
+Phải thấy
+irms-shared
+Sau đó
+aws sts get-caller-identity &ndash;profile irms-shared
+Nếu đúng sẽ trả về
+Account
+UserId
+Arn</p><h4 id=55105-build-project>5.5.10.5 Build Project</h4><p>Trong thư mục project
+cd /d &ldquo;D:\Thực Tập\irms-serverless&rdquo;
+Build
+sam build ^
+&ndash;template-file infrastructure\template.yaml
+SAM sẽ</p><ul><li>copy source Lambda</li><li>cài requirements.txt</li><li>sinh thư mục
+.aws-sam
+<img alt="Build & Deploy 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-001.png></li></ul><h4 id=55106-kiểm-tra-build>5.5.10.6 Kiểm tra Build</h4><p>dir .aws-sam
+phải thấy
+build
+cache
+Sau đó
+dir .aws-sam\build
+phải thấy
+IncidentCrudFunction
+UploadEvidenceFunction
+GenerateReportFunction
+AlertHandlerFunction
+AiAssistantFunction
+template.yaml
+<img alt="Build & Deploy 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-002.png></p><h4 id=55107-deploy-guided>5.5.10.7 Deploy Guided</h4><p>Tiếp theo là deploy guided, nhưng trước khi chạy cần chuẩn bị Cognito parameter.
+Chạy lệnh này để lấy User Pool ID:
+aws cognito-idp list-user-pools &ndash;max-results 10 &ndash;region ap-southeast-1 &ndash;profile irms-shared
+Và lấy App Client ID:
+aws cognito-idp list-user-pool-clients &ndash;user-pool-id YOUR_USER_POOL_ID &ndash;region ap-southeast-1 &ndash;profile irms-shared
+Thay YOUR_USER_POOL_ID bằng User Pool ID bạn thấy ở lệnh đầu.
+Sau khi chạy lệnh lấy App Client ID:
+aws cognito-idp list-user-pool-clients ^
+&ndash;user-pool-id ap-southeast-1_NjzUFNCpi ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared</p><p>Lần đầu deploy
+sam deploy &ndash;guided ^
+&ndash;template-file .aws-sam\build\template.yaml ^
+&ndash;profile irms-shared
+SAM sẽ hỏi
+Stack Name
+Ví dụ
+irms-serverless
+Region
+ap-southeast-1
+Confirm changes before deploy
+N
+Allow SAM IAM
+Y
+Save configuration
+Y
+Sau lần đầu sẽ sinh
+samconfig.toml
+<img alt="Build & Deploy 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-003.png></p><h4 id=55108-deploy-lần-sau>5.5.10.8 Deploy lần sau</h4><p>Chỉ cần
+sam build
+rồi
+sam deploy
+không cần guided nữa.</p><h4 id=55109-validate-deployment>5.5.10.9 Validate Deployment</h4><p>Kiểm tra stack
+aws cloudformation list-stacks ^
+&ndash;profile irms-shared
+<img alt="Build & Deploy 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-004.png>
+Kiểm tra Lambda
+aws lambda list-functions ^
+&ndash;profile irms-shared
+<img alt="Build & Deploy 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-005.png>
+<img alt="Build & Deploy 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-006.png>
+<img alt="Build & Deploy 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-10-007.png>
+Kiểm tra API
+aws apigateway get-rest-apis ^
+&ndash;profile irms-shared</p><h4 id=551010-checklist>5.5.10.10 Checklist</h4><ul><li>✅ AWS CLI hoạt động
+✅ SAM CLI hoạt động
+✅ Profile irms-shared hoạt động
+✅ sam build thành công
+✅ .aws-sam được tạo
+✅ Lambda build thành công
+✅ sam deploy thành công
+✅ CloudFormation Stack được tạo
+✅ API Gateway được tạo
+✅ Lambda được tạo
+✅ DynamoDB được tạo
+✅ EventBridge được tạo
+✅ SNS Topic được tạo</li></ul><h3 id=5511-functional-testing--validation>5.5.11 Functional Testing & Validation</h3><p>Mục tiêu
+Chứng minh hệ thống IRMS không chỉ deploy thành công, mà các chức năng chính thật sự chạy được:
+API Gateway → Lambda → DynamoDB / S3 / EventBridge / SNS / Secrets Manager</p><h4 id=55111-verify-api-gateway-deployment>5.5.11.1 Verify API Gateway Deployment</h4><p>Mục tiêu
+Xác nhận API Gateway đã deploy thành công, có Stage dev, có Invoke URL và các endpoint đúng.
+Thực hiện
+<strong>Bước 1: Mở AWS Console</strong>
+Vào:
+API Gateway → irms-api → Stages → dev
+<img alt="Testing & Validation 1" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-001.png>
+Lưu ý: URL này chỉ là base URL, chưa phải endpoint chức năng.
+<strong>Bước 2: Liệt kê API Resources</strong>
+Chạy:
+aws apigateway get-resources ^
+&ndash;rest-api-id 07frck8bih ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 2" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-002.png>
+<img alt="Testing & Validation 3" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-003.png>
+<img alt="Testing & Validation 4" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-004.png>
+<img alt="Testing & Validation 5" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-005.png></p><h4 id=55112-test-api-health-check>5.5.11.2 Test API Health Check</h4><p>Mục tiêu
+Kiểm tra luồng:
+Client → API Gateway → IncidentCrud Lambda → Response
+Thực hiện
+Chạy:
+curl.exe <a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping</a>
+<img alt="Testing & Validation 6" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-006.png>
+Hoặc mở trình duyệt:
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ping</a>
+<img alt="Testing & Validation 7" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-007.png></p><h4 id=55113-test-incident-crud>5.5.11.3 Test Incident CRUD</h4><p>🎯 Mục tiêu
+Kiểm tra toàn bộ quy trình tạo và quản lý Incident trong hệ thống IRMS.
+Sau bài test này, chúng ta sẽ xác nhận:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Client
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>IncidentCrud Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>DynamoDB (irms-incidents)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span></code></pre></div><p>CloudWatch Logs
+Nếu thành công nghĩa là hệ thống backend đã xử lý được nghiệp vụ cốt lõi của IRMS.</p><p>Kiến trúc</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>POST /incidents
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>IncidentCrud Lambda
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>DynamoDB
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>HTTP Response
+</span></span></code></pre></div><p>📝 Các bước thực hiện
+Bước 1 - Xác định API cần test
+Trước tiên kiểm tra endpoint đã deploy.
+Bạn đã có:
+POST /incidents
+GET /incidents
+GET /incidents/{id}
+PUT /incidents/{id}
+DELETE /incidents/{id}
+Bước 2 - Kiểm tra Lambda đang mong đợi body như thế nào
+Trước khi gọi API, chúng ta cần xem handler.py của incident-crud.
+Hãy chạy:
+type backend\incident-crud\handler.py
+<img alt="Testing & Validation 8" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-008.png>
+Bước 3 - Gửi request tạo Incident
+Mở CMD và chạy:
+curl.exe -X POST ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents</a> ^
+-H &ldquo;Content-Type: application/json&rdquo; ^
+-d &ldquo;{"title":"Unauthorized SSH Login","description":"Multiple failed SSH login attempts detected","severity":"High","source":"manual","assignedTo":"Security Analyst"}&rdquo;
+<img alt="Testing & Validation 9" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-009.png>
+Nghĩa là endpoint /incidents đang được Cognito Authorizer bảo vệ. /ping public, còn CRUD thì cần JWT token.
+Bạn cần lấy Access Token bằng Cognito. Chạy lệnh này, thay YOUR_USERNAME và YOUR_PASSWORD bằng user bạn đã tạo trước đó:
+aws cognito-idp initiate-auth ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared ^
+&ndash;client-id 7ulhp62hdg16m0s2dh6sr9mcvk ^
+&ndash;auth-flow USER_PASSWORD_AUTH ^
+&ndash;auth-parameters USERNAME=YOUR_USERNAME,PASSWORD=YOUR_PASSWORD
+Sau khi chạy xong, bạn sẽ nhận được:
+&ldquo;IDToken&rdquo;: &ldquo;eyJ&mldr;&rdquo;
+<img alt="Testing & Validation 10" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-010.png>
+Sau đó gọi lại API bằng token:
+curl.exe -X POST ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents</a> ^
+-H &ldquo;Content-Type: application/json&rdquo; ^
+-H &ldquo;Authorization: Bearer YOUR_ID _TOKEN&rdquo; ^
+-d &ldquo;{"title":"Unauthorized SSH Login","description":"Multiple failed SSH login attempts detected","severity":"High","source":"manual","assignedTo":"Security Analyst"}&rdquo;
+<img alt="Testing & Validation 11" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-011.png>
+Bước 4 – Kiểm tra Incident vừa tạo
+Lấy danh sách Incident.
+Chạy: curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+Danh sách Incident.
+<img alt="Testing & Validation 12" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-012.png>
+Bước 5 : GET chi tiết incident
+Dùng ID vừa tạo:
+INC-53DB6458
+Chạy:
+curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+<img alt="Testing & Validation 13" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-013.png>
+Bước 6 : PUT cập nhật incident
+Chạy:
+curl.exe -X PUT ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458</a> ^
+-H &ldquo;Content-Type: application/json&rdquo; ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo; ^
+-d &ldquo;{"status":"In Progress","assignedTo":"Security Analyst","actor":"analyst@example.com"}&rdquo;
+Mục tiêu: status đổi từ:
+Open
+thành:
+In Progress
+<img alt="Testing & Validation 14" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-014.png>
+<strong>Bước 7: GET timeline</strong>
+Sau khi tạo và update, timeline phải có ít nhất 2 event:
+curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458/timeline>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458/timeline</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+Mục tiêu thấy các event kiểu:
+incident.created
+incident.updated
+<img alt="Testing & Validation 15" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-015.png>
+<strong>Bước 8: Kiểm tra DynamoDB</strong>
+Vào AWS Console:
+DynamoDB → Tables → irms-incidents → Explore table items
+Tìm :INC-53DB6458
+<img alt="Testing & Validation 16" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-016.png>
+Sau đó kiểm tra timeline:
+DynamoDB → Tables → irms-timeline → Explore table items
+Tìm các item có:
+incidentId = INC-53DB6458
+<img alt="Testing & Validation 17" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-017.png></p><h4 id=55114-test-evidence-upload>5.5.11.4 Test Evidence Upload</h4><p>Đây là nơi chúng ta sẽ kiểm tra:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Client
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>UploadEvidence Lambda
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>├──────── Generate Presigned URL
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Amazon S3
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>DynamoDB (Metadata)
+</span></span></code></pre></div><p>Mục tiêu
+Xác nhận hệ thống có thể:</p><ul><li>Tạo metadata cho Evidence.</li><li>Sinh Presigned URL để upload file lên Amazon S3.</li><li>Upload file lên S3.</li><li>Kiểm tra metadata trong DynamoDB.</li><li>Lấy thông tin Evidence thông qua API.
+Kiến trúc</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>POST /evidence
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>API Gateway
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>UploadEvidence Lambda
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ├──────── PutItem
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ├──────── Generate Presigned URL
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>DynamoDB
+</span></span><span style=display:flex><span>        │
+</span></span><span style=display:flex><span>        ▼
+</span></span><span style=display:flex><span>Amazon S3
+</span></span></code></pre></div><p>thực hiện
+Bước 1. Kiểm tra source code Chạy:
+more backend\upload-evidence\handler.py
+Quan sát hai hàm:</p><ul><li>create_evidence()</li><li>lambda_handler()</li></ul><p><img alt="Testing & Validation 18" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-018.png>
+<img alt="Testing & Validation 19" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-019.png>
+<img alt="Testing & Validation 20" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-020.png>
+Chức năng
+create_evidence() thực hiện:</p><ul><li>Đọc request body.</li><li>Sinh evidenceId.</li><li>Tạo đường dẫn lưu file trên S3.</li><li>Sinh Presigned URL.</li><li>Lưu metadata vào DynamoDB.</li><li>Trả về metadata và upload URL.
+lambda_handler() định tuyến:
+POST /evidence
+đến
+create_evidence()</li></ul><p>Bước 2. Tạo file kiểm thử
+Tạo file:
+echo This is IRMS evidence test file > evidence-test.txt
+Kiểm tra:
+dir evidence-test.txt
+<img alt="Testing & Validation 21" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-021.png>
+Bước 3. Tạo Evidence Metadata
+Gọi API:
+curl.exe -X POST ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence</a> ^
+-H &ldquo;Content-Type: application/json&rdquo; ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo; ^
+-d &ldquo;{"incidentId":"INC-53DB6458","fileName":"evidence-test.txt","fileType":"text/plain","description":"Test evidence upload from CMD","uploadedBy":"analyst@example.com","fileSize":32}&rdquo;
+Lưu ý: Thay YOUR_ID_TOKEN bằng IdToken vừa lấy từ Amazon Cognito.
+API trả về:
+<img alt="Testing & Validation 22" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-022.png>
+Response trả về metadata và upload URL.
+Bước 4. Upload file lên Amazon S3
+Copy giá trị:
+uploadUrl
+trong response.
+Thực hiện upload:
+curl.exe -X PUT ^
+&ldquo;PASTE_UPLOAD_URL_HERE&rdquo; ^
+-H &ldquo;Content-Type: text/plain&rdquo; ^
+&ndash;upload-file evidence-test.txt
+Nếu thành công, lệnh sẽ không hiển thị lỗi và file sẽ được upload lên Amazon S3.
+<img alt="Testing & Validation 23" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-023.png>
+Sau đó gọi GET evidence:
+curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence/845d4a06-f3c2-4a4d-84bb-d937a522da46>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence/845d4a06-f3c2-4a4d-84bb-d937a522da46</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+<img alt="Testing & Validation 24" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-024.png></p><h4 id=55115-test-ai-assistant>5.5.11.5 Test AI Assistant</h4><p>Mục tiêu: kiểm tra request đã xác thực có đi tới AI Assistant Lambda, Lambda đọc Groq API key từ Secrets Manager, và provider abstraction trả về structured response hoặc fallback response an toàn.</p><p><img alt="Testing & Validation 25" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-025.png>
+<img alt="Testing & Validation 26" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-026.png></p><p>Kiểm tra Groq secret đã cấu hình:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws secretsmanager get-secret-value ^
+</span></span><span style=display:flex><span>  --secret-id YOUR_GROQ_SECRET_NAME ^
+</span></span><span style=display:flex><span>  --region ap-southeast-1 ^
+</span></span><span style=display:flex><span>  --profile irms-shared
+</span></span></code></pre></div><p>Gọi incident analysis:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>curl.exe -X POST ^
+</span></span><span style=display:flex><span>  https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ai/analyze ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Content-Type: application/json&#34;</span> ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Authorization: Bearer YOUR_ID_TOKEN&#34;</span> ^
+</span></span><span style=display:flex><span>  -d <span style=color:#e6db74>&#34;{\&#34;incident\&#34;:{\&#34;title\&#34;:\&#34;Unauthorized SSH Login\&#34;,\&#34;description\&#34;:\&#34;Multiple failed SSH login attempts detected from unknown IP\&#34;,\&#34;severity\&#34;:\&#34;High\&#34;,\&#34;source\&#34;:\&#34;manual\&#34;}}&#34;</span>
+</span></span></code></pre></div><p>Gọi explain severity:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>curl.exe -X POST ^
+</span></span><span style=display:flex><span>  https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ai/explain ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Content-Type: application/json&#34;</span> ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Authorization: Bearer YOUR_ID_TOKEN&#34;</span> ^
+</span></span><span style=display:flex><span>  -d <span style=color:#e6db74>&#34;{\&#34;incidentId\&#34;:\&#34;INC-53DB6458\&#34;,\&#34;severity\&#34;:\&#34;High\&#34;}&#34;</span>
+</span></span></code></pre></div><p>Hỏi AI theo incident hiện tại:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>curl.exe -X POST ^
+</span></span><span style=display:flex><span>  https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/ai/chat ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Content-Type: application/json&#34;</span> ^
+</span></span><span style=display:flex><span>  -H <span style=color:#e6db74>&#34;Authorization: Bearer YOUR_ID_TOKEN&#34;</span> ^
+</span></span><span style=display:flex><span>  -d <span style=color:#e6db74>&#34;{\&#34;incidentId\&#34;:\&#34;INC-53DB6458\&#34;,\&#34;question\&#34;:\&#34;What evidence should I collect next?\&#34;}&#34;</span>
+</span></span></code></pre></div><p>Nếu Groq không khả dụng hoặc timeout, Lambda trả về fallback notification và rule-based analysis để người dùng vẫn tiếp tục được quy trình xử lý incident.</p><p><img alt="Testing & Validation 28" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-028.png></p><h4 id=55116-test-generate-report>5.5.11.6 Test Generate Report</h4><p><strong>Bước 1: Test GET /reports</strong>
+curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+Mục tiêu: trả về danh sách report summary.
+<img alt="Testing & Validation 29" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-029.png>
+<strong>Bước 2: Test POST /reports/generate</strong>
+Dùng incident đã có:
+INC-53DB6458
+Chạy:
+curl.exe -X POST ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports/generate>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/reports/generate</a> ^
+-H &ldquo;Content-Type: application/json&rdquo; ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo; ^
+-d &ldquo;{"incidentId":"INC-53DB6458"}&rdquo;
+<img alt="Testing & Validation 30" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-030.png></p><h4 id=55117-test-eventbridge-alert-automation>5.5.11.7 Test EventBridge Alert Automation</h4><p>Phần này kiểm tra luồng tự động:
+Simulated GuardDuty Event
+↓
+EventBridge Rule
+↓
+AlertHandler Lambda
+↓
+DynamoDB + SNS
+<strong>Bước 1: Tạo file event mẫu</strong>
+Tạo file:
+notepad guardduty-event.json
+Dán nội dung này:
+[
+{
+&ldquo;Source&rdquo;: &ldquo;aws.guardduty&rdquo;,
+&ldquo;DetailType&rdquo;: &ldquo;GuardDuty Finding&rdquo;,
+&ldquo;Detail&rdquo;: &ldquo;{"title":"Simulated SSH Brute Force Attack","severity":"Critical","description":"Simulated GuardDuty finding: multiple SSH brute force attempts detected from suspicious IP.","source":"guardduty-simulation","assignedTo":"soc-team"}&rdquo;,
+&ldquo;EventBusName&rdquo;: &ldquo;default&rdquo;
+}
+]
+Lưu file.
+<strong>Bước 2: Gửi event vào EventBridge</strong>
+aws events put-events ^
+&ndash;entries file://guardduty-event.json ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 31" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-031.png>
+<strong>Bước 3: Kiểm tra Incident tự động</strong>
+curl.exe ^
+<a href=https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents>https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents</a> ^
+-H &ldquo;Authorization: Bearer YOUR_ID_TOKEN&rdquo;
+Tìm incident: Simulated SSH Brute Force Attack
+<img alt="Testing & Validation 32" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-032.png>
+<strong>Bước 5: Kiểm tra DynamoDB</strong>
+Vào:
+DynamoDB → irms-incidents → Explore table items
+Tìm incident có:
+source = guardduty-simulation
+createdBy = alert-handler
+<img alt="Testing & Validation 33" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-033.png>
+<strong>Bước 6: Kiểm tra CloudWatch</strong>
+aws logs describe-log-groups ^
+&ndash;log-group-name-prefix /aws/lambda/alert-handler ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 34" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-034.png></p><h4 id=55118-cloudwatch-logs-and-final-validation>5.5.11.8 CloudWatch Logs and Final Validation</h4><p>Chạy các lệnh kiểm tra tổng thể:
+aws cloudformation describe-stacks ^
+&ndash;stack-name irms-serverless ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared ^
+&ndash;query &ldquo;Stacks[0].StackStatus&rdquo;
+<img alt="Testing & Validation 35" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-035.png>
+aws lambda list-functions ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared ^
+&ndash;query &ldquo;Functions[].FunctionName&rdquo;
+<img alt="Testing & Validation 36" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-036.png>
+aws dynamodb list-tables ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 37" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-037.png>
+aws s3 ls ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 38" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-038.png>
+aws events list-rules ^
+&ndash;region ap-southeast-1 ^
+&ndash;profile irms-shared
+<img alt="Testing & Validation 39" src=https://dantruong209.github.io/Internship-Report/images/5-Workshop/IRMS/section-11-039.png>
+Kết quả mong đợi cuối 11
+Sau khi hoàn thành 11, bạn có thể chứng minh:</p><ul><li>✅ API Gateway gọi được Lambda
+✅ Incident CRUD hoạt động
+✅ Timeline hoạt động
+✅ Evidence upload lên S3 hoạt động
+✅ AI Assistant gọi Groq hoặc fallback hoạt động
+✅ EventBridge tự động tạo incident hoạt động
+✅ SNS alert hoạt động
+✅ Report CSV được tạo lên S3
+✅ CloudWatch Logs có log kiểm chứng</li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.4-application-development/ title="Phát triển ứng dụng"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=https://dantruong209.github.io/Internship-Report/vi/5-workshop/5.6-frontend-integration-web-deployment/ title="Tích hợp frontend và triển khai web" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=https://dantruong209.github.io/Internship-Report/js/clipboard.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/perfect-scrollbar.jquery.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/jquery.sticky.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/featherlight.min.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/highlight.pack.js?1784897816></script><script>hljs.initHighlightingOnLoad()</script><script src=https://dantruong209.github.io/Internship-Report/js/modernizr.custom-3.6.0.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/learn.js?1784897816></script><script src=https://dantruong209.github.io/Internship-Report/js/hugo-learn.js?1784897816></script><link href=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.css?1784897816 rel=stylesheet><script src=https://dantruong209.github.io/Internship-Report/mermaid/mermaid.js?1784897816></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>
